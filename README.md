@@ -2,6 +2,15 @@
 
 This repository hosts the working website for the Jacob Blanchette Jr. Photography Archive. The site is **not ready for public launch**: the biography contains family-reported information under verification, the portrait is cataloged as JB-000001 with an AI-enhanced display image and a phone-capture comparison, and the BFHF gallery uses nine clearly labeled demonstration records.
 
+## New: Black Repertory Group 1990 album
+
+- `brg-1990.html`: introduction to the album's documented 25th anniversary title page (July 20–22, 1990), original cover and opening-page photographs.
+- `gallery.html?collection=brg-1990`: tiled gallery and slideshow, with text search and filter by provisional album page P09–P14.
+- `data/photos.json`: 21 provisional photographs, identifiers `JB-000002` through `JB-000023`, excluding private business card `JB-000021`. BFHF demo entries remain separate.
+- `assets/images/brg-1990/`: small first-pass WebP derivatives made by conventional cropping and tonal adjustment, **not generative AI**; includes cover and title page.
+- **Important:** Individual photograph dates, subject identifications, original photographer attribution, exact page order, crop boundaries, and publication rights require review. The printed title page establishes the album's stated celebration dates, not each print's date. Public GitHub repositories expose assets even if GitHub Pages is disabled.
+- The authoritative item-level catalog and original-arrangement photographs remain in the **private** `archive-catalog` repository. Do not publish internal file metadata or unreviewed business-card contact information.
+
 ## Website files
 - `index.html`: homepage and portrait placeholder
 - `biography.html`: preliminary biography
