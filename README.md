@@ -1,6 +1,6 @@
 # Jacob Blanchette Jr. Photography Archive — draft website
 
-This repository hosts the working website for the Jacob Blanchette Jr. Photography Archive. The site is **not ready for public launch**: the biography contains family-reported information under verification, the portrait is a placeholder, and the gallery uses nine clearly labeled demonstration records.
+This repository hosts the working website for the Jacob Blanchette Jr. Photography Archive. The site is **not ready for public launch**: the biography contains family-reported information under verification, the portrait is cataloged as JB-000001 with an AI-enhanced display image and a phone-capture comparison, and the BFHF gallery uses nine clearly labeled demonstration records.
 
 ## Website files
 - `index.html`: homepage and portrait placeholder
@@ -16,8 +16,8 @@ This repository hosts the working website for the Jacob Blanchette Jr. Photograp
 ## View locally
 Run `python3 -m http.server 8000` in the repository folder, then open `http://localhost:8000/`. Loading the gallery data requires HTTP rather than opening the file directly.
 
-## Add the actual portrait
-Save an approved web derivative to `assets/images/jacob-portrait.jpg` and update `index.html` and `biography.html` to reference it instead of `assets/images/portrait-placeholder.svg`. Preserve the original capture separately.
+## First cataloged portrait — JB-000001
+The homepage displays `assets/images/JB-000001_enhanced_web.webp`, derived by generative AI from a phone photograph of a print. The biography provides a comparison with `assets/images/JB-000001_phone_web.webp`. `data/portrait.json` provides public-facing metadata. Both files are resized derivatives for web display. The original phone capture and full-resolution AI result are retained outside the public repository, and the underlying physical print's date, photographer, and original container are not yet documented. Do not mistake generative restoration for archival reproduction.
 
 ## Add photographs
 Replace the nine `DEMO-...` records in `data/photos.json` with real catalog records only after checking identification, provenance, and publication rights. Place approved resized display JPEGs in `assets/images/photos/` and set each record's `image` field to its relative path. Do **not** put original phone photographs, TIFF masters, confidential archival metadata, or unreleased photographs in this public repository. Keep those in appropriately backed-up private storage.
