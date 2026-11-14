@@ -1,0 +1,23 @@
+{
+  "id": "JB-000001",
+  "collection_id": "BIO",
+  "title": "Portrait of Jacob Blanchette Jr.",
+  "subject": "Jacob Blanchette Jr.",
+  "date": "Unknown",
+  "photographer": "Unknown",
+  "medium": "Photographic print",
+  "digitization_tier": "Tier 1 — phone",
+  "identification_status": "Subject identified; date and photographer not verified",
+  "display_image": "assets/images/JB-000001_enhanced_web.webp",
+  "display_image_notice": "AI-enhanced derivative. Generative enhancement may reconstruct details; not an archival master.",
+  "source_capture": "assets/images/JB-000001_phone_web.webp",
+  "source_capture_notice": "Rotated/cropped web derivative of original phone photograph.",
+  "file_ids": [
+    "JB-000001-D01",
+    "JB-000001-D02",
+    "JB-000001-D03",
+    "JB-000001-D04"
+  ],
+  "original_grouping": "Pending documentation",
+  "public_status": "Draft website, not yet launched"
+}
