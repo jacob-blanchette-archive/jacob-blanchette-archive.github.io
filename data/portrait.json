@@ -8,8 +8,8 @@
   "medium": "Photographic print",
   "digitization_tier": "Tier 1 — phone",
   "identification_status": "Subject identified; date and photographer not verified",
-  "display_image": "assets/images/JB-000001_enhanced_web.webp",
-  "display_image_notice": "AI-enhanced derivative. Generative enhancement may reconstruct details; not an archival master.",
+  "display_image": "assets/images/JB-000001_phone_web.webp",
+  "display_image_notice": "Non-generative, rotated/cropped web derivative of original phone photograph; not an archival master.",
   "source_capture": "assets/images/JB-000001_phone_web.webp",
   "source_capture_notice": "Rotated/cropped web derivative of original phone photograph.",
   "file_ids": [
