@@ -1,0 +1,161 @@
+/* Jacob Blanchette Jr. Photography Archive
+ * Curatorial Hierarchy (title weight 600) + Balanced Monochrome.
+ * Approved 2026-11-15. Overrides existing site styles; archival content untouched.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root {
+  --paper: #FCFCFB;
+  --ink: #141414;
+  --muted: #525252;
+  --line: #CECECC;
+  --accent: #383838;
+  --dark: #161616;
+  --serif: "Helvetica Neue", Helvetica, Inter, "Nimbus Sans", Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Inter, "Nimbus Sans", Arial, sans-serif;
+  --archive-alt: #F5F5F4;
+  --archive-body: #424242;
+  --archive-border: #D3D3D1;
+}
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); }
+a:hover { color: #444; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-offset: 3px; }
+
+/* Dark archive announcement, compact wordmark, low-key navigation. */
+.announcement {
+  background: #242424; color: #F8F8F8; padding: 12px 16px;
+  font: 600 10px/1.5 var(--sans); letter-spacing: .15em; text-transform: uppercase;
+}
+.header { background: var(--paper); border-color: var(--line); }
+.brand strong { font: 600 23px/1.17 var(--sans); letter-spacing: -.045em; color: var(--ink); }
+.brand small { color: var(--muted); font: 600 10px/1.5 var(--sans); letter-spacing: .19em; }
+.links { font-weight: 500; }
+.links a[aria-current=page] { border-color: var(--ink); }
+.eyebrow {
+  font: 700 11px/1.55 var(--sans); letter-spacing: .19em;
+  text-transform: uppercase; color: var(--accent);
+}
+
+/* Curatorial typography: display weight 600, strong supporting hierarchy. */
+.hero h1, .page-title {
+  font-family: var(--sans); font-weight: 600; letter-spacing: -.06em;
+  line-height: 1.06; color: var(--ink); overflow-wrap: break-word;
+}
+.hero h1 { font-size: clamp(54px, 5.8vw, 80px); }
+.page-title { font-size: clamp(46px, 5.9vw, 78px); }
+.hero h1 em { font-weight: 600; color: var(--ink); font-style: normal; }
+.hero-grid { grid-template-columns: 1.18fr .82fr; gap: 5%; }
+.hero .profession {
+  font: 400 17px/1.5 var(--sans); font-style: normal; color: var(--archive-body);
+}
+.hero .lead, .lead {
+  font: 400 17px/1.75 var(--sans); color: var(--archive-body);
+}
+.section h2, .feature-copy h3, .bio-career h2, .bio-end h2 {
+  font-family: var(--sans); font-weight: 700; letter-spacing: -.045em;
+  line-height: 1.13; font-size: clamp(35px, 4vw, 49px);
+}
+.prose h2, .bio-story h2 {
+  font-family: var(--sans); font-weight: 700; letter-spacing: -.04em;
+  line-height: 1.2; font-size: clamp(28px, 3vw, 34px);
+}
+.collection-body h3 {
+  font: 700 27px/1.18 var(--sans); letter-spacing: -.04em;
+}
+.prose, .prose p, .bio-story, .bio-narrative, .bio-end .bio-narrative,
+.feature-copy p, .collection-body p {
+  font-family: var(--sans); font-weight: 400; line-height: 1.8;
+  color: var(--archive-body);
+}
+.bio-story, .bio-narrative, .bio-end .bio-narrative { font-size: 17px; }
+.credit, .bio-hero figcaption, .bio-photo figcaption { color: var(--muted); }
+.bio-hero figcaption strong, .bio-photo figcaption strong { color: var(--ink); }
+.textlink, .bio-album-link { color: var(--ink); font-weight: 600; }
+.photo-meta strong, .viewer-details h2, .viewer-comparison-title {
+  font-family: var(--sans); font-weight: 700; letter-spacing: -.03em;
+  color: var(--ink);
+}
+
+/* Neutral materials: white, off-white, gray, black; preserve photographs' pixels. */
+.section.alt, .bio-career { background: var(--archive-alt); }
+.section.dark { background: var(--dark); color: #F8F8F8; }
+.section.dark .prose, .section.dark .prose p,
+.section.dark p, .section.dark .textlink { color: #E4E4E4; }
+.section.dark .eyebrow { color: #D2D2D2; }
+.portrait, .portrait-image, .photo-visual, .bio-photo-stage { background: #E5E5E4; }
+.collection-card { background: #FFF; border-color: var(--archive-border); }
+.collection-image { background: linear-gradient(145deg, #E5E5E4, #C7C7C6); }
+.collection-image .photo-fallback { color: #575757; }
+.photo-fallback span, .photo-placeholder strong {
+  font-family: var(--sans); font-weight: 700;
+}
+.photo-fallback small { color: #575757; }
+.collection-art {
+  background: #E5E5E4; color: #575757; font-family: var(--sans); font-weight: 700;
+}
+.note, .work-notice {
+  border-left-color: #555; background: #F3F3F2; color: var(--archive-body);
+}
+.note strong { color: var(--ink); }
+.button { font-weight: 600; }
+.button.primary { background: var(--dark); border-color: var(--dark); color: #FFF; }
+.button.primary:hover { background: #333; }
+.button.secondary { background: transparent; border-color: var(--dark); color: var(--ink); }
+.feature { background: var(--archive-alt); }
+.feature-art { background: #E0E0DF; color: #555; font-family: var(--sans); }
+.footer { background: #F1F1F0; }
+.footer-title { font: 700 25px/1.18 var(--sans); letter-spacing: -.04em; }
+.footer p, .footer-bottom { color: var(--muted); }
+.footer-bottom { border-color: var(--line); }
+
+/* Illustrated biography: text changes only, preserve all image provenance controls. */
+.bio-story .bio-section + .bio-section, .bio-sources, .bio-group,
+.portrait-sources { border-color: var(--line); }
+.bio-sources summary { color: var(--ink); font-weight: 600; }
+.bio-sources p { color: var(--muted); }
+.bio-sources .portrait-versions img, .portrait-versions img {
+  background: #E5E5E4;
+}
+.bio-album-link { border-color: var(--ink); }
+.bio-dialog, dialog.viewer { background: var(--paper); color: var(--ink); }
+.bio-dialog figcaption { color: var(--muted); }
+
+/* Collections and gallery: do not alter image sources or crop settings. */
+.photo-placeholder, .viewer-placeholder {
+  background: linear-gradient(145deg, #E5E5E4, #C7C7C6); color: #575757;
+}
+.photo-meta small, .photo-caption, .count, .viewer-data,
+.viewer-details p, .viewer-status, .photo-review-status,
+.viewer-source-thumbnail small { color: var(--muted); }
+.search, .toggle, .gallery-page-filter select {
+  background: #FFF; border-color: var(--archive-border); color: var(--ink);
+}
+.toggle:hover, .toggle[aria-pressed=true] { background: var(--dark); color: #FFF; }
+.gallery-page-filter { color: var(--muted); }
+.viewer-status, .viewer-data { border-color: var(--line); }
+.viewer-source-thumbnail img { background: #EEE; border-color: var(--line); }
+.viewer-visual { background: #202020; }
+.empty { background: var(--archive-alt); color: var(--muted); }
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: clamp(50px, 6.3vw, 66px); }
+  .page-title { font-size: clamp(43px, 6.5vw, 66px); }
+}
+@media (max-width: 800px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .hero h1 { font-size: clamp(50px, 9.6vw, 68px); }
+  .page-title { font-size: clamp(42px, 8vw, 64px); }
+  .section h2 { font-size: clamp(33px, 6vw, 46px); }
+  .bio-story h2 { font-size: 30px; }
+}
+@media (max-width: 540px) {
+  .brand strong { font-size: 21px; }
+  .links { gap: 15px; }
+  .hero h1 { font-size: clamp(49px, 10.5vw, 60px); }
+  .page-title { font-size: clamp(38px, 10vw, 52px); }
+  .section h2, .bio-career h2, .bio-end h2 {
+    font-size: clamp(32px, 8.5vw, 43px);
+  }
+  .collection-body h3 { font-size: 25px; }
+  .announcement { font-size: 9px; }
+}
