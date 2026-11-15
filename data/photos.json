@@ -21,7 +21,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Not applicable (printed announcement; graphic designer unverified)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P00.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000025",
@@ -45,7 +49,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P01.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000026",
@@ -69,7 +77,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P01.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000027",
@@ -93,7 +105,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P01.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000028",
@@ -117,7 +133,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P02.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000029",
@@ -141,7 +161,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P02.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000030",
@@ -165,7 +189,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P02.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000031",
@@ -189,7 +217,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P03.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000032",
@@ -213,7 +245,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P03.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000033",
@@ -237,7 +273,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P03.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000034",
@@ -261,7 +301,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P04.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000035",
@@ -285,7 +329,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P04.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000036",
@@ -309,7 +357,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P04.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000037",
@@ -333,7 +385,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P05.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000038",
@@ -357,7 +413,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P05.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000039",
@@ -381,7 +441,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P05.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000040",
@@ -405,7 +469,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P06.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000041",
@@ -429,7 +497,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P06.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000042",
@@ -453,7 +525,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P06.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000043",
@@ -477,7 +553,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P07.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000044",
@@ -501,7 +581,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P07.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000045",
@@ -525,7 +609,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P07.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000046",
@@ -549,7 +637,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P08.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000047",
@@ -573,7 +665,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P08.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000048",
@@ -597,7 +693,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P09.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000049",
@@ -621,7 +721,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P09.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000050",
@@ -645,7 +749,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P09.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000051",
@@ -669,7 +777,11 @@
     "image_review_status": "First-pass crop · review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P09.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000052",
@@ -693,7 +805,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P10.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000053",
@@ -717,7 +833,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P11.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000054",
@@ -741,7 +861,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P12.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000055",
@@ -765,7 +889,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P13.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000056",
@@ -789,7 +917,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P14.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000057",
@@ -813,7 +945,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P15.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000058",
@@ -837,7 +973,11 @@
     "image_review_status": "Working contact/film assembly preview · physical format and crop review pending",
     "photographer": "Jacob Blanchette Jr. (family attribution)",
     "draft": true,
-    "published": true
+    "published": true,
+    "source_image": "assets/images/bfhf/as-found/OC-002_P16.jpg",
+    "source_label": "Binder page as photographed · documentary reproduction",
+    "presentation_label": "Conventional presentation crop · non-generative",
+    "compare_note": "The as-photographed image shows the mounted page and surrounding materials. It is not a high-resolution scan of the individual photographic print."
   },
   {
     "id": "JB-000002",

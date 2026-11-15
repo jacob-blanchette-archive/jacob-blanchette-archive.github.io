@@ -1,2 +1,12 @@
 /* Black Repertory Group 1990 collection */
 .intro-block{align-items:start}.intro-block .prose h2{margin-top:12px}.album-intro-art{margin:0 auto;max-width:450px;width:100%}.album-intro-art img{width:100%;height:auto;display:block;background:#e8ddcc}.album-title-row{grid-template-columns:minmax(230px,.8fr) 1fr;align-items:center;gap:8%}.album-title-figure{margin:0;max-width:500px}.album-title-figure img{width:100%;height:auto;display:block;border:1px solid #ddd1c6}.album-title-figure figcaption{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.7}.gallery-info{max-width:760px}.gallery-page-filter{font-size:13px;display:flex;align-items:center;gap:8px;color:var(--muted)}.gallery-page-filter select{font:inherit;color:var(--ink);border:1px solid #c6bcb1;padding:12px 15px;background:#fff;max-width:190px}.photo-review-status{color:#6f5947;font-size:11px;letter-spacing:.015em}.work-notice{border-left:3px solid #b99a83;background:#ede6db;padding:15px 20px;color:#635c54;font-size:13px;line-height:1.65;margin:18px 0 0;max-width:810px}.viewer-status{font-size:12px;color:#84634f;border-top:1px solid #ddd7cc;margin-top:14px;padding-top:12px;line-height:1.6}@media(max-width:800px){.album-title-row{grid-template-columns:1fr;gap:30px}.album-title-figure{max-width:450px}}
+
+/* Archival image provenance: gallery presentation vs. as-photographed source page. */
+.viewer-comparison{margin:26px 0 20px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.viewer-comparison-title{font-family:Georgia,serif;font-size:21px;margin:0 0 12px!important;color:var(--ink)!important}
+.viewer-version-toggle{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.viewer-version-toggle .toggle{padding:9px 12px;font-size:12px}
+.viewer-comparison-note{font-size:12px;line-height:1.6!important;margin:12px 0!important}
+.viewer-source-thumbnail{margin:15px 0}
+.viewer-source-thumbnail img{display:block;width:100%;max-height:180px;object-fit:contain;object-position:center;background:#e7e1d8;border:1px solid var(--line)}
+.viewer-source-thumbnail small{display:block;font-size:11px;line-height:1.5;color:var(--muted);margin-top:7px}
