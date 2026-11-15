@@ -3,7 +3,7 @@
 
 /* Archival image provenance: gallery presentation vs. as-photographed source page. */
 .viewer-comparison{margin:26px 0 20px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.viewer-comparison-title{font-family:Georgia,serif;font-size:21px;margin:0 0 12px!important;color:var(--ink)!important}
+.viewer-comparison-title{font-family:var(--serif);font-size:21px;margin:0 0 12px!important;color:var(--ink)!important}
 .viewer-version-toggle{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .viewer-version-toggle .toggle{padding:9px 12px;font-size:12px}
 .viewer-comparison-note{font-size:12px;line-height:1.6!important;margin:12px 0!important}
