@@ -1,6 +1,6 @@
-# Jacob Blanchette Jr. Photography Archive — draft website
+# Jacob Blanchette Photography Archive — draft website
 
-This public repository contains the working website for the Jacob Blanchette Jr. Photography Archive. The collection steward has approved provisional public presentation of the BFHF images. Historical identifications, rights documentation, and higher-quality digitization are still under review; a public repository makes all committed assets accessible even if GitHub Pages is not enabled. The biography contains family-reported information under verification, and the portrait has an explicitly labeled AI-enhanced presentation image alongside a documentary phone capture.
+This public repository contains the working website for the Jacob Blanchette Photography Archive. The collection steward has approved provisional public presentation of the BFHF images. Historical identifications, rights documentation, and higher-quality digitization are still under review; a public repository makes all committed assets accessible even if GitHub Pages is not enabled. The biography contains family-reported information under verification, and the portrait has an explicitly labeled AI-enhanced presentation image alongside a documentary phone capture.
 
 ## New: Black Repertory Group 1990 album
 
@@ -29,7 +29,7 @@ This public repository contains the working website for the Jacob Blanchette Jr.
 - `assets/images/bfhf/`: reduced-resolution, non-generative presentation crops; `assets/images/bfhf/as-found/`: 17 documentary binder-page reproductions for comparison.
 - The expanded viewer switches between the cropped image and the binder page as photographed. The latter is **not a preservation-grade scan of an individual print**. Item IDs are displayed in the expanded viewer, not beneath thumbnails.
 - These are provisional exhibition images; no new AI restoration was applied to the BFHF gallery, and the image-treatment review has not yet been carried out as an image replacement campaign. Preserve source captures and master files in private storage.
-- The 1987 printed program and the Chicago June 1987 contact frames do not individually date all items. Attribution to Jacob Blanchette Jr. is family-reported; individual people, exposure dates, and rights documentation remain under research.
+- The 1987 printed program and the Chicago June 1987 contact frames do not individually date all items. Attribution to Jacob Blanchette is family-reported; individual people, exposure dates, and rights documentation remain under research.
 
 ## View locally
 Run `python3 -m http.server 8000` in the repository folder, then open `http://localhost:8000/`. Loading the gallery data requires HTTP rather than opening the file directly.
