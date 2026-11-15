@@ -1,11 +1,14 @@
 [
   {
     "id": "bfhf-pilot",
-    "title": "Black Filmmakers Hall of Fame — Pilot",
-    "description": "A one-year subcollection being prepared for digitization and historical research.",
-    "status": "Pilot — demonstration gallery",
+    "title": "Black Filmmakers Hall of Fame — Binder OC-002",
+    "description": "Thirty-five cataloged objects from one binder: a 1987 Oscar Micheaux Awards announcement, 27 photographs, and seven film/contact assemblies.",
+    "status": "Working public gallery · research and rights review ongoing",
     "intro": "bfhf.html",
-    "credits": "Jacob Blanchette Jr. Photography Archive"
+    "credits": "Materials held in the Jacob Blanchette Jr. Photography Archive; photographer attribution for individual photographs not established.",
+    "eyebrow": "Black Filmmakers Hall of Fame · Binder OC-002",
+    "gallery_description": "Browse 35 preliminary digitizations from the BFHF binder, with original-page filters and item identifiers. Dates, subjects, photographer attribution and album chronology remain under research.",
+    "notice": "Working archival gallery: some crops and tones need review. The February 22, 1987 Oscar Micheaux Awards announcement provides context, but does not prove that every photograph was made at that event. Additional film/contact materials may reflect other events. Names, authorship, copyright and dates are under review."
   },
   {
     "id": "brg-1990",
