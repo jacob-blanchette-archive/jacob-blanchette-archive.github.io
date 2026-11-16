@@ -13,6 +13,26 @@ function imageVersion(r){
  const source=viewerVersion==='source'&&Boolean(r.source_image);
  return {src:source?r.source_image:r.image,alt:source?'Binder page as photographed, including the mounted photograph and surrounding context':(r.alt||r.title||'Archive photograph')};
 }
+
+const isJacobPhotograph=r=>/\bJacob Blanchette\b/i.test(String(r.photographer||''))&&!/^(Not applicable|Not established|Printed program)/i.test(String(r.photographer||''));
+function dateForCitation(r){
+ const match=String(r.date||'').match(/\b(?:19|20)\d{2}\b/);
+ if(!match)return 'date not established';
+ return isJacobPhotograph(r)?match[0]+' (event/binder context; exposure date not verified)':match[0]+' (document or event context; item date not verified)';
+}
+function citationFor(r){
+ const u=new URL('gallery.html',location.href);u.search='';u.hash='';u.searchParams.set('collection',r.collection_id);u.searchParams.set('photo',r.id);
+ const parts=[isJacobPhotograph(r)?'Jacob Blanchette':null,r.title||'Untitled item',dateForCitation(r),collection?.title||'Collection not established','Jacob Blanchette Photography Archive',r.id,u.href];
+ return parts.filter(Boolean).join('. ')+'.';
+}
+async function copyCitation(){
+ const value=$('viewer-citation-text').textContent,status=$('viewer-copy-status');
+ try{
+  if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(value);
+  else{const box=document.createElement('textarea');box.value=value;box.setAttribute('readonly','');box.style.position='fixed';box.style.opacity='0';document.body.append(box);box.select();const ok=document.execCommand('copy');box.remove();if(!ok)throw Error('Copy unavailable');}
+  status.textContent='Citation copied.';
+ }catch(e){status.textContent='Copy unavailable; select the citation text to copy.';}
+}
 function show(){
  const r=filtered[current];if(!r)return;
  const comp=$('viewer-comparison'),hasSource=Boolean(r.source_image);
@@ -37,6 +57,10 @@ function show(){
  $('viewer-title').textContent=r.title||'Untitled photograph';
  $('viewer-caption').textContent=r.caption||'Caption under research';
  $('viewer-description').textContent=r.description||'';
+ $('viewer-credit').textContent=isJacobPhotograph(r)?'Photograph by Jacob Blanchette':'Printed or documentary item · creator not established';
+ $('viewer-citation-text').textContent=citationFor(r);
+ $('viewer-citation').open=false;
+ $('viewer-copy-status').textContent='';
  const fields=$('viewer-fields');fields.replaceChildren();
  for(const [name,value] of [['Original collection position',r.original_group],['Date',r.date],['People',(r.people||[]).join(', ')],['Photographer',r.photographer],['Image source',r.digitization_tier],['Image processing',r.image_processing],['Identification',r.identification_status]])if(value)fields.append(el('div','',name+': '+value));
  $('viewer-status').textContent=r.demo?'Demonstration entry; no archival photograph yet.':(r.image_review_status||'Research and image review in progress.');
@@ -45,6 +69,7 @@ function show(){
 function open(i){if(!filtered.length)return;viewerVersion='presentation';current=Math.max(0,Math.min(i,filtered.length-1));show();if(!dialog.open)dialog.showModal();slidesBtn.setAttribute('aria-pressed','true');gridBtn.setAttribute('aria-pressed','false')}
 function close(){if(dialog.open)dialog.close();changeUrl(null);slidesBtn.setAttribute('aria-pressed','false');gridBtn.setAttribute('aria-pressed','true')}
 function move(d){if(!filtered.length)return;viewerVersion='presentation';current=(current+d+filtered.length)%filtered.length;show()}
+$('viewer-copy-citation').addEventListener('click',copyCitation);
 $('view-presentation').addEventListener('click',()=>{viewerVersion='presentation';show()});$('view-source').addEventListener('click',()=>{viewerVersion='source';show()});search.addEventListener('input',filter);pageFilter.addEventListener('change',filter);more.addEventListener('click',morePhotos);slidesBtn.addEventListener('click',()=>open(0));gridBtn.addEventListener('click',()=>{close();grid.scrollIntoView({behavior:'smooth'})});$('viewer-close').addEventListener('click',close);$('viewer-prev').addEventListener('click',()=>move(-1));$('viewer-next').addEventListener('click',()=>move(1));dialog.addEventListener('close',()=>{changeUrl(null);slidesBtn.setAttribute('aria-pressed','false');gridBtn.setAttribute('aria-pressed','true')});document.addEventListener('keydown',evt=>{if(!dialog.open)return;if(evt.key==='ArrowLeft'){evt.preventDefault();move(-1)}if(evt.key==='ArrowRight'){evt.preventDefault();move(1)}});
 let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.changedTouches[0].screenX},{passive:true});$('viewer-stage').addEventListener('touchend',evt=>{const d=evt.changedTouches[0].screenX-start;if(Math.abs(d)>60)move(d>0?-1:1)},{passive:true});
 (async()=>{try{const [cs,ps]=await Promise.all([fetch('data/collections.json'),fetch('data/photos.json')]);if(!cs.ok||!ps.ok)throw Error('Catalog data unavailable');const [cols,all]=await Promise.all([cs.json(),ps.json()]);const id=new URLSearchParams(location.search).get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');document.title=collection.title+' | Jacob Blanchette Photography Archive';records=all.filter(p=>p.collection_id===id&&p.published!==false).sort((a,b)=>(a.order||0)-(b.order||0));$('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';$('gallery-eyebrow').textContent='Archive · '+(collection.eyebrow||'Collection');$('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';$('gallery-back').href=collection.intro||'collections.html';$('gallery-back').textContent='← Back to collection introduction';if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}const pages=[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();if(pages.length){pageLabel.hidden=false;for(const p of pages){const option=el('option','',p);option.value=p;pageFilter.add(option)}const requestedPage=new URLSearchParams(location.search).get('page');if(pages.includes(requestedPage))pageFilter.value=requestedPage}filter();const photoId=new URLSearchParams(location.search).get('photo');if(photoId){const idx=filtered.findIndex(p=>p.id===photoId);if(idx>=0)open(idx)}}catch(err){$('results-count').textContent='Unable to load gallery';$('empty-state').hidden=false;$('empty-state').textContent='Unable to load collection records. '+err.message}})()
