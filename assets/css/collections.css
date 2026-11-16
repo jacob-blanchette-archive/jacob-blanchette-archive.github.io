@@ -26,3 +26,8 @@
  .themed-cards .collection-body { padding: 23px 23px 28px; }
  .theme-header { margin-bottom: 25px; }
 }
+
+/* Keep linked collection cards and their independent archival-record links accessible. */
+.themed-cards .collection-card-wrap{display:flex;flex-direction:column;min-width:0}
+.themed-cards .collection-card-wrap>.collection-card{flex:1;height:auto}
+.themed-cards .collection-card-wrap>.featured-photo-credit{margin:10px 2px 0}
