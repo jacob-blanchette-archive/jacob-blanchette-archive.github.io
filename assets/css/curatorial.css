@@ -209,3 +209,25 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 
 /* Respect the hidden state when an editorial image has no full gallery record. */
 .editorial-photo-record[hidden]{display:none}
+
+/* Shared museum-style organizational collection layouts. */
+.collection-feature-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:6%;align-items:start}
+.collection-feature-row .prose h2{margin-top:10px}
+.collection-feature-figure{margin:0;min-width:0}
+.collection-feature-figure .editorial-photo-trigger img{width:100%;height:auto;object-fit:contain;background:var(--archive-alt)}
+.collection-feature-figure figcaption{margin-top:12px;color:var(--muted);font:400 12px/1.65 var(--sans)}
+.collection-history{max-width:940px}
+.collection-history h2:not(:first-child){margin-top:34px}
+.collection-gallery-intro{max-width:810px;color:var(--archive-body);font:400 16px/1.75 var(--sans);margin:0 0 26px}
+.collection-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.collection-gallery-card{display:flex;flex-direction:column;color:var(--ink);background:#fff;border:1px solid var(--line);text-decoration:none;min-width:0}
+.collection-gallery-card:hover{color:var(--ink);border-color:var(--ink)}
+.collection-gallery-card-image{display:flex;background:var(--archive-alt);height:260px;align-items:center;justify-content:center}
+.collection-gallery-card-image img{display:block;width:100%;height:100%;object-fit:contain}
+.collection-gallery-card-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:22px 24px 24px;line-height:1.6}
+.collection-gallery-card-copy strong{font:600 clamp(23px,2.7vw,30px)/1.2 var(--sans);letter-spacing:-.035em}
+.collection-gallery-card-action{font-weight:600;text-decoration:underline;text-underline-offset:3px;margin-top:5px}
+.collection-gallery-section .collection-source-note{display:block;font:400 13px/1.7 var(--sans);color:var(--muted);margin-top:24px;max-width:900px}
+.collection-history a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:850px){.collection-feature-row{grid-template-columns:1fr}.collection-feature-figure{max-width:600px}}
+@media(max-width:620px){.collection-gallery-grid{grid-template-columns:1fr}.collection-gallery-card-image{height:240px}}
