@@ -35,3 +35,17 @@
 .brg-album-card-copy strong{font:600 clamp(23px,3vw,31px)/1.2 var(--sans);letter-spacing:-.035em}
 .brg-album-card-action{font-weight:600;text-decoration:underline;text-underline-offset:4px;margin-top:6px}
 @media(max-width:650px){.brg-album-card{grid-template-columns:1fr}.brg-album-card-photo{min-height:0}.brg-album-card-photo img{max-height:310px}.brg-album-card-copy{padding:23px}}
+
+/* Album documentation stays with its archival gallery rather than the organizational introduction. */
+.brg-gallery-documentation{border-bottom:1px solid var(--line);background:var(--archive-alt);padding:18px 0 20px}
+.brg-gallery-documentation[hidden]{display:none}
+.brg-gallery-documentation summary{cursor:pointer;font:600 14px/1.5 var(--sans);color:var(--ink)}
+.brg-gallery-documentation-body{display:grid;grid-template-columns:minmax(180px,310px) 1fr;gap:30px;align-items:center;max-width:900px;padding:24px 0 4px}
+.brg-gallery-documentation-body img{width:100%;height:auto;display:block;object-fit:contain;border:1px solid var(--line)}
+.brg-gallery-documentation-body p{font:400 15px/1.75 var(--sans);color:var(--archive-body)}
+.brg-gallery-documentation-body .credit{font-size:12px;color:var(--muted)}
+.brg-gallery-documentation-body .credit a{text-decoration:underline;text-underline-offset:3px}
+.brg-organization-history{max-width:900px}
+.brg-organization-history .brg-research-links{font-size:13px;color:var(--muted)}
+.brg-organization-history .brg-research-links a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:650px){.brg-gallery-documentation-body{grid-template-columns:1fr}}
