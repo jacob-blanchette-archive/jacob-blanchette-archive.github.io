@@ -233,3 +233,6 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .collection-history a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:850px){.collection-feature-row{grid-template-columns:1fr}.collection-feature-figure{max-width:600px}}
 @media(max-width:620px){.collection-gallery-grid{grid-template-columns:1fr}.collection-gallery-card-image{height:240px}}
+
+/* Homepage collection previews: same credit role and size across all published themes. */
+.home-theme .collection-body > p.featured-photo-credit{font:400 12px/1.6 var(--sans);color:var(--muted);margin:0 0 12px}
