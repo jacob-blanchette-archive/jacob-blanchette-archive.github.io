@@ -219,6 +219,8 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .collection-history{max-width:780px;margin-inline:auto}
 .collection-history h2:not(:first-child){margin-top:34px}
 .collection-gallery-intro{max-width:810px;color:var(--archive-body);font:400 16px/1.75 var(--sans);margin:0 0 26px}
+/* Gallery navigation is a shared component on organization-level collection pages. */
+.collection-gallery-section{border-top:1px solid var(--line)}
 .collection-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .collection-gallery-card{display:flex;flex-direction:column;color:var(--ink);background:#fff;border:1px solid var(--line);text-decoration:none;min-width:0}
 .collection-gallery-card:hover{color:var(--ink);border-color:var(--ink)}
