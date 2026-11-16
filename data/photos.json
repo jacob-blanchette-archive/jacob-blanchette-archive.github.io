@@ -2645,7 +2645,6 @@
     "album_page": "P00",
     "page_number": 0,
     "image": "assets/images/dellums-1987/printed_portrait.webp",
-    "source_image": "assets/images/dellums-1987/as-found/OC-003_P00_asfound.webp",
     "alt": "Commemorative illustrated portrait — Twenty Years of Public Service",
     "identification_status": "Printed artwork; artist and depicted person not independently verified",
     "digitization_tier": "Tier 1 · phone capture derivative",
@@ -2654,9 +2653,7 @@
     "photographer": "Not applicable — printed artifact (creator undetermined)",
     "draft": true,
     "published": true,
-    "source_label": "Album page as photographed · resized documentary reproduction",
-    "presentation_label": "Conventional document crop · non-generative",
-    "compare_note": "The as-photographed binder page preserves the arrangement. Documentary association does not establish the identity of the printed artwork's creator."
+    "compare_note": "The original opening binder page includes a historic photographer business card, which is documented privately and is not reproduced on the public site."
   },
   {
     "id": "JB-000103",
