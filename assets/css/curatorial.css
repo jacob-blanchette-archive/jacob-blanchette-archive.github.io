@@ -44,7 +44,7 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .hero h1 { font-size: clamp(54px, 5.8vw, 80px); }
 .page-title { font-size: clamp(46px, 5.9vw, 78px); }
 .hero h1 em { font-weight: 600; color: var(--ink); font-style: normal; }
-.hero-grid { grid-template-columns: 1.18fr .82fr; gap: 5%; }
+.hero-grid { grid-template-columns: 1.1fr .9fr; gap: 5%; }
 .hero .profession {
   font: 400 17px/1.5 var(--sans); font-style: normal; color: var(--archive-body);
 }
