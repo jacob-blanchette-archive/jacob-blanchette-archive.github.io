@@ -19,3 +19,8 @@
 .album-intro-art .featured-photo-link:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .album-intro-art figcaption a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .collection-source-note{font:400 13px/1.7 var(--sans);color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
+
+/* Editorial photo enlargement on the collection introduction; no direct-navigation image overlays. */
+.album-title-figure .editorial-photo-trigger{width:100%;cursor:zoom-in}
+.album-intro-art .editorial-photo-trigger{cursor:zoom-in}
+.album-title-figure .editorial-photo-trigger img{width:100%;height:auto;object-fit:contain}
