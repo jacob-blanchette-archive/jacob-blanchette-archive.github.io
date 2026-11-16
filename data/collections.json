@@ -8,7 +8,8 @@
     "credits": "Photographs by Jacob Blanchette (attributed by family); printed announcement creator not established.",
     "eyebrow": "Black Filmmakers Hall of Fame · Binder OC-002",
     "gallery_description": "Browse 35 preliminary digitizations from the BFHF binder. Open an image to compare the presentation crop with the binder page as photographed, and to view archival details.",
-    "notice": "Working archival gallery: the presentation images are conventional non-generative crops and tone adjustments, not high-resolution scans. Open any image to compare it with the binder page as photographed. Some crops and tones require review. The February 22, 1987 Oscar Micheaux Awards announcement provides context but does not date every photograph. Names, authorship, copyright and dates remain under review."
+    "notice": "Working archival gallery: the presentation images are conventional non-generative crops and tone adjustments, not high-resolution scans. Open any image to compare it with the binder page as photographed. Some crops and tones require review. The February 22, 1987 Oscar Micheaux Awards announcement provides context but does not date every photograph. Names, authorship, copyright and dates remain under review.",
+    "theme": "arts-culture"
   },
   {
     "id": "brg-1990",
@@ -19,7 +20,8 @@
     "description": "First-pass gallery of 21 mounted photographs from the Black Repertory Group 25th anniversary album.",
     "gallery_description": "Twenty-one photographs by Jacob Blanchette (family attribution), presented as preliminary crops from six photographed album pages. Browse by provisional album page, search descriptions, or use the slideshow. Individual dates and identities remain under research.",
     "notice": "Working digitization: the photographer is identified by family as Jacob Blanchette Some crops still need checking. The album title page dates the anniversary celebration July 20–22, 1990; that does not independently establish each individual exposure date. Identification of participants and reproduction rights remain under review.",
-    "credits": "Photographs by Jacob Blanchette (family attribution)."
+    "credits": "Photographs by Jacob Blanchette (family attribution).",
+    "theme": "arts-culture"
   },
   {
     "id": "dellums-1987",
@@ -30,6 +32,7 @@
     "eyebrow": "Political and civic life · Oakland · 1987",
     "gallery_description": "Browse 41 photographs and three accompanying printed objects from the 1987 Ronald V. Dellums gala album. The green sticker numbering and original binder-page context have been preserved.",
     "notice": "Working digitization: display images are non-generative crops from phone photographs of the original album, not archival scans. Use the as-photographed view to see original arrangement and numbering. The invitation establishes the gala date and venue, not every exposure date. Participants are not identified from appearance. Attribution to Jacob Blanchette and the gala context were confirmed by the collection steward.",
-    "credits": "Gala photographs by Jacob Blanchette (family confirmation, November 2026). Printed ephemera creators not established."
+    "credits": "Gala photographs by Jacob Blanchette (family confirmation, November 2026). Printed ephemera creators not established.",
+    "theme": "community-civic-life"
   }
 ]

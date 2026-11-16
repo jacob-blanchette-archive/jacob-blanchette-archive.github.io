@@ -1,0 +1,28 @@
+/* Collections thematic hierarchy. Extends the approved monochrome/curatorial theme. */
+.collections-intro .lead { max-width: 910px; }
+.collection-themes { padding-top: 16px; }
+.theme-section { padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
+.theme-section:last-child { border-bottom: 0; padding-bottom: 12px; }
+.theme-header { max-width: 900px; margin-bottom: 34px; }
+.theme-header h2 { margin: 0 0 16px; font: 600 clamp(34px, 4.4vw, 51px)/1.14 var(--sans); letter-spacing: -.052em; }
+.theme-header > p { margin: 0; max-width: 790px; color: var(--archive-body); font-size: 16px; line-height: 1.82; }
+.themed-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.themed-cards.single { grid-template-columns: minmax(0, 560px); }
+.themed-cards .collection-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+.themed-cards .collection-card:hover .textlink { border-color: var(--ink); }
+.themed-cards .collection-art { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #e5e5e4; }
+.themed-cards .collection-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.themed-cards .collection-body { display: flex; flex-direction: column; flex: 1; padding: 28px 30px 32px; }
+.themed-cards .collection-body .eyebrow { margin: 0 0 12px; color: var(--muted); font-size: 10px; }
+.themed-cards .collection-body h3 { margin: 0 0 18px; }
+.themed-cards .collection-body > p:not(.eyebrow) { margin: 0 0 16px; line-height: 1.74; }
+.themed-cards .textlink { margin-top: auto; padding-top: 11px; align-self: flex-start; }
+.portraiture-preview { border-left: 2px solid var(--line); padding: 4px 0 4px 23px; max-width: 760px; }
+.portraiture-preview .eyebrow { margin: 0 0 13px; }
+.portraiture-preview p:last-child { margin: 0; line-height: 1.8; color: var(--archive-body); }
+@media(max-width: 760px) {
+ .theme-section { padding: 44px 0 54px; }
+ .themed-cards, .themed-cards.single { grid-template-columns: 1fr; }
+ .themed-cards .collection-body { padding: 23px 23px 28px; }
+ .theme-header { margin-bottom: 25px; }
+}
