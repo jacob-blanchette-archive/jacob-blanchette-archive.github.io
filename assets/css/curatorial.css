@@ -216,7 +216,7 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .collection-feature-figure{margin:0;min-width:0}
 .collection-feature-figure .editorial-photo-trigger img{width:100%;height:auto;object-fit:contain;background:var(--archive-alt)}
 .collection-feature-figure figcaption{margin-top:12px;color:var(--muted);font:400 12px/1.65 var(--sans)}
-.collection-history{max-width:940px}
+.collection-history{max-width:780px;margin-inline:auto}
 .collection-history h2:not(:first-child){margin-top:34px}
 .collection-gallery-intro{max-width:810px;color:var(--archive-body);font:400 16px/1.75 var(--sans);margin:0 0 26px}
 .collection-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
