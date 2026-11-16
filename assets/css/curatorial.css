@@ -186,3 +186,23 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .page-citation{margin-top:9px;font:400 12px/1.65 var(--sans)}
 .page-citation summary{cursor:pointer;color:var(--ink);font-weight:600}
 .page-citation p{overflow-wrap:anywhere;margin:7px 0 0;color:var(--muted)}
+
+/* Editorial photographs: a shared, restrained enlargement for home and biography. */
+.editorial-photo-trigger{display:block;width:100%;border:0;background:transparent;padding:0;text-align:inherit;cursor:zoom-in;color:inherit;font:inherit}
+.editorial-photo-trigger img{display:block;max-width:100%}
+.editorial-photo-trigger:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.editorial-caption-hint{font-size:12px;color:var(--muted)}
+.editorial-dialog{width:min(1060px,calc(100vw - 28px));max-height:calc(100vh - 30px);padding:0;border:1px solid var(--archive-border);background:var(--paper);color:var(--ink);box-shadow:0 20px 75px #0007}
+.editorial-dialog::backdrop{background:rgba(8,8,8,.83)}
+.editorial-dialog-shell{padding:18px clamp(16px,3vw,30px) 24px}
+.editorial-dialog-close{display:block;margin:0 0 14px auto;border:1px solid var(--line);background:var(--paper);font:600 12px/1.5 var(--sans);padding:7px 12px;cursor:pointer}
+.editorial-dialog-image{background:var(--archive-alt);display:flex;justify-content:center;align-items:center}
+.editorial-dialog-image img{max-width:100%;max-height:60vh;object-fit:contain;width:auto;height:auto}
+.editorial-dialog-info{max-width:800px;margin:18px auto 0;font:400 13px/1.7 var(--sans)}
+.editorial-dialog-info h2{font:600 clamp(20px,3vw,28px)/1.25 var(--sans);letter-spacing:-.03em;margin:0 0 8px}
+.editorial-photo-credit,.editorial-photo-context{margin:4px 0;color:var(--archive-body)}
+.editorial-dialog .page-citation{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}
+.editorial-copy-button{font:600 12px/1.5 var(--sans);background:var(--paper);border:1px solid var(--line);padding:7px 12px;cursor:pointer}
+.editorial-copy-status{margin-left:12px;color:var(--muted);font:400 12px/1.5 var(--sans)}
+.editorial-photo-record{display:inline-block;margin-top:14px;text-decoration:underline;text-underline-offset:3px;font:600 12px/1.6 var(--sans)}
+.editorial-rights-note{color:var(--muted);font:400 12px/1.6 var(--sans);margin:14px 0 0}
