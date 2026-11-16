@@ -206,3 +206,6 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .editorial-copy-status{margin-left:12px;color:var(--muted);font:400 12px/1.5 var(--sans)}
 .editorial-photo-record{display:inline-block;margin-top:14px;text-decoration:underline;text-underline-offset:3px;font:600 12px/1.6 var(--sans)}
 .editorial-rights-note{color:var(--muted);font:400 12px/1.6 var(--sans);margin:14px 0 0}
+
+/* Respect the hidden state when an editorial image has no full gallery record. */
+.editorial-photo-record[hidden]{display:none}
