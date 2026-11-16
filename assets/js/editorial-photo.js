@@ -1,0 +1,28 @@
+(()=>{'use strict';
+const dialog=document.getElementById('editorial-photo-dialog');if(!dialog)return;
+const get=id=>document.getElementById(id);
+const button=get('editorial-photo-close'),photo=get('editorial-photo-image'),title=get('editorial-photo-title'),credit=get('editorial-photo-credit'),context=get('editorial-photo-context'),citation=get('editorial-photo-citation'),record=get('editorial-photo-record'),status=get('editorial-copy-status');
+let citationText='';
+function show(trigger){
+ const image=trigger.querySelector('img');if(!image)return;
+ const d=trigger.dataset;photo.src=image.currentSrc||image.src;photo.alt=image.alt||d.title||'Archive photograph';
+ title.textContent=d.title||image.alt||'Photograph';credit.textContent=d.credit||'Photographer not established';context.textContent=d.context||'';
+ const url=new URL(location.href);url.search='';url.hash='';
+ if(d.id&&d.collection){
+  url.pathname=url.pathname.replace(/[^/]*$/,'gallery.html');url.searchParams.set('collection',d.collection);url.searchParams.set('photo',d.id);
+  record.href=url.href;record.hidden=false;
+ }else{const figure=trigger.closest('figure');if(figure?.id)url.hash=figure.id;record.hidden=true;record.removeAttribute('href');}
+ const date=d.date||'Undated';const who=/^Photograph by Jacob Blanchette/.test(d.credit||'')?'Jacob Blanchette':'Photographer not established';
+ const coll=d.collection==='bfhf-pilot'?'Black Filmmakers Hall of Fame — 1987 Binder 2':d.collection==='brg-1990'?'Black Repertory Group — 25th Anniversary (1990)':null;
+ citationText=[who,d.title||'Untitled photograph',date,coll,'Jacob Blanchette Photography Archive',d.id||'Archive identifier pending',url.href].filter(Boolean).join('. ')+'.';
+ citation.textContent=citationText;status.textContent='';dialog.querySelector('details').open=false;dialog.showModal();
+}
+document.querySelectorAll('.editorial-photo-trigger').forEach(node=>node.addEventListener('click',()=>show(node)));
+button.addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+get('editorial-photo-copy').addEventListener('click',async()=>{
+ try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(citationText);
+ else{const field=document.createElement('textarea');field.value=citationText;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const copied=document.execCommand('copy');field.remove();if(!copied)throw Error('Unavailable');}
+ status.textContent='Citation copied.';}catch(e){status.textContent='Copy unavailable; select the citation text.';}
+});
+})();
