@@ -178,3 +178,11 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .viewer-citation-actions .toggle{padding:8px 12px;font-size:12px}
 #viewer-copy-status{font-size:12px;color:var(--muted)}
 .viewer-citation-note{font:400 12px/1.65 var(--sans);color:var(--muted)}
+
+/* Discreet credits and archival citation links for featured and biographical images. */
+.featured-photo-credit{color:var(--muted);font:400 12px/1.6 var(--sans);margin:0 0 12px}
+.featured-photo-credit a,.photo-citation-link a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.photo-citation-link{display:block;margin-top:7px;color:var(--muted);font:400 12px/1.65 var(--sans)}
+.page-citation{margin-top:9px;font:400 12px/1.65 var(--sans)}
+.page-citation summary{cursor:pointer;color:var(--ink);font-weight:600}
+.page-citation p{overflow-wrap:anywhere;margin:7px 0 0;color:var(--muted)}
