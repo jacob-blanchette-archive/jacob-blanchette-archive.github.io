@@ -25,17 +25,6 @@
 .album-intro-art .editorial-photo-trigger{cursor:zoom-in}
 .album-title-figure .editorial-photo-trigger img{width:100%;height:auto;object-fit:contain}
 
-/* Organizational BRG collection: gallery index can grow as additional albums are documented. */
-.brg-albums-intro{max-width:760px;color:var(--archive-body);line-height:1.75;margin:0 0 24px}
-.brg-album-card{display:grid;grid-template-columns:minmax(180px,300px) 1fr;max-width:850px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.brg-album-card:hover{border-color:var(--ink);color:var(--ink)}
-.brg-album-card-photo{display:block;min-height:230px;background:var(--archive-alt)}
-.brg-album-card-photo img{display:block;width:100%;height:100%;object-fit:contain}
-.brg-album-card-copy{display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center;padding:28px 32px;line-height:1.55}
-.brg-album-card-copy strong{font:600 clamp(23px,3vw,31px)/1.2 var(--sans);letter-spacing:-.035em}
-.brg-album-card-action{font-weight:600;text-decoration:underline;text-underline-offset:4px;margin-top:6px}
-@media(max-width:650px){.brg-album-card{grid-template-columns:1fr}.brg-album-card-photo{min-height:0}.brg-album-card-photo img{max-height:310px}.brg-album-card-copy{padding:23px}}
-
 /* Album documentation stays with its archival gallery rather than the organizational introduction. */
 .brg-gallery-documentation{border-bottom:1px solid var(--line);background:var(--archive-alt);padding:18px 0 20px}
 .brg-gallery-documentation[hidden]{display:none}
