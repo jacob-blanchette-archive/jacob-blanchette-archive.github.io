@@ -12,7 +12,8 @@ function show(trigger){
   url.pathname=url.pathname.replace(/[^/]*$/,'gallery.html');url.searchParams.set('collection',d.collection);url.searchParams.set('photo',d.id);
   record.href=url.href;record.hidden=false;
  }else{const figure=trigger.closest('figure');if(figure?.id)url.hash=figure.id;record.hidden=true;record.removeAttribute('href');}
- const date=d.date||'Undated';const who=/^Photograph by Jacob Blanchette/.test(d.credit||'')?'Jacob Blanchette':'Photographer not established';
+ const isDocument=d.type==='document';const label=get('editorial-photo-citation-label');if(label)label.textContent=isDocument?'Cite this document':'Cite this photograph';
+ const date=d.date||'Undated';const who=isDocument?(d.creator||'Creator not established'):/^Photograph by Jacob Blanchette/.test(d.credit||'')?'Jacob Blanchette':'Photographer not established';
  const coll=d.collection==='bfhf-pilot'?'Black Filmmakers Hall of Fame — 1987 Binder 2':d.collection==='brg-1990'?'Black Repertory Group — 25th Anniversary (1990)':null;
  citationText=[who,d.title||'Untitled photograph',date,coll,'Jacob Blanchette Photography Archive',d.id||'Archive identifier pending',url.href].filter(Boolean).join('. ')+'.';
  citation.textContent=citationText;status.textContent='';dialog.querySelector('details').open=false;dialog.showModal();
