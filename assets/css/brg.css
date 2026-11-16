@@ -45,7 +45,6 @@
 .brg-gallery-documentation-body p{font:400 15px/1.75 var(--sans);color:var(--archive-body)}
 .brg-gallery-documentation-body .credit{font-size:12px;color:var(--muted)}
 .brg-gallery-documentation-body .credit a{text-decoration:underline;text-underline-offset:3px}
-.brg-organization-history{max-width:900px}
 .brg-organization-history .brg-research-links{font-size:13px;color:var(--muted)}
 .brg-organization-history .brg-research-links a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:650px){.brg-gallery-documentation-body{grid-template-columns:1fr}}
