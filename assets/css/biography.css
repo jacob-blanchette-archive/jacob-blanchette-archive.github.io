@@ -1,0 +1,50 @@
+/* bio-illustrated-2026: Approved illustrated biography; archival details remain provisional. */
+.bio-lead{padding:66px 0 42px}
+.bio-lead-grid{display:grid;grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);gap:7%;align-items:start}
+.bio-story{font-family:var(--serif);font-size:18px;line-height:1.85;color:#36322d}
+.bio-story p{margin:0 0 20px}
+.bio-story h2{font:400 clamp(32px,3.6vw,43px)/1.17 var(--serif);letter-spacing:-.04em;margin:0 0 25px}
+.bio-story .bio-section+.bio-section{margin-top:51px;padding-top:42px;border-top:1px solid var(--line)}
+.bio-hero{margin:0}
+.bio-hero .portrait{aspect-ratio:4/5}
+.bio-hero figcaption,.bio-photo figcaption{font:13px/1.65 var(--sans);color:var(--muted);margin-top:13px}
+.bio-hero figcaption strong,.bio-photo figcaption strong{color:var(--accent);letter-spacing:.02em}
+.bio-sources{border-top:1px solid var(--line);margin-top:25px;padding-top:20px}
+.bio-sources summary{cursor:pointer;color:var(--accent);font-size:13px;line-height:1.65}
+.bio-sources p{color:var(--muted);font-size:12px;line-height:1.7}
+.bio-sources .portrait-versions{margin-top:15px}
+.bio-sources .portrait-versions img{height:auto;aspect-ratio:4/5;object-fit:contain;background:#e5ddd3}
+.bio-career{padding:70px 0 85px;background:#eee9e0}
+.bio-career .eyebrow{margin:0 0 12px}
+.bio-career h2,.bio-end h2{font:400 clamp(37px,4.3vw,55px)/1.13 var(--serif);letter-spacing:-.052em;margin:0 0 30px}
+.bio-narrative{max-width:830px;margin:0 auto;font:19px/1.82 var(--serif);color:#37332d}
+.bio-narrative p{margin:0 0 24px}
+.bio-narrative p+ p{margin-top:26px}
+.bio-group{margin:61px 0 22px;padding-top:36px;border-top:1px solid #d8d0c4}
+.bio-group .eyebrow{margin-bottom:16px}
+.bio-photo{margin:33px 0 15px}
+.bio-photo-stage{height:330px;padding:13px;background:#ded5c9;display:flex;align-items:center;justify-content:center}
+.bio-photo-stage img{max-height:100%;max-width:100%;display:block;object-fit:contain}
+.bio-photo-link{display:block}
+.bio-photo-link:hover .bio-photo-stage{outline:2px solid var(--accent);outline-offset:2px}
+.bio-photo figcaption{padding:0 2px}
+.bio-photo figcaption span{display:block;margin-top:4px}
+.bio-army{max-width:850px;margin:34px auto 0}
+.bio-army .bio-photo-stage{height:auto;min-height:0;background:transparent;padding:0}
+.bio-army .bio-photo-stage img{width:100%;height:auto;max-height:none}
+.bio-army button{border:0;background:none;display:block;width:100%;cursor:zoom-in;padding:0}
+.bio-army figcaption{margin-top:10px}
+.bio-duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0 8px}
+.bio-duo .bio-photo{margin:0}
+.bio-album-link{display:inline-block;font-size:13px;border-bottom:1px solid;padding-bottom:7px;margin-top:20px}
+.bio-end{padding:66px 0 84px}
+.bio-end .bio-narrative{font-size:18px}
+.bio-end p{margin:0 0 22px}
+.bio-dialog{border:0;padding:0;background:#f8f5ef;max-width:min(1050px,96vw);max-height:94vh;box-shadow:0 20px 80px #0009}
+.bio-dialog::backdrop{background:#191714d9}
+.bio-dialog figure{margin:0;padding:22px}
+.bio-dialog img{display:block;width:auto;max-width:100%;max-height:74vh;object-fit:contain;margin:auto}
+.bio-dialog figcaption{font:13px/1.6 var(--sans);color:var(--muted);padding:13px 0}
+.bio-dialog .bio-dialog-close{font-size:12px;border:1px solid var(--line);background:#fff;padding:10px 16px;cursor:pointer;margin:12px 20px 0}
+@media(max-width:850px){.bio-lead-grid{grid-template-columns:1fr;gap:37px}.bio-hero{max-width:480px}.bio-story{font-size:18px}}
+@media(max-width:620px){.bio-lead{padding:40px 0 25px}.bio-career{padding:50px 0 62px}.bio-narrative{font-size:17px;line-height:1.79}.bio-duo{grid-template-columns:1fr;gap:24px}.bio-photo-stage{height:270px}.bio-group{margin-top:39px}.bio-end{padding:50px 0 65px}}

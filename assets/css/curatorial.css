@@ -137,6 +137,15 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .viewer-visual { background: #202020; }
 .empty { background: var(--archive-alt); color: var(--muted); }
 
+/* Shared exhibition-style image presentation: preserve photographic tones and aspect ratios. */
+.photo-visual img { object-fit: contain; display: block; }
+.album-intro-art img { background: #E5E5E4; }
+.album-title-figure img { background: #E5E5E4; border-color: var(--archive-border); }
+.credit, .bio-hero figcaption, .bio-photo figcaption, .album-title-figure figcaption {
+  color: var(--muted); font: 400 12px/1.65 var(--sans);
+}
+.photo-caption, .viewer-source-thumbnail small { color: var(--muted); font: 400 12px/1.65 var(--sans); }
+
 @media (max-width: 900px) {
   .hero h1 { font-size: clamp(50px, 6.3vw, 66px); }
   .page-title { font-size: clamp(43px, 6.5vw, 66px); }
