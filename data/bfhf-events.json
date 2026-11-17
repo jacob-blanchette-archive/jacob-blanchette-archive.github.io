@@ -10,16 +10,17 @@
       "events": [
         {
           "key": "symposium",
-          "title": "Film symposium — provisional photographic association",
+          "title": "Film symposium",
           "attribution": "Probable",
           "ids": [
             "JB-000107"
           ],
-          "note": "Panel photograph in a binder with the February 21 film-symposium program; the individual exposure date and venue are not independently confirmed."
+          "note": "Panel photograph in a binder with the February 21 film-symposium program; the individual exposure date and venue are not independently confirmed.",
+          "public_note": "Photograph of a panel discussion preserved with the 1987 film symposium program."
         },
         {
           "key": "micheaux-awards",
-          "title": "Fourteenth Annual Oscar Micheaux Awards — provisional photographs",
+          "title": "Fourteenth Annual Oscar Micheaux Awards",
           "attribution": "Probable",
           "ids": [
             "JB-000025",
@@ -41,7 +42,8 @@
             "JB-000041",
             "JB-000042"
           ],
-          "note": "Stage presentation sequence in a binder associated by family with the February 1987 awards ceremony. The printed announcement documents the occasion but not the exposure date of each photograph."
+          "note": "Stage presentation sequence in a binder associated by family with the February 1987 awards ceremony. The printed announcement documents the occasion but not the exposure date of each photograph.",
+          "public_note": "Stage presentations and performances in albums associated with the annual Oscar Micheaux Awards."
         }
       ]
     },
@@ -53,7 +55,7 @@
       "events": [
         {
           "key": "micheaux-awards",
-          "title": "Fifteenth Annual Oscar Micheaux Awards — provisional photographs",
+          "title": "Fifteenth Annual Oscar Micheaux Awards",
           "attribution": "Probable",
           "ids": [
             "JB-000190",
@@ -70,7 +72,8 @@
             "JB-000201",
             "JB-000221"
           ],
-          "note": "Award presentation photographs are in a binder containing a printed Fifteenth Annual Oscar Micheaux Awards program; their association is probable but unverified individually."
+          "note": "Award presentation photographs are in a binder containing a printed Fifteenth Annual Oscar Micheaux Awards program; their association is probable but unverified individually.",
+          "public_note": "Stage presentations and performances in albums associated with the annual Oscar Micheaux Awards."
         }
       ]
     },

@@ -93,9 +93,9 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   }else if(eventKey){
    const event=cfg.events.find(g=>g.key===eventKey);if(!event)throw Error('Event group not found');
    const ids=new Set(event.ids);rows=rows.filter(p=>ids.has(p.id));
-   title=event.title;description=event.note+' Photograph-to-event attribution: '+event.attribution.toLowerCase()+'.';
+   title=event.title;description=event.public_note||event.note;
   }
-  collection={title,display_title:title,gallery_description:description,eyebrow:'Black Filmmakers Hall of Fame · '+yearId,intro:'bfhf-'+yearId+'.html',notice:'Provisional photographic grouping; not a final exhibition selection. Binder positions remain in the individual records. Exposure dates, identifications and reproduction rights remain under review.'};
+  collection={title,display_title:title,gallery_description:description,eyebrow:'Black Filmmakers Hall of Fame · '+yearId,intro:'bfhf-'+yearId+'.html',notice:'The photographs are presented with their original album references. Names, exact exposure dates, and reproduction rights remain under review.'};
   records=rows.sort((a,b)=>cfg.collection_ids.indexOf(a.collection_id)-cfg.collection_ids.indexOf(b.collection_id)||(a.order||0)-(b.order||0));
  }else{
   const id=params.get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');

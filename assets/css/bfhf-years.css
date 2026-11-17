@@ -27,3 +27,23 @@
 .bfhf-year-note{max-width:880px;margin:22px 0 0;font:400 13px/1.7 var(--sans);color:var(--muted)}
 @media(max-width:900px){.bfhf-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.bfhf-year-grid,.bfhf-event-grid{grid-template-columns:1fr}.bfhf-year-image{height:210px}.bfhf-event-copy{padding:23px}.bfhf-breadcrumb{margin-bottom:26px}}
+
+
+/* Curatorial presentation of the photographic record and event chronology. */
+.bfhf-source-line{font:400 12px/1.7 var(--sans);color:var(--muted);margin-top:24px!important}
+.bfhf-source-line a{text-decoration:underline;text-underline-offset:3px}
+.bfhf-photo-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:27px 0 18px}
+.bfhf-photo-preview-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid var(--archive-border,var(--line));text-decoration:none;color:var(--ink)}
+.bfhf-photo-preview-card:hover{border-color:var(--ink);color:var(--ink)}
+.bfhf-photo-preview-image{display:flex;align-items:center;justify-content:center;background:var(--archive-alt);height:275px;padding:8px}
+.bfhf-photo-preview-image img{display:block;width:100%;height:100%;object-fit:contain}
+.bfhf-photo-preview-label{padding:15px 17px 18px;font:600 15px/1.5 var(--sans)}
+.bfhf-year-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:25px}
+.bfhf-program-list{list-style:none;margin:40px auto 0;padding:0;max-width:850px;border-top:1px solid var(--line)}
+.bfhf-program-entry{display:grid;grid-template-columns:minmax(150px,.36fr) minmax(0,1fr);gap:26px;padding:28px 0 31px;border-bottom:1px solid var(--line)}
+.bfhf-program-date{font:600 17px/1.4 var(--sans);letter-spacing:-.03em}
+.bfhf-program-entry h3{font:600 clamp(23px,2.8vw,31px)/1.25 var(--sans);letter-spacing:-.035em;margin:5px 0 12px}
+.bfhf-program-entry p:not(.eyebrow){font:400 15px/1.75 var(--sans);color:var(--archive-body);margin:0}
+.bfhf-program-entry .eyebrow{margin:0}
+@media(max-width:850px){.bfhf-photo-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.bfhf-photo-preview-grid{grid-template-columns:1fr 1fr;gap:13px}.bfhf-photo-preview-image{height:190px}.bfhf-photo-preview-label{font-size:13px}.bfhf-program-entry{grid-template-columns:1fr;gap:8px;padding:22px 0}.bfhf-program-date{font-size:15px}}
