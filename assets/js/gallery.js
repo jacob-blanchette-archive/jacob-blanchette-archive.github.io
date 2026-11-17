@@ -4,7 +4,21 @@ const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.cla
 const isGenerativeImage=r=>/\b(?:AI-enhanced|AI-generated|generatively enhanced)\b/i.test(String(r.image_processing||''))&&!/\b(?:non[- ]generative|no generative AI)\b/i.test(String(r.image_processing||''));
 const displayCaption=r=>{const caption=String(r.caption||'').trim(),title=String(r.title||'').trim();const simplify=s=>s.toLocaleLowerCase().replace(/[.!?,:;\s]+/g,' ').trim();return !caption||simplify(caption)===simplify(title)?'':caption};
 const substitute=(i)=>{const node=el('div','photo-placeholder');node.append(el('strong','',String(i+1).padStart(2,'0')),el('span','','Digitization pending'));return node};
-function imageFor(r,i){if(!r.image)return substitute(i);const im=el('img');im.src=r.image;im.alt=r.alt||r.title||'Archive photograph';im.loading='lazy';return im}
+function orientPresentationImage(img,r){
+ const angle=Number(r.presentation_rotation||0);
+ if(![90,-90,180].includes(angle))return;
+ img.addEventListener('load',()=>{
+  const w=img.naturalWidth,h=img.naturalHeight;if(!w||!h)return;
+  const canvas=document.createElement('canvas'),turn=Math.abs(angle)===90;
+  canvas.width=turn?h:w;canvas.height=turn?w:h;
+  const ctx=canvas.getContext('2d');if(!ctx)return;
+  ctx.translate(canvas.width/2,canvas.height/2);ctx.rotate(angle*Math.PI/180);
+  ctx.drawImage(img,-w/2,-h/2);
+  // In-memory, lossless display derivative only; the archived image and source page remain unchanged.
+  img.src=canvas.toDataURL('image/png');
+ },{once:true});
+}
+function imageFor(r,i){if(!r.image)return substitute(i);const im=el('img');im.alt=r.alt||r.title||'Archive photograph';im.loading='lazy';orientPresentationImage(im,r);im.src=r.image;return im}
 function card(r,i){const b=el('button','photo-card');b.type='button';b.setAttribute('aria-label','Open '+r.id+' in slideshow');const visual=el('div','photo-visual');visual.append(imageFor(r,i));if(r.demo)visual.append(el('span','demo-tag','Demo entry'));const meta=el('div','photo-meta');meta.append(el('strong','',r.title||'Untitled photograph'));b.append(visual,meta);const captionText=displayCaption(r);if(captionText||r.page_number){const pageText=r.page_number?'Album page P'+String(r.page_number).padStart(2,'0'):'';b.append(el('p','photo-caption',[pageText,captionText].filter(Boolean).join(' · ')));}if(isGenerativeImage(r))b.append(el('small','photo-review-status','AI-enhanced image'));b.addEventListener('click',()=>open(i));return b}
 function morePhotos(){const end=Math.min(filtered.length,visible+24),fragment=document.createDocumentFragment();for(let i=visible;i<end;i++)fragment.append(card(filtered[i],i));grid.append(fragment);visible=end;more.hidden=visible>=filtered.length}
 function searchable(r){return[r.id,r.title,r.caption,r.description,r.date,r.place,r.original_group,r.album_page,r.page_position,r.identification_status,...(r.people||[]),...(r.keywords||[])].filter(Boolean).join(' ').toLowerCase()}
@@ -51,7 +65,7 @@ function show(){
  }
  const stage=$('viewer-stage');stage.querySelectorAll('img,.photo-placeholder').forEach(node=>node.remove());
  const v=imageVersion(r);const visual=v.src?el('img'):substitute(current);
- if(v.src){visual.src=v.src;visual.alt=v.alt;visual.loading='eager'}
+ if(v.src){visual.alt=v.alt;visual.loading='eager';if(viewerVersion==='presentation')orientPresentationImage(visual,r);visual.src=v.src}
  stage.prepend(visual);
  $('viewer-counter').textContent=(current+1)+' of '+filtered.length;
  $('viewer-photo-id').textContent='Archive ID: '+r.id;
@@ -123,6 +137,11 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   if(!eventKey||eventKey==='unassigned')allLink.setAttribute('aria-current','page');
   options.append(allLink);
   eventNav.replaceChildren(options);eventNav.hidden=false;
+ }
+ const historySection=$('gallery-history');
+ if(historySection&&Array.isArray(collection.gallery_history)&&collection.gallery_history.length){
+  const contents=collection.gallery_history.filter(p=>typeof p==='string'&&p.trim());
+  if(contents.length){historySection.replaceChildren(...contents.map(p=>el('p','',p)));historySection.hidden=false;}
  }
  const sourceNote=collection.gallery_source_note||collection.notice||'';
  if(sourceNote){$('gallery-notice').hidden=false;$('gallery-notice').textContent=sourceNote}
