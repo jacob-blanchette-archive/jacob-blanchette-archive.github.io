@@ -18,16 +18,20 @@
 }
 
 /*
- * Shared vertical rhythm. Main sections on the Homepage, Collections, and
- * Biography use one common padding token; other collection/event pages retain
- * their own section spacing. Internal narrative, card, and paragraph spacing
- * remain independent.
+ * Vertical rhythm is role-based: the shared major band inset applies to
+ * Homepage, Collections and Biography; smaller dividers separate related
+ * subsections; introductory headers and other collection pages are distinct.
+ * Never stack outer .content padding around theme sections. Keep paragraph,
+ * image and card spacing separate.
  */
 :root {
   /* Major section padding and page introductions */
-  --space-section: 81px;
-  --space-major-section: 72px;
-  --space-section-home: var(--space-major-section);
+  --space-section: 81px; /* other interior collection and event pages */
+  --space-major-section: 72px; /* Home, Collections, Biography */
+  --space-internal-divider: 40px; /* total space across a related divider */
+  --space-internal-divider-half: calc(var(--space-internal-divider) / 2);
+  --space-chapter-divider: 56px; /* biography's stronger subsection breaks */
+  --space-chapter-divider-half: calc(var(--space-chapter-divider) / 2);
   --space-hero-interior-top: 95px;
   --space-hero-interior-bottom: 100px;
   --space-hero-home-top: 72px;
@@ -36,22 +40,6 @@
   --space-page-header-bottom: 48px;
   --space-content-top: 67px;
   --space-content-bottom: 95px;
-  --space-theme-top: var(--space-major-section);
-  --space-theme-bottom: var(--space-major-section);
-  /* Major transitions within an overview or long narrative */
-  --space-home-theme-gap: 48px;
-  --space-home-theme-inset: 42px;
-  --space-bio-story-gap: 48px;
-  --space-bio-story-inset: 40px;
-  --space-bio-group-gap: 58px;
-  --space-bio-group-inset: 34px;
-  /* Biography's major bands share padding; narrative subgroups stay distinct. */
-  --space-bio-lead-top: var(--space-major-section);
-  --space-bio-lead-bottom: var(--space-major-section);
-  --space-bio-career-top: var(--space-major-section);
-  --space-bio-career-bottom: var(--space-major-section);
-  --space-bio-end-top: var(--space-major-section);
-  --space-bio-end-bottom: var(--space-major-section);
 }
 @media (max-width: 800px) {
   :root {
@@ -62,15 +50,10 @@
 @media (max-width: 760px) {
   :root {
     --space-major-section: 56px;
+    --space-internal-divider: 32px;
+    --space-chapter-divider: 44px;
     --space-hero-home-top: 57px;
     --space-hero-home-bottom: 57px;
-    --space-home-theme-gap: 36px;
-    --space-home-theme-inset: 32px;
-  }
-}
-@media (max-width: 620px) {
-  :root {
-    --space-bio-group-gap: 37px;
   }
 }
 @media (max-width: 540px) {

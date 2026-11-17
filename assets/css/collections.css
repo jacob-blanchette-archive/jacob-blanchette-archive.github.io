@@ -1,8 +1,11 @@
 /* Collections thematic hierarchy. Extends the approved monochrome/curatorial theme. */
 .collections-intro .lead { max-width: 910px; }
-.collection-themes { padding-top: 16px; }
-.theme-section { padding: var(--space-theme-top) 0 var(--space-theme-bottom); border-bottom: 1px solid var(--line); }
-.theme-section:last-child { border-bottom: 0; padding-bottom: 12px; }
+.content.collection-themes { padding: 0; /* sections own the outer spacing */ }
+.theme-section { padding: var(--space-major-section) 0; border-bottom: 1px solid var(--line); }
+/* Related themes share a 40px (32px mobile) divider, not two 72px insets. */
+.theme-section:not(:last-child) { padding-bottom: var(--space-internal-divider-half); }
+.theme-section + .theme-section { padding-top: var(--space-internal-divider-half); }
+.theme-section:last-child { border-bottom: 0; }
 .theme-header { max-width: 900px; margin-bottom: 34px; }
 .theme-header h2 { margin: 0 0 16px; font: 600 clamp(34px, 4.4vw, 51px)/1.14 var(--sans); letter-spacing: -.052em; }
 .theme-header > p { margin: 0; max-width: 790px; color: var(--archive-body); font-size: 16px; line-height: 1.82; }
@@ -21,7 +24,6 @@
 .portraiture-preview .eyebrow { margin: 0 0 13px; }
 .portraiture-preview p:last-child { margin: 0; line-height: 1.8; color: var(--archive-body); }
 @media(max-width: 760px) {
- .theme-section { padding: var(--space-theme-top) 0 var(--space-theme-bottom); }
  .themed-cards { grid-template-columns: 1fr; }
  .themed-cards .collection-body { padding: 23px 23px 28px; }
  .theme-header { margin-bottom: 25px; }
