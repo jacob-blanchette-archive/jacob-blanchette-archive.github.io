@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "editorial_note": "Event associations for photographs are provisional, independent of documentary event dates and of public image rights, preservation, and curatorial selection.",
+  "version": 2,
+  "editorial_note": "Public gallery navigation based on original binder/program associations and photographic continuity; confidence notes and item-level evidence are maintained in private records.",
   "years": {
     "1987": {
       "collection_ids": [
@@ -11,17 +11,27 @@
         {
           "key": "symposium",
           "title": "Film symposium",
-          "attribution": "Probable",
+          "kind": "historical occasion",
           "ids": [
             "JB-000107"
           ],
-          "note": "Panel photograph in a binder with the February 21 film-symposium program; the individual exposure date and venue are not independently confirmed.",
-          "public_note": "Photograph of a panel discussion preserved with the 1987 film symposium program."
+          "public_note": "A panel discussion preserved with the 1987 film symposium announcement. The exact session is not established."
+        },
+        {
+          "key": "gala",
+          "title": "Gala dinner and dance",
+          "kind": "historical occasion",
+          "ids": [
+            "JB-000120",
+            "JB-000121",
+            "JB-000122"
+          ],
+          "public_note": "Photographs of guests and speakers immediately following the gala program in the 1987 album."
         },
         {
           "key": "micheaux-awards",
           "title": "Fourteenth Annual Oscar Micheaux Awards",
-          "attribution": "Probable",
+          "kind": "historical program",
           "ids": [
             "JB-000025",
             "JB-000026",
@@ -40,10 +50,18 @@
             "JB-000039",
             "JB-000040",
             "JB-000041",
-            "JB-000042"
+            "JB-000042",
+            "JB-000043",
+            "JB-000044",
+            "JB-000045",
+            "JB-000046",
+            "JB-000047",
+            "JB-000048",
+            "JB-000049",
+            "JB-000050",
+            "JB-000051"
           ],
-          "note": "Stage presentation sequence in a binder associated by family with the February 1987 awards ceremony. The printed announcement documents the occasion but not the exposure date of each photograph.",
-          "public_note": "Stage presentations and performances in albums associated with the annual Oscar Micheaux Awards."
+          "public_note": "Stage presentations, performances and receptions from the binder preserving the Fourteenth Annual Oscar Micheaux Awards announcement."
         }
       ]
     },
@@ -56,7 +74,7 @@
         {
           "key": "micheaux-awards",
           "title": "Fifteenth Annual Oscar Micheaux Awards",
-          "attribution": "Probable",
+          "kind": "historical program",
           "ids": [
             "JB-000190",
             "JB-000191",
@@ -70,10 +88,104 @@
             "JB-000199",
             "JB-000200",
             "JB-000201",
-            "JB-000221"
+            "JB-000202",
+            "JB-000203",
+            "JB-000204",
+            "JB-000205",
+            "JB-000206",
+            "JB-000207",
+            "JB-000208",
+            "JB-000209",
+            "JB-000210",
+            "JB-000211",
+            "JB-000212",
+            "JB-000213",
+            "JB-000214",
+            "JB-000215",
+            "JB-000216",
+            "JB-000217",
+            "JB-000218",
+            "JB-000219",
+            "JB-000220",
+            "JB-000221",
+            "JB-000222",
+            "JB-000223"
           ],
-          "note": "Award presentation photographs are in a binder containing a printed Fifteenth Annual Oscar Micheaux Awards program; their association is probable but unverified individually.",
-          "public_note": "Stage presentations and performances in albums associated with the annual Oscar Micheaux Awards."
+          "public_note": "Award presentations and performances in the original album containing the printed Fifteenth Annual Oscar Micheaux Awards program."
+        },
+        {
+          "key": "performances-gatherings",
+          "title": "Performances and gatherings",
+          "kind": "photographic sequence",
+          "ids": [
+            "JB-000123",
+            "JB-000124",
+            "JB-000125",
+            "JB-000126",
+            "JB-000127",
+            "JB-000128",
+            "JB-000129",
+            "JB-000130",
+            "JB-000131",
+            "JB-000132",
+            "JB-000133",
+            "JB-000134",
+            "JB-000135",
+            "JB-000136",
+            "JB-000137",
+            "JB-000138",
+            "JB-000139",
+            "JB-000140",
+            "JB-000141",
+            "JB-000142",
+            "JB-000143",
+            "JB-000144",
+            "JB-000145",
+            "JB-000146",
+            "JB-000147",
+            "JB-000148",
+            "JB-000149",
+            "JB-000150",
+            "JB-000151",
+            "JB-000152",
+            "JB-000153",
+            "JB-000154",
+            "JB-000155",
+            "JB-000156",
+            "JB-000157",
+            "JB-000158",
+            "JB-000159",
+            "JB-000160",
+            "JB-000161",
+            "JB-000162",
+            "JB-000163",
+            "JB-000164",
+            "JB-000165",
+            "JB-000166",
+            "JB-000167",
+            "JB-000168",
+            "JB-000169",
+            "JB-000170",
+            "JB-000171",
+            "JB-000172",
+            "JB-000173",
+            "JB-000174",
+            "JB-000175",
+            "JB-000176",
+            "JB-000177",
+            "JB-000178",
+            "JB-000179",
+            "JB-000180",
+            "JB-000181",
+            "JB-000182",
+            "JB-000183",
+            "JB-000184",
+            "JB-000185",
+            "JB-000186",
+            "JB-000187",
+            "JB-000188"
+          ],
+          "public_note": "Musicians, speakers and guests photographed in a second Black Filmmakers Hall of Fame album marked 1988."
         }
       ]
     },
@@ -81,7 +193,70 @@
       "collection_ids": [
         "bfhf-1990"
       ],
-      "events": [],
+      "events": [
+        {
+          "key": "film-discussions",
+          "title": "Today's Black Cinema: talks and discussion",
+          "kind": "program association",
+          "ids": [
+            "JB-000241",
+            "JB-000242"
+          ],
+          "public_note": "A panel discussion in the album containing the Today's Black Cinema lectures and symposium schedule; the specific session has not been established."
+        },
+        {
+          "key": "micheaux-awards",
+          "title": "Oscar Micheaux Awards and celebrations",
+          "kind": "historical program",
+          "ids": [
+            "JB-000243",
+            "JB-000244",
+            "JB-000245",
+            "JB-000246",
+            "JB-000247",
+            "JB-000248",
+            "JB-000249",
+            "JB-000250",
+            "JB-000251",
+            "JB-000253",
+            "JB-000254",
+            "JB-000255",
+            "JB-000257",
+            "JB-000262",
+            "JB-000263",
+            "JB-000264",
+            "JB-000265",
+            "JB-000266",
+            "JB-000267",
+            "JB-000268",
+            "JB-000269",
+            "JB-000252",
+            "JB-000256",
+            "JB-000258",
+            "JB-000259",
+            "JB-000260",
+            "JB-000261",
+            "JB-000304",
+            "JB-000307",
+            "JB-000308"
+          ],
+          "public_note": "Presentations, performances, banquet scenes and portraits preserved with the 1990 Hall of Fame awards-weekend program."
+        },
+        {
+          "key": "handprint-activities",
+          "title": "Handprint activities",
+          "kind": "photographic sequence",
+          "ids": [
+            "JB-000283",
+            "JB-000284",
+            "JB-000285",
+            "JB-000286",
+            "JB-000287",
+            "JB-000288"
+          ],
+          "public_note": "Two binder-local sequences of people participating in a handprint activity, preserved in a Hall of Fame album marked 1990. The specific occasion is not established."
+        }
+      ],
       "status": "44 approved public web crops from available photographed 1990 album pages, with 45 further cataloged photographic items awaiting source reproductions; events are documented by printed schedule but not assigned per photograph."
     }
   }

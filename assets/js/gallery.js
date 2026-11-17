@@ -83,14 +83,13 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   const cfg=bfhf.years&&bfhf.years[yearId];if(!cfg)throw Error('BFHF year not found');
   isYear=true;const wanted=new Set(cfg.collection_ids);
   let rows=all.filter(p=>wanted.has(p.collection_id)&&p.published!==false);
-  const assigned=new Set(cfg.events.flatMap(g=>g.ids));
-  let title=yearId+' · Black Filmmakers Hall of Fame';
-  let description='Browse published photographic and documentary records associated with the '+yearId+' BFHF binders. The binder year does not independently establish the date of any individual exposure.';
-  if(eventKey==='unassigned'){
-   rows=rows.filter(p=>!assigned.has(p.id)&&isJacobPhotograph(p)&&!/^(?:Film.strip|Printed|Gala program|Film symposium announcement|Fourteenth Annual.*announcement)/i.test(String(p.title||'')));
-   title=yearId+' · Photographs awaiting event identification';
-   description='These photographs are associated with '+yearId+'-labeled BFHF binders, but their individual occasions remain unassigned.';
-  }else if(eventKey){
+  let title='Photographs from '+yearId+' · Black Filmmakers Hall of Fame';
+  let description='Photographs and accompanying documents from the '+yearId+' Hall of Fame albums. Original arrangement and supporting documentation are available in individual records.';
+  if(eventKey==='unassigned' && typeof history.replaceState==='function'){
+   const qp=new URLSearchParams(location.search);qp.delete('event');
+   history.replaceState(null,'',location.pathname+(qp.toString()?'?'+qp.toString():'')+location.hash);
+  }
+  if(eventKey && eventKey!=='unassigned'){
    const event=cfg.events.find(g=>g.key===eventKey);if(!event)throw Error('Event group not found');
    const ids=new Set(event.ids);rows=rows.filter(p=>ids.has(p.id));
    title=event.title;description=event.public_note||event.note;
