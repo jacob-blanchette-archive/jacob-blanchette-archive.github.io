@@ -60,3 +60,16 @@ python3 scripts/check_gallery_contract.py
 ```
 
 This standard-library check verifies that the BFHF and BRG event/occasion card titles match their destination gallery headings and that the shared `gallery-source-note` stays below the photographic grid rather than under the Back link. It also checks the gallery's field fallbacks and responsive hidden state. Historical verification, copyright review, and browser/mobile inspection remain separate requirements. The skill's `references/site-presentation.md` documents the editorial rule.
+
+## Presentation standards and checks
+
+The role-based card system and editorial hierarchy are documented in [`docs/presentation-standards.md`](docs/presentation-standards.md). The **Collections** design is the reference for the **Home and Collections** preview cards, implemented once in `assets/css/collection-previews.css`. Interior **BFHF year cards** and shared **BFHF/BRG/Dellums occasion cards** have deliberately different spacing, proportions and information density, defined in `assets/css/bfhf-years.css`; consistency applies **within each role**, not between roles. The preview photographer credit and item-level archival citation appear below (outside) the linked card. Portraiture's Home placeholder is not linked until a substantive collection is published.
+
+Before publication of relevant site or metadata changes, run:
+
+```bash
+python3 scripts/check_preview_contract.py
+python3 scripts/check_gallery_contract.py
+```
+
+These are structural checks only. Review desktop/mobile appearance, navigation, image fidelity, attribution and historical claims separately.
