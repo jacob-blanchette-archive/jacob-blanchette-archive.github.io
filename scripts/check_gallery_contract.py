@@ -106,6 +106,52 @@ def check(root: Path) -> tuple[int, int]:
             )
         checked += 1
 
+    # Person and organization subject collections share one navigation contract.
+    subjects = json.loads(read(root, "data/subjects.json"))
+    subject_map = {entry["id"]: entry for entry in subjects}
+    if len(subject_map) != len(subjects):
+        raise ValueError("Duplicate subject IDs in data/subjects.json")
+    gallery_to_subject = {}
+    for subj in subjects:
+        sid = subj["id"]
+        if subj["subject_type"] not in {"person", "organization"}:
+            raise ValueError(f"{sid}: invalid subject_type")
+        if not (root / subj["page"]).is_file():
+            raise ValueError(f"{sid}: subject page not found: {subj['page']}")
+        page = read(root, subj["page"])
+        if "collection-history" not in page:
+            raise ValueError(f"{sid}: missing subject historical introduction")
+        if not subj.get("collection_ids"):
+            raise ValueError(f"{sid}: no published occasion galleries")
+        for cid in subj["collection_ids"]:
+            if cid in gallery_to_subject:
+                raise ValueError(f"{cid}: gallery assigned to multiple subjects")
+            gallery_to_subject[cid] = sid
+            if cid not in collection_map:
+                raise ValueError(f"{sid}: gallery {cid} missing from collections register")
+            record = collection_map[cid]
+            if record.get("subject_id") != sid:
+                raise ValueError(f"{cid}: subject_id does not match subject register")
+            if record.get("intro") not in {subj["page"], "bfhf-1987.html", "bfhf-1988.html", "bfhf-1990.html"}:
+                raise ValueError(f"{cid}: unexpected gallery intro route")
+    if set(gallery_to_subject) != set(collection_map):
+        raise ValueError("Every published gallery must have exactly one subject")
+    dellums = subject_map.get("ronald-v-dellums")
+    if not dellums or dellums["subject_type"] != "person":
+        raise ValueError("Dellums should be a person subject")
+    dellums_page = read(root, dellums["page"])
+    dellums_cards = cards(dellums_page, "archive-event")
+    expected_title = collection_map["dellums-1987"].get("display_title")
+    if len(dellums_cards) != 1 or dellums_cards[0][0] != expected_title:
+        raise ValueError("Dellums occasion card title must match the gallery display title")
+    if parse_qs(urlsplit(dellums_cards[0][1]).query).get("collection") != ["dellums-1987"]:
+        raise ValueError("Dellums occasion card must link to the original gallery ID")
+    if 'data-id="JB-000103"' not in dellums_page or 'data-type="document"' not in dellums_page:
+        raise ValueError("Dellums invitation must use the shared document viewer")
+    if 'src="assets/js/editorial-photo.js"' not in dellums_page:
+        raise ValueError("Dellums document viewer script is missing")
+    checked += len(dellums_cards)
+
     # The common gallery template must not place a source note below Back.
     gallery = read(root, "gallery.html")
     header_start = gallery.find('<section class="page-header">')
@@ -149,7 +195,7 @@ def main() -> int:
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         print(f"FAIL: {exc}")
         return 1
-    print(f"PASS: {checked} gallery cards across {years} BFHF year pages and BRG; source note layout verified")
+    print(f"PASS: {checked} gallery cards across BFHF, BRG and Dellums; subject mapping and source note layout verified")
     return 0
 
 
