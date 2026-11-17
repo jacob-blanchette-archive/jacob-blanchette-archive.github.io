@@ -1,6 +1,6 @@
 /* Homepage thematic overview aligns with the Collections page while preserving photo-led presentation. */
 .home-themes{margin-top:6px}
-.home-theme+.home-theme{border-top:1px solid var(--line);margin-top:51px;padding-top:44px}
+.home-theme+.home-theme{border-top:1px solid var(--line);margin-top:48px;padding-top:42px}
 .home-theme-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);align-items:baseline;gap:38px;margin-bottom:27px}
 .home-theme-heading h3{margin:0;color:var(--ink);font:600 clamp(28px,3.4vw,38px)/1.19 var(--sans);letter-spacing:-.045em}
 .home-theme-heading>p{color:var(--archive-body);font:400 15px/1.72 var(--sans);margin:0;max-width:620px}
@@ -12,5 +12,5 @@
 .home-preview{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
 .home-preview .eyebrow{color:var(--muted);margin:0}
 .home-preview .textlink{margin:0}
-@media(max-width:760px){.home-theme-heading{grid-template-columns:1fr;gap:10px}.home-theme+.home-theme{margin-top:38px;padding-top:34px}}
+@media(max-width:760px){.home-theme-heading{grid-template-columns:1fr;gap:10px}.home-theme+.home-theme{margin-top:36px;padding-top:32px}}
 @media(max-width:540px){.home-theme .collection-body h4{font-size:25px}}
