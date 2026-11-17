@@ -15,7 +15,7 @@ function show(trigger){
  const isDocument=d.type==='document';const label=get('editorial-photo-citation-label');if(label)label.textContent=isDocument?'Cite this document':'Cite this photograph';
  const date=d.date||'Undated';const who=isDocument?(d.creator||'Creator not established'):/^Photograph by Jacob Blanchette/.test(d.credit||'')?'Jacob Blanchette':'Photographer not established';
  const coll=d.collectionTitle||(d.collection==='bfhf-pilot'?'Black Filmmakers Hall of Fame — 1987 Binder 2':d.collection==='brg-1990'?'Black Repertory Group — 25th Anniversary (1990)':null);
- citationText=[who,d.title||'Untitled photograph',date,coll,'Jacob Blanchette Photography Archive',d.id||'Archive identifier pending',url.href].filter(Boolean).join('. ')+'.';
+ citationText=[who,d.title||'Untitled photograph',date,coll,'Jacob Blanchette Photography Archive',(d.id||(isDocument?'':'Archive identifier pending')),url.href].filter(Boolean).join('. ')+'.';
  citation.textContent=citationText;status.textContent='';dialog.querySelector('details').open=false;dialog.showModal();
 }
 document.querySelectorAll('.editorial-photo-trigger').forEach(node=>node.addEventListener('click',event=>{

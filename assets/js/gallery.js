@@ -125,7 +125,7 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   eventNav.replaceChildren(options);eventNav.hidden=false;
  }
  if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}
- const docs=$('brg-album-documentation');if(docs)docs.hidden=isYear||collection.id!=='brg-1990';
+
  const pages=isYear?[]:[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();
  if(pages.length){pageLabel.hidden=false;for(const p of pages){const option=el('option','',p);option.value=p;pageFilter.add(option)}const requested=params.get('page');if(pages.includes(requested))pageFilter.value=requested}
  filter();const photoId=params.get('photo');if(photoId){const i=filtered.findIndex(p=>p.id===photoId);if(i>=0)open(i)}
