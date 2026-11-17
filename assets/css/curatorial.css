@@ -18,15 +18,16 @@
 }
 
 /*
- * Shared vertical rhythm. Edit these tokens (rather than page-level pixel
- * values) when adjusting section spacing. Distinct values intentionally
- * preserve the current layouts for home, interior pages, Collections and Bio.
- * These are SECTION-level values; paragraph, photo and card spacing is separate.
+ * Shared vertical rhythm. Main sections on the Homepage, Collections, and
+ * Biography use one common padding token; other collection/event pages retain
+ * their own section spacing. Internal narrative, card, and paragraph spacing
+ * remain independent.
  */
 :root {
   /* Major section padding and page introductions */
   --space-section: 81px;
-  --space-section-home: 73px;
+  --space-major-section: 72px;
+  --space-section-home: var(--space-major-section);
   --space-hero-interior-top: 95px;
   --space-hero-interior-bottom: 100px;
   --space-hero-home-top: 72px;
@@ -35,8 +36,8 @@
   --space-page-header-bottom: 48px;
   --space-content-top: 67px;
   --space-content-bottom: 95px;
-  --space-theme-top: 61px;
-  --space-theme-bottom: 68px;
+  --space-theme-top: var(--space-major-section);
+  --space-theme-bottom: var(--space-major-section);
   /* Major transitions within an overview or long narrative */
   --space-home-theme-gap: 48px;
   --space-home-theme-inset: 42px;
@@ -44,13 +45,13 @@
   --space-bio-story-inset: 40px;
   --space-bio-group-gap: 58px;
   --space-bio-group-inset: 34px;
-  /* Biography's distinct section padding */
-  --space-bio-lead-top: 63px;
-  --space-bio-lead-bottom: 40px;
-  --space-bio-career-top: 67px;
-  --space-bio-career-bottom: 81px;
-  --space-bio-end-top: 63px;
-  --space-bio-end-bottom: 80px;
+  /* Biography's major bands share padding; narrative subgroups stay distinct. */
+  --space-bio-lead-top: var(--space-major-section);
+  --space-bio-lead-bottom: var(--space-major-section);
+  --space-bio-career-top: var(--space-major-section);
+  --space-bio-career-bottom: var(--space-major-section);
+  --space-bio-end-top: var(--space-major-section);
+  --space-bio-end-bottom: var(--space-major-section);
 }
 @media (max-width: 800px) {
   :root {
@@ -60,23 +61,15 @@
 }
 @media (max-width: 760px) {
   :root {
-    --space-section-home: 59px;
+    --space-major-section: 56px;
     --space-hero-home-top: 57px;
     --space-hero-home-bottom: 57px;
     --space-home-theme-gap: 36px;
     --space-home-theme-inset: 32px;
-    --space-theme-top: 42px;
-    --space-theme-bottom: 51px;
   }
 }
 @media (max-width: 620px) {
   :root {
-    --space-bio-lead-top: 38px;
-    --space-bio-lead-bottom: 24px;
-    --space-bio-career-top: 48px;
-    --space-bio-career-bottom: 59px;
-    --space-bio-end-top: 48px;
-    --space-bio-end-bottom: 62px;
     --space-bio-group-gap: 37px;
   }
 }
