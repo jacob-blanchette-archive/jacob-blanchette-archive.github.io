@@ -32,6 +32,41 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 - Put qualified dates, attribution/rights caveats and documentary provenance in a restrained `gallery_source_note` **after** the photographic grid; full evidence remains in item records.
 - Preserve permanent `JB-######` IDs, approved publication scope, photo sources, rights and as-found arrangement.
 
+## Shared vertical spacing contract
+
+Spacing follows semantic roles, not page-by-page pixel choices. Define the
+tokens once in `assets/css/curatorial.css` and reference them in page styles.
+
+| Role | Desktop | Mobile (760px and below) | Application |
+| --- | --- | --- | --- |
+| Major content-section inset (`--space-major-section`) | 72px | 56px | Home's outer bands, Collections' first/last outer edges, Biography's lead/career/conclusion |
+| Related-topic divider (`--space-internal-divider`) | 40px total | 32px total | Between homepage themes, Collections themes, biography passages; split equally before and after the divider |
+| Stronger biography chapter divider (`--space-chapter-divider`) | 56px total | 44px total | Between distinct groups within the professional narrative |
+| Interior collection/event section (`--space-section`) | 81px | 57px at 540px and below | BFHF, BRG, Dellums and other pages, intentionally separate from the three top-level page families |
+
+The page-title/header region uses separate tokens; it is not a standard content
+band. Card padding, text leading, and photo staging likewise do not inherit
+section spacing.
+
+- **Never double-pad Collections themes.** Their `.content.collection-themes`
+  wrapper has zero vertical padding; the first and last theme supply 72px/56px
+  exterior insets. Each shared theme boundary instead uses two half-dividers,
+  creating 40px/32px total whitespace around the border.
+- **Homepage theme separators** use the same two half-dividers; Biography
+  internal passages also use the same related-topic divider. The stronger
+  biography grouped sections use the chapter divider.
+- **No ad-hoc last-child padding exceptions.** A terminal theme ends with the
+  same major inset as another top-level section. A deliberate exception must
+  have a named token and an explanation here before publication.
+- Change the shared tokens rather than adding hardcoded `margin-top` or
+  `padding` values to equivalent sections. Keep responsive breakpoints
+  centralized; do not duplicate the values in page-specific media queries.
+
+Run `python3 scripts/check_spacing_contract.py` after changing site spacing
+or any of these CSS files. This guards the token references, wrapper geometry,
+document inclusion, and mobile values. Check actual desktop/mobile rendering
+separately: automated structure checks cannot prove visual balance.
+
 ## Review before publication
 
-Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture behavior and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
+Run `python3 scripts/check_spacing_contract.py` for shared major-section and internal-divider rules. Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture behavior and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
