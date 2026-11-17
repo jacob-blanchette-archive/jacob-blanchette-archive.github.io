@@ -43,3 +43,10 @@
 .bfhf-event-nav-all{margin-left:auto}
 @media(max-width:1000px){.bfhf-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.bfhf-event-grid,.bfhf-year-grid{grid-template-columns:1fr}.bfhf-event-photo{height:235px}.bfhf-year-image{height:215px}.bfhf-event-copy{padding:23px}.bfhf-breadcrumb{margin-bottom:27px}.bfhf-program-entry{grid-template-columns:1fr;gap:8px;padding:23px 0}.bfhf-event-nav-all{margin-left:0}}
+
+/* Historical programs accompany the year interpretation, outside photographic event cards. */
+.bfhf-year-documents{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 18px;border-top:1px solid var(--archive-border,var(--line));margin-top:26px;padding-top:18px}
+.bfhf-year-documents-label{font:600 11px/1.6 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.bfhf-year-document-links{display:flex;flex-wrap:wrap;gap:9px 20px}
+.bfhf-year-document-links a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(max-width:680px){.bfhf-year-documents{align-items:flex-start;flex-direction:column;gap:10px}.bfhf-year-document-links{flex-direction:column;gap:10px}}
