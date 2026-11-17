@@ -248,3 +248,8 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 
 /* Homepage collection previews: same credit role and size across all published themes. */
 .home-theme .collection-body > p.featured-photo-credit{font:400 12px/1.6 var(--sans);color:var(--muted);margin:0 0 12px}
+
+/* Optional event-level interpretation belongs to the occasion gallery, not its parent subject page. */
+.gallery-history{margin:0 auto 40px;max-width:780px}
+.gallery-history p{margin:0 0 17px;line-height:1.85}
+.gallery-history[hidden]{display:none}
