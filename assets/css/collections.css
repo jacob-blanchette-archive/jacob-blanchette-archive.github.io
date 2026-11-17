@@ -7,7 +7,7 @@
 .theme-header h2 { margin: 0 0 16px; font: 600 clamp(34px, 4.4vw, 51px)/1.14 var(--sans); letter-spacing: -.052em; }
 .theme-header > p { margin: 0; max-width: 790px; color: var(--archive-body); font-size: 16px; line-height: 1.82; }
 .themed-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.themed-cards.single { grid-template-columns: minmax(0, 560px); }
+.themed-cards.single { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .themed-cards .collection-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 .themed-cards .collection-card:hover .textlink { border-color: var(--ink); }
 .themed-cards .collection-art { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #e5e5e4; }
