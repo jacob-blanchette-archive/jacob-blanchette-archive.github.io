@@ -1,0 +1,17 @@
+/* Shared Home and Collections preview cards; Collections provides the approved reference design. */
+.collection-card-wrap{display:flex;flex-direction:column;min-width:0}
+.collection-card-wrap>.collection-card{display:flex;flex:1;flex-direction:column;min-width:0;height:auto;overflow:hidden;color:var(--ink);background:#fff;border:1px solid var(--archive-border,var(--line));text-decoration:none}
+.collection-card-wrap>.collection-card:hover{color:var(--ink);border-color:var(--ink)}
+.collection-card-wrap>.collection-card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.collection-card-wrap .collection-art{display:block;aspect-ratio:16/10;overflow:hidden;background:#e5e5e4}
+.collection-card-wrap .collection-art img{display:block;width:100%;height:100%;object-fit:cover}
+.collection-card-wrap .collection-body{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:28px 30px 32px}
+.collection-card-wrap .collection-body>.eyebrow{margin:0 0 12px;color:var(--muted);font:700 10px/1.55 var(--sans);letter-spacing:.19em}
+.collection-card-wrap .collection-body>h3,.collection-card-wrap .collection-body>h4{color:var(--ink);font:700 27px/1.18 var(--sans);letter-spacing:-.04em;margin:0 0 18px}
+.collection-card-wrap .collection-body>p:not(.eyebrow){margin:0 0 16px;color:var(--archive-body);font:400 14px/1.74 var(--sans)}
+.collection-card-wrap .collection-body>.textlink{margin-top:auto;padding-top:11px;align-self:flex-start;font-weight:600}
+.collection-card-wrap>.featured-photo-credit{margin:10px 2px 0;color:var(--muted);font:400 12px/1.6 var(--sans)}
+.collection-card-wrap>.featured-photo-credit a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.home-theme .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+@media(max-width:760px){.home-theme .collection-grid{grid-template-columns:1fr;gap:24px}.collection-card-wrap .collection-body{padding:23px 23px 28px}}
+@media(max-width:540px){.collection-card-wrap .collection-body>h3,.collection-card-wrap .collection-body>h4{font-size:25px}}
