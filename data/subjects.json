@@ -1,0 +1,36 @@
+[
+  {
+    "id": "black-filmmakers-hall-of-fame",
+    "subject_type": "organization",
+    "title": "Black Filmmakers Hall of Fame",
+    "theme": "arts-culture",
+    "page": "bfhf.html",
+    "collection_ids": [
+      "bfhf-1987-binder1",
+      "bfhf-pilot",
+      "bfhf-1988-binder1",
+      "bfhf-1988-binder2",
+      "bfhf-1990"
+    ]
+  },
+  {
+    "id": "black-repertory-group",
+    "subject_type": "organization",
+    "title": "Black Repertory Group",
+    "theme": "arts-culture",
+    "page": "brg-1990.html",
+    "collection_ids": [
+      "brg-1990"
+    ]
+  },
+  {
+    "id": "ronald-v-dellums",
+    "subject_type": "person",
+    "title": "Ronald V. Dellums",
+    "theme": "community-civic-life",
+    "page": "dellums-1987.html",
+    "collection_ids": [
+      "dellums-1987"
+    ]
+  }
+]
