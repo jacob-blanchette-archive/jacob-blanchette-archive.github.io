@@ -102,10 +102,28 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
  }
  document.title=collection.title+' | Jacob Blanchette Photography Archive';
  $('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';
- $('gallery-eyebrow').textContent='Archive · '+(collection.eyebrow||'Collection');
+ $('gallery-eyebrow').textContent=isYear?('Black Filmmakers Hall of Fame · '+yearId):('Archive · '+(collection.eyebrow||'Collection'));
  $('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';
  $('gallery-back').href=collection.intro||'collections.html';
- $('gallery-back').textContent=isYear?'← Back to '+yearId+' year overview':'← Back to collection introduction';
+ $('gallery-back').textContent=isYear?'← Back to '+yearId+' events':'← Back to collection introduction';
+ const eventNav=$('bfhf-event-nav');
+ if(eventNav&&isYear){
+  const spec=bfhf.years[yearId];
+  const eventLinks=spec.events.filter(g=>g.show_in_navigation!==false);
+  const options=document.createDocumentFragment();
+  options.append(el('span','bfhf-event-nav-label','Explore by event'));
+  for(const event of eventLinks){
+   const a=el('a','bfhf-event-nav-link',event.title);
+   a.href='gallery.html?bfhf_year='+encodeURIComponent(yearId)+'&event='+encodeURIComponent(event.key);
+   if(eventKey===event.key)a.setAttribute('aria-current','page');
+   options.append(a);
+  }
+  const allLink=el('a','bfhf-event-nav-link bfhf-event-nav-all','Complete year gallery');
+  allLink.href='gallery.html?bfhf_year='+encodeURIComponent(yearId);
+  if(!eventKey||eventKey==='unassigned')allLink.setAttribute('aria-current','page');
+  options.append(allLink);
+  eventNav.replaceChildren(options);eventNav.hidden=false;
+ }
  if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}
  const docs=$('brg-album-documentation');if(docs)docs.hidden=isYear||collection.id!=='brg-1990';
  const pages=isYear?[]:[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();
