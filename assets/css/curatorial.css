@@ -16,6 +16,78 @@
   --archive-body: #424242;
   --archive-border: #D3D3D1;
 }
+
+/*
+ * Shared vertical rhythm. Edit these tokens (rather than page-level pixel
+ * values) when adjusting section spacing. Distinct values intentionally
+ * preserve the current layouts for home, interior pages, Collections and Bio.
+ * These are SECTION-level values; paragraph, photo and card spacing is separate.
+ */
+:root {
+  /* Major section padding and page introductions */
+  --space-section: 81px;
+  --space-section-home: 73px;
+  --space-hero-interior-top: 95px;
+  --space-hero-interior-bottom: 100px;
+  --space-hero-home-top: 72px;
+  --space-hero-home-bottom: 78px;
+  --space-page-header-top: 78px;
+  --space-page-header-bottom: 48px;
+  --space-content-top: 67px;
+  --space-content-bottom: 95px;
+  --space-theme-top: 61px;
+  --space-theme-bottom: 68px;
+  /* Major transitions within an overview or long narrative */
+  --space-home-theme-gap: 48px;
+  --space-home-theme-inset: 42px;
+  --space-bio-story-gap: 48px;
+  --space-bio-story-inset: 40px;
+  --space-bio-group-gap: 58px;
+  --space-bio-group-inset: 34px;
+  /* Biography's distinct section padding */
+  --space-bio-lead-top: 63px;
+  --space-bio-lead-bottom: 40px;
+  --space-bio-career-top: 67px;
+  --space-bio-career-bottom: 81px;
+  --space-bio-end-top: 63px;
+  --space-bio-end-bottom: 80px;
+}
+@media (max-width: 800px) {
+  :root {
+    --space-hero-interior-top: 62px;
+    --space-hero-interior-bottom: 62px;
+  }
+}
+@media (max-width: 760px) {
+  :root {
+    --space-section-home: 59px;
+    --space-hero-home-top: 57px;
+    --space-hero-home-bottom: 57px;
+    --space-home-theme-gap: 36px;
+    --space-home-theme-inset: 32px;
+    --space-theme-top: 42px;
+    --space-theme-bottom: 51px;
+  }
+}
+@media (max-width: 620px) {
+  :root {
+    --space-bio-lead-top: 38px;
+    --space-bio-lead-bottom: 24px;
+    --space-bio-career-top: 48px;
+    --space-bio-career-bottom: 59px;
+    --space-bio-end-top: 48px;
+    --space-bio-end-bottom: 62px;
+    --space-bio-group-gap: 37px;
+  }
+}
+@media (max-width: 540px) {
+  :root {
+    --space-section: 57px;
+    --space-page-header-top: 57px;
+    --space-page-header-bottom: 36px;
+  }
+}
+
 body { background: var(--paper); color: var(--ink); font-family: var(--sans); }
 a:hover { color: #444; }
 a:focus-visible, button:focus-visible, input:focus-visible,
