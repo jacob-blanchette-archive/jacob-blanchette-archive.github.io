@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "editorial_note": "Event associations for photographs are provisional, independent of documentary event dates and of public image rights, preservation, and curatorial selection.",
+  "years": {
+    "1987": {
+      "collection_ids": [
+        "bfhf-1987-binder1",
+        "bfhf-pilot"
+      ],
+      "events": [
+        {
+          "key": "symposium",
+          "title": "Film symposium — provisional photographic association",
+          "attribution": "Probable",
+          "ids": [
+            "JB-000107"
+          ],
+          "note": "Panel photograph in a binder with the February 21 film-symposium program; the individual exposure date and venue are not independently confirmed."
+        },
+        {
+          "key": "micheaux-awards",
+          "title": "Fourteenth Annual Oscar Micheaux Awards — provisional photographs",
+          "attribution": "Probable",
+          "ids": [
+            "JB-000025",
+            "JB-000026",
+            "JB-000027",
+            "JB-000028",
+            "JB-000029",
+            "JB-000030",
+            "JB-000031",
+            "JB-000032",
+            "JB-000033",
+            "JB-000034",
+            "JB-000035",
+            "JB-000036",
+            "JB-000037",
+            "JB-000038",
+            "JB-000039",
+            "JB-000040",
+            "JB-000041",
+            "JB-000042"
+          ],
+          "note": "Stage presentation sequence in a binder associated by family with the February 1987 awards ceremony. The printed announcement documents the occasion but not the exposure date of each photograph."
+        }
+      ]
+    },
+    "1988": {
+      "collection_ids": [
+        "bfhf-1988-binder1",
+        "bfhf-1988-binder2"
+      ],
+      "events": [
+        {
+          "key": "micheaux-awards",
+          "title": "Fifteenth Annual Oscar Micheaux Awards — provisional photographs",
+          "attribution": "Probable",
+          "ids": [
+            "JB-000190",
+            "JB-000191",
+            "JB-000192",
+            "JB-000193",
+            "JB-000194",
+            "JB-000195",
+            "JB-000196",
+            "JB-000197",
+            "JB-000198",
+            "JB-000199",
+            "JB-000200",
+            "JB-000201",
+            "JB-000221"
+          ],
+          "note": "Award presentation photographs are in a binder containing a printed Fifteenth Annual Oscar Micheaux Awards program; their association is probable but unverified individually."
+        }
+      ]
+    },
+    "1990": {
+      "collection_ids": [],
+      "events": [],
+      "status": "Program-year overview only. Privately cataloged 1990 photographs are not newly published by this update."
+    }
+  }
+}
