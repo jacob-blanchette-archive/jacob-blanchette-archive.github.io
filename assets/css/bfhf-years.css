@@ -47,3 +47,13 @@
 .bfhf-program-entry .eyebrow{margin:0}
 @media(max-width:850px){.bfhf-photo-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.bfhf-photo-preview-grid{grid-template-columns:1fr 1fr;gap:13px}.bfhf-photo-preview-image{height:190px}.bfhf-photo-preview-label{font-size:13px}.bfhf-program-entry{grid-template-columns:1fr;gap:8px;padding:22px 0}.bfhf-program-date{font-size:15px}}
+
+/* BFHF curatorial year pages: photographs lead; original evidence remains in linked records. */
+.bfhf-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bfhf-event-photo{order:-1;flex:none;border-top:0;border-bottom:1px solid var(--line);height:275px;padding:8px}
+.bfhf-event-photo img{display:block;object-fit:contain;width:100%;height:100%}
+.bfhf-year-groups .collection-history{margin-bottom:24px}
+.bfhf-year-browse .prose.collection-history{max-width:780px}
+.bfhf-year-browse .bfhf-year-actions{margin-top:25px}
+@media(max-width:900px){.bfhf-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.bfhf-year-grid{grid-template-columns:1fr}.bfhf-event-photo{height:235px;padding:5px}}
