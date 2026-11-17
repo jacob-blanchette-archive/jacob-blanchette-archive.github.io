@@ -73,5 +73,45 @@ function move(d){if(!filtered.length)return;viewerVersion='presentation';current
 $('viewer-copy-citation').addEventListener('click',copyCitation);
 $('view-presentation').addEventListener('click',()=>{viewerVersion='presentation';show()});$('view-source').addEventListener('click',()=>{viewerVersion='source';show()});search.addEventListener('input',filter);pageFilter.addEventListener('change',filter);more.addEventListener('click',morePhotos);slidesBtn.addEventListener('click',()=>open(0));gridBtn.addEventListener('click',()=>{close();grid.scrollIntoView({behavior:'smooth'})});$('viewer-close').addEventListener('click',close);$('viewer-prev').addEventListener('click',()=>move(-1));$('viewer-next').addEventListener('click',()=>move(1));dialog.addEventListener('close',()=>{changeUrl(null);slidesBtn.setAttribute('aria-pressed','false');gridBtn.setAttribute('aria-pressed','true')});document.addEventListener('keydown',evt=>{if(!dialog.open)return;if(evt.key==='ArrowLeft'){evt.preventDefault();move(-1)}if(evt.key==='ArrowRight'){evt.preventDefault();move(1)}});
 let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.changedTouches[0].screenX},{passive:true});$('viewer-stage').addEventListener('touchend',evt=>{const d=evt.changedTouches[0].screenX-start;if(Math.abs(d)>60)move(d>0?-1:1)},{passive:true});
-(async()=>{try{const [cs,ps]=await Promise.all([fetch('data/collections.json'),fetch('data/photos.json')]);if(!cs.ok||!ps.ok)throw Error('Catalog data unavailable');const [cols,all]=await Promise.all([cs.json(),ps.json()]);const id=new URLSearchParams(location.search).get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');document.title=collection.title+' | Jacob Blanchette Photography Archive';records=all.filter(p=>p.collection_id===id&&p.published!==false).sort((a,b)=>(a.order||0)-(b.order||0));$('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';$('gallery-eyebrow').textContent='Archive · '+(collection.eyebrow||'Collection');$('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';$('gallery-back').href=collection.intro||'collections.html';$('gallery-back').textContent='← Back to collection introduction';if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}const albumDocumentation=$('brg-album-documentation');if(albumDocumentation)albumDocumentation.hidden=id!=='brg-1990';const pages=[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();if(pages.length){pageLabel.hidden=false;for(const p of pages){const option=el('option','',p);option.value=p;pageFilter.add(option)}const requestedPage=new URLSearchParams(location.search).get('page');if(pages.includes(requestedPage))pageFilter.value=requestedPage}filter();const photoId=new URLSearchParams(location.search).get('photo');if(photoId){const idx=filtered.findIndex(p=>p.id===photoId);if(idx>=0)open(idx)}}catch(err){$('results-count').textContent='Unable to load gallery';$('empty-state').hidden=false;$('empty-state').textContent='Unable to load collection records. '+err.message}})()
+(async()=>{try{
+ const [cs,ps,es]=await Promise.all([fetch('data/collections.json'),fetch('data/photos.json'),fetch('data/bfhf-events.json')]);
+ if(!cs.ok||!ps.ok||!es.ok)throw Error('Catalog data unavailable');
+ const [cols,all,bfhf]=await Promise.all([cs.json(),ps.json(),es.json()]);
+ const params=new URLSearchParams(location.search),yearId=params.get('bfhf_year'),eventKey=params.get('event');
+ let isYear=false;
+ if(yearId){
+  const cfg=bfhf.years&&bfhf.years[yearId];if(!cfg)throw Error('BFHF year not found');
+  isYear=true;const wanted=new Set(cfg.collection_ids);
+  let rows=all.filter(p=>wanted.has(p.collection_id)&&p.published!==false);
+  const assigned=new Set(cfg.events.flatMap(g=>g.ids));
+  let title=yearId+' · Black Filmmakers Hall of Fame';
+  let description='Browse published photographic and documentary records associated with the '+yearId+' BFHF binders. The binder year does not independently establish the date of any individual exposure.';
+  if(eventKey==='unassigned'){
+   rows=rows.filter(p=>!assigned.has(p.id)&&isJacobPhotograph(p)&&!/^(?:Film.strip|Printed|Gala program|Film symposium announcement|Fourteenth Annual.*announcement)/i.test(String(p.title||'')));
+   title=yearId+' · Photographs awaiting event identification';
+   description='These photographs are associated with '+yearId+'-labeled BFHF binders, but their individual occasions remain unassigned.';
+  }else if(eventKey){
+   const event=cfg.events.find(g=>g.key===eventKey);if(!event)throw Error('Event group not found');
+   const ids=new Set(event.ids);rows=rows.filter(p=>ids.has(p.id));
+   title=event.title;description=event.note+' Photograph-to-event attribution: '+event.attribution.toLowerCase()+'.';
+  }
+  collection={title,display_title:title,gallery_description:description,eyebrow:'Black Filmmakers Hall of Fame · '+yearId,intro:'bfhf-'+yearId+'.html',notice:'Provisional photographic grouping; not a final exhibition selection. Binder positions remain in the individual records. Exposure dates, identifications and reproduction rights remain under review.'};
+  records=rows.sort((a,b)=>cfg.collection_ids.indexOf(a.collection_id)-cfg.collection_ids.indexOf(b.collection_id)||(a.order||0)-(b.order||0));
+ }else{
+  const id=params.get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');
+  records=all.filter(p=>p.collection_id===id&&p.published!==false).sort((a,b)=>(a.order||0)-(b.order||0));
+ }
+ document.title=collection.title+' | Jacob Blanchette Photography Archive';
+ $('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';
+ $('gallery-eyebrow').textContent='Archive · '+(collection.eyebrow||'Collection');
+ $('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';
+ $('gallery-back').href=collection.intro||'collections.html';
+ $('gallery-back').textContent=isYear?'← Back to '+yearId+' year overview':'← Back to collection introduction';
+ if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}
+ const docs=$('brg-album-documentation');if(docs)docs.hidden=isYear||collection.id!=='brg-1990';
+ const pages=isYear?[]:[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();
+ if(pages.length){pageLabel.hidden=false;for(const p of pages){const option=el('option','',p);option.value=p;pageFilter.add(option)}const requested=params.get('page');if(pages.includes(requested))pageFilter.value=requested}
+ filter();const photoId=params.get('photo');if(photoId){const i=filtered.findIndex(p=>p.id===photoId);if(i>=0)open(i)}
+}catch(err){$('results-count').textContent='Unable to load gallery';$('empty-state').hidden=false;$('empty-state').textContent='Unable to load collection records. '+err.message}})()
+
 })();
