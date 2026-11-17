@@ -50,3 +50,13 @@ This repository is public, and provisional public display of the BFHF collection
 - [Indiana University Black Film Center & Archive](https://www.bfca.iu.edu/)
 
 These institutional sources provide general context, not verification for particular photo captions or every family-reported biographical detail.
+
+## Gallery consistency check
+
+Before publishing a change to an event/occasion gallery card, gallery title, `data/collections.json`, `data/bfhf-events.json`, or the shared gallery layout, run:
+
+```bash
+python3 scripts/check_gallery_contract.py
+```
+
+This standard-library check verifies that the BFHF and BRG event/occasion card titles match their destination gallery headings and that the shared `gallery-source-note` stays below the photographic grid rather than under the Back link. It also checks the gallery's field fallbacks and responsive hidden state. Historical verification, copyright review, and browser/mobile inspection remain separate requirements. The skill's `references/site-presentation.md` documents the editorial rule.
