@@ -10,7 +10,8 @@
     "gallery_description": "Browse 16 photographs and two printed documents preserved in 1987 Binder 1. The accompanying flyer documents February 21 film-symposium and gala programming and the February 22 awards ceremony, but individual photographs are not assigned to these events without further evidence.",
     "gallery_source_note": "These photographs are shown in their original album groupings. Select an image to see its description and, where available, the photographed album page. Individual dates, identifications, and reproduction rights remain under review.",
     "theme": "arts-culture",
-    "display_title": "1987 · Binder 1"
+    "display_title": "1987 · Binder 1",
+    "subject_id": "black-filmmakers-hall-of-fame"
   },
   {
     "id": "bfhf-pilot",
@@ -23,7 +24,8 @@
     "gallery_description": "Photographs in this binder are associated by family attribution with the Fourteenth Annual Oscar Micheaux Awards held in Oakland on February 22, 1987. The accompanying announcement confirms the ceremony date and venue; other binder material references a Black film festival in Chicago in June 1987. Individual photograph dates, locations and subjects remain under research. Browse 35 items and compare presentation crops with as-photographed binder pages.",
     "gallery_source_note": "These photographs are shown in their original album groupings. Select an image to see its description and, where available, the photographed album page. Individual dates, identifications, and reproduction rights remain under review.",
     "theme": "arts-culture",
-    "display_title": "1987 · Binder 2"
+    "display_title": "1987 · Binder 2",
+    "subject_id": "black-filmmakers-hall-of-fame"
   },
   {
     "id": "brg-1990",
@@ -36,7 +38,8 @@
     "gallery_description": "The Black Repertory Group marked its silver anniversary in July 1990, celebrating its work in Black theater and community life. Photographs associated with the occasion show speakers, presentations, group portraits, and guests gathered around an anniversary cake.",
     "gallery_source_note": "The album title page identifies July 20–22, 1990, as the celebration dates; individual photograph dates have not been independently established. Identifications and reproduction rights remain under review.",
     "credits": "Photographs by Jacob Blanchette (family attribution).",
-    "theme": "arts-culture"
+    "theme": "arts-culture",
+    "subject_id": "black-repertory-group"
   },
   {
     "id": "dellums-1987",
@@ -48,7 +51,9 @@
     "gallery_description": "Browse 41 photographs and three accompanying printed objects from the 1987 Ronald V. Dellums gala album. The green sticker numbering and original binder-page context have been preserved.",
     "gallery_source_note": "Working digitization: display images are non-generative crops from phone photographs of the original album, not archival scans. Use the as-photographed view to see original arrangement and numbering. The invitation establishes the gala date and venue, not every exposure date. Participants are not identified from appearance. Attribution to Jacob Blanchette and the gala context were confirmed by the collection steward.",
     "credits": "Gala photographs by Jacob Blanchette (family confirmation, November 2026). Printed ephemera creators not established.",
-    "theme": "community-civic-life"
+    "theme": "community-civic-life",
+    "subject_id": "ronald-v-dellums",
+    "display_title": "Twenty Years of Public Service"
   },
   {
     "id": "bfhf-1988-binder1",
@@ -61,7 +66,8 @@
     "eyebrow": "Black Filmmakers Hall of Fame",
     "gallery_description": "Browse 34 photographs and a printed Oscar Micheaux Awards program preserved in a binder marked 1988. Their individual dates, places and participants have not been independently confirmed.",
     "gallery_source_note": "These photographs are shown in their original album groupings. Select an image to see its description and, where available, the photographed album page. Individual dates, identifications, and reproduction rights remain under review.",
-    "theme": "arts-culture"
+    "theme": "arts-culture",
+    "subject_id": "black-filmmakers-hall-of-fame"
   },
   {
     "id": "bfhf-1988-binder2",
@@ -74,7 +80,8 @@
     "eyebrow": "Black Filmmakers Hall of Fame",
     "gallery_description": "Browse 66 photographs preserved in a binder labeled 1988. The images depict stage performances, presentations and formal gatherings; their individual dates, venues and participants are under research.",
     "gallery_source_note": "These photographs are shown in their original album groupings. Select an image to see its description and, where available, the photographed album page. Individual dates, identifications, and reproduction rights remain under review.",
-    "theme": "arts-culture"
+    "theme": "arts-culture",
+    "subject_id": "black-filmmakers-hall-of-fame"
   },
   {
     "id": "bfhf-1990",
@@ -87,6 +94,7 @@
     "gallery_description": "Photographs of presentations, musical performances, social gatherings, handprint activities and portraits preserved in albums labeled 1990. The particular occasions and exposure dates remain to be established.",
     "gallery_source_note": "The photographs are presented as conventional crops from mounted album prints. Select an image to see its description and original album position. Dates, identifications and reproduction rights remain under review.",
     "credits": "Photographs attributed to Jacob Blanchette by the collection steward; individual dates and rights status under review.",
-    "theme": "arts-culture"
+    "theme": "arts-culture",
+    "subject_id": "black-filmmakers-hall-of-fame"
   }
 ]
