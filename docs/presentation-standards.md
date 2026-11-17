@@ -1,0 +1,37 @@
+# Public presentation standards
+
+These are **role-based** design and editorial conventions. Reuse styles **within a card role**, not a single size or spacing rule for every page. The website CSS is the rendering authority; the Jacob Photo Archive skill records the editorial method.
+
+| Role | Applies to | Rendering source | Intentional geometry |
+| --- | --- | --- | --- |
+| Collection preview | Home and Collections: BFHF, BRG, Dellums | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
+| Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
+| Occasion/event index | BFHF years, BRG, Dellums | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
+| Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
+
+## Collection-preview contract
+
+1. Both Home and Collections use `collection-card-wrap > a.collection-card + p.featured-photo-credit`; **the whole card** links to the introduction. No link is nested in that anchor.
+2. The same collection uses the same photographic image, public subject title, destination and archival-record link on both pages; Home may have shorter text, and HTML heading levels appropriately differ.
+3. The credit is a separate subdued line **after the closing card link**: `Photograph by Jacob Blanchette · View photo record and citation →`. The link points to that specific published photograph, not automatically to the card's collection. Do not attribute an unattributed image to Jacob by layout convention.
+4. Every theme uses normal grid cells, even when only one collection is published. Portraiture stays a quiet `Collection in development` label with no `Learn more` action until there is content worth navigating to.
+5. Load `assets/css/collection-previews.css` after the page and curatorial styles on both pages, so there is one preview design to maintain.
+
+## Interior-card contract
+
+1. **BFHF year cards** are navigational indexes by year. Keep their own card proportions and spacing; do not force the preview-card image ratio or event-card typography onto them.
+2. **Occasion/event cards** on BFHF year pages and BRG/Dellums introductions use the shared `bfhf-event` / `archive-event` rules in `assets/css/bfhf-years.css`. Within this role, match photograph height, padding, title scale, CTA alignment and mobile breakpoints. The event/occasion title must equal the destination gallery H1.
+3. The primary photo and CTA open the corresponding gallery. An occasion-specific document is a separate action in the **same action row**, opening the shared document viewer. A schedule covering several events belongs under the broader year history instead. Do not add documents to photographic counts.
+4. Preserve distinct page hierarchies: organization → year or occasion → gallery. A single published gallery remains one normal grid card, not a stretched horizontal hero.
+5. Differences **between roles** are deliberate: the shared system is typography, photographic fidelity, attribution and action semantics, not an identical `padding` or `gap` value on every component.
+
+## Gallery and writing contract
+
+- A gallery title matches its incoming card; context such as organization/year belongs in an eyebrow when useful.
+- Lead with the historic occasion and photographed activity. Keep counts, crop workflow and uncertain binder assignments out of public introductory prose.
+- Put qualified dates, attribution/rights caveats and documentary provenance in a restrained `gallery_source_note` **after** the photographic grid; full evidence remains in item records.
+- Preserve permanent `JB-######` IDs, approved publication scope, photo sources, rights and as-found arrangement.
+
+## Review before publication
+
+Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture behavior and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
