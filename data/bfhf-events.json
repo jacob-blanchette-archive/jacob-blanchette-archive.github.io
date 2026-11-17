@@ -75,9 +75,11 @@
       ]
     },
     "1990": {
-      "collection_ids": [],
+      "collection_ids": [
+        "bfhf-1990"
+      ],
       "events": [],
-      "status": "Program-year overview only. Privately cataloged 1990 photographs are not newly published by this update."
+      "status": "44 approved public web crops from available photographed 1990 album pages, with 45 further cataloged photographic items awaiting source reproductions; events are documented by printed schedule but not assigned per photograph."
     }
   }
 }
