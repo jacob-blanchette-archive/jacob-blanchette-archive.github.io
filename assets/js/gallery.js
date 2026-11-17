@@ -102,7 +102,7 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
  }
  document.title=collection.title+' | Jacob Blanchette Photography Archive';
  $('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';
- $('gallery-eyebrow').textContent=isYear?('Black Filmmakers Hall of Fame · '+yearId):('Archive · '+(collection.eyebrow||'Collection'));
+ $('gallery-eyebrow').textContent=isYear?('Black Filmmakers Hall of Fame · '+yearId):(collection.eyebrow||'Collection');
  $('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';
  $('gallery-back').href=collection.intro||'collections.html';
  $('gallery-back').textContent=isYear?'← Back to '+yearId+' events':'← Back to collection introduction';
@@ -124,7 +124,8 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   options.append(allLink);
   eventNav.replaceChildren(options);eventNav.hidden=false;
  }
- if(collection.notice){$('gallery-notice').hidden=false;$('gallery-notice').textContent=collection.notice}
+ const sourceNote=collection.gallery_source_note||collection.notice||'';
+ if(sourceNote){$('gallery-notice').hidden=false;$('gallery-notice').textContent=sourceNote}
 
  const pages=isYear?[]:[...new Set(records.map(r=>r.album_page).filter(Boolean))].sort();
  if(pages.length){pageLabel.hidden=false;for(const p of pages){const option=el('option','',p);option.value=p;pageFilter.add(option)}const requested=params.get('page');if(pages.includes(requested))pageFilter.value=requested}

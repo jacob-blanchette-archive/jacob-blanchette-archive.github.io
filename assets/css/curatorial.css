@@ -238,6 +238,9 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 .collection-gallery-card-documents{margin-top:auto;border-top:1px solid var(--line);padding:15px 24px 18px}
 .collection-gallery-document-link{display:inline-block;color:var(--ink);font:600 12px/1.6 var(--sans);text-decoration:underline;text-underline-offset:4px}
 
+/* Shared gallery-page source note: quiet provenance and date qualifiers, not a warning banner. */
+.gallery-source-note{max-width:810px;margin:22px 0 0;padding:12px 0 0;border-top:1px solid var(--line);background:none;color:var(--muted);font:400 13px/1.7 var(--sans)}
+.gallery-source-note[hidden]{display:none}
 .collection-gallery-section .collection-source-note{display:block;font:400 13px/1.7 var(--sans);color:var(--muted);margin-top:24px;max-width:900px}
 .collection-history a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:850px){.collection-feature-row{grid-template-columns:1fr}.collection-feature-figure{max-width:600px}}
