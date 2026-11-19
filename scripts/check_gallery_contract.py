@@ -140,17 +140,23 @@ def check(root: Path) -> tuple[int, int]:
     if not dellums or dellums["subject_type"] != "person":
         raise ValueError("Dellums should be a person subject")
     dellums_page = read(root, dellums["page"])
-    dellums_cards = cards(dellums_page, "archive-event")
+    # The single Dellums occasion is presented directly, without an extra card.
     expected_title = collection_map["dellums-1987"].get("display_title")
-    if len(dellums_cards) != 1 or dellums_cards[0][0] != expected_title:
-        raise ValueError("Dellums occasion card title must match the gallery display title")
-    if parse_qs(urlsplit(dellums_cards[0][1]).query).get("collection") != ["dellums-1987"]:
-        raise ValueError("Dellums occasion card must link to the original gallery ID")
+    if cards(dellums_page, "archive-event"):
+        raise ValueError("Dellums single-occasion page must not introduce a gallery card")
+    if f"<h2>{expected_title}</h2>" not in dellums_page:
+        raise ValueError("Dellums occasion heading must match the gallery display title")
+    if 'class="collection-feature-row"' not in dellums_page:
+        raise ValueError("Dellums occasion must have a direct photographic feature")
+    if 'href="gallery.html?collection=dellums-1987"' not in dellums_page:
+        raise ValueError("Dellums direct gallery link is missing")
+    if 'data-id="JB-000088"' not in dellums_page or 'data-collection="dellums-1987"' not in dellums_page:
+        raise ValueError("Dellums featured photograph must link to its published record")
     if 'data-id="JB-000103"' not in dellums_page or 'data-type="document"' not in dellums_page:
         raise ValueError("Dellums invitation must use the shared document viewer")
     if 'src="assets/js/editorial-photo.js"' not in dellums_page:
         raise ValueError("Dellums document viewer script is missing")
-    checked += len(dellums_cards)
+    checked += 1
 
     # Topic-led collections use the same matched gallery title contract.
     for cid, page_name in (("community-baseball", "community-baseball.html"),
@@ -229,7 +235,7 @@ def main() -> int:
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         print(f"FAIL: {exc}")
         return 1
-    print(f"PASS: {checked} gallery cards across BFHF, BRG and Dellums; subject mapping and source note layout verified")
+    print(f"PASS: {checked} occasion/gallery routes across BFHF, BRG, Dellums and thematic subjects; source notes verified")
     return 0
 
 

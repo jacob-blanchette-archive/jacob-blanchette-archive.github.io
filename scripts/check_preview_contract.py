@@ -107,7 +107,7 @@ def check(root: Path) -> int:
     if 'class="bfhf-year-grid"' not in read(root, "bfhf.html"):
         raise ValueError("BFHF year overview must retain its distinct grid")
     for page in ('bfhf-1987.html', 'bfhf-1988.html', 'bfhf-1990.html',
-                 'brg-1990.html', 'dellums-1987.html'):
+                 'brg-1990.html'):
         source = read(root, page)
         prefix = "bfhf-event" if page.startswith("bfhf-") else "archive-event"
         for name in (f'{prefix}-grid', prefix,
@@ -116,6 +116,12 @@ def check(root: Path) -> int:
                 raise ValueError(f"{page}: missing interior card role {name}")
         if 'assets/css/bfhf-years.css' not in source.split("</head>", 1)[0]:
             raise ValueError(f"{page}: missing shared interior-card stylesheet")
+    # Dellums is a documented single occasion, presented as a feature rather than a one-item card index.
+    dellums = read(root, 'dellums-1987.html')
+    if 'class="collection-feature-row"' not in dellums or 'class="collection-feature-figure"' not in dellums:
+        raise ValueError('Dellums: missing direct single-occasion feature')
+    if 'class="archive-event"' in dellums:
+        raise ValueError('Dellums: unexpected intermediate occasion card')
     return len(home)
 
 

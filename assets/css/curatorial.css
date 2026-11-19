@@ -258,6 +258,10 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 /* Respect the hidden state when an editorial image has no full gallery record. */
 .editorial-photo-record[hidden]{display:none}
 
+/* A single documented occasion can be presented directly, without an intermediate card. */
+.single-occasion-actions{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 22px;margin-top:25px}
+.single-occasion-actions .editorial-photo-trigger{width:auto}
+
 /* Shared museum-style organizational collection layouts. */
 .collection-feature-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:6%;align-items:start}
 .collection-feature-row .prose h2{margin-top:10px}
@@ -297,7 +301,7 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 /* Homepage collection previews: same credit role and size across all published themes. */
 .home-theme .collection-body > p.featured-photo-credit{font:400 12px/1.6 var(--sans);color:var(--muted);margin:0 0 12px}
 
-/* Optional event-level interpretation belongs to the occasion gallery, not its parent subject page. */
+/* Gallery interpretation and a direct single-occasion subject feature can coexist. */
 .gallery-history{margin:0 auto 40px;max-width:780px}
 .gallery-history p{margin:0 0 17px;line-height:1.85}
 .gallery-history[hidden]{display:none}
