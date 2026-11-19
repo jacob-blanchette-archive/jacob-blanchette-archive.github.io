@@ -40,38 +40,59 @@
     },
     {
       "page_type": "thematic",
-      "path": "community-baseball.html",
-      "collection_id": "community-baseball",
-      "page_title": "Community Baseball",
-      "page_eyebrow": "Community & Civic Life",
-      "page_lead": "Photographs of a community ball game, its players, and the people gathered to watch.",
-      "parent_href": "community.html",
-      "parent_label": "Recreation & Events",
-      "history_eyebrow": "Community recreation",
-      "history_heading": "At the ball field",
+      "path": "political-gatherings.html",
+      "collection_id": "political-gatherings",
+      "page_title": "Political Gatherings",
+      "page_eyebrow": "Community & Civic Life · Politics & Activism",
+      "page_lead": "Photographs of people gathered outdoors near a brick building, provisionally associated with political activity.",
+      "parent_href": "politics-activism.html",
+      "parent_label": "Politics & Activism",
+      "history_eyebrow": "Political and civic life",
+      "history_heading": "An outdoor gathering",
       "history_paragraphs": [
-        "At an outdoor ball field, players take turns at bat as a catcher and other participants gather nearby. Spectators watch from beyond the fence, and the photographs capture both the action of the game and the interactions around it. The date, location, and identities of the participants have not been established."
+        "People converse, pose together, serve food, and sit in an outdoor audience. Several photographs show a brick-building backdrop; another depicts two people in conversation beside a building. Some participants appear to hold papers or wear buttons.",
+        "The collection steward considers these scenes likely to be associated with political activity. The particular occasion, participants, organizers, date, and location remain unknown; the original physical association of all the photographs has not been established."
       ],
       "gallery_eyebrow": "The photographs",
-      "gallery_heading": "Photographs from the ball field",
+      "gallery_heading": "Photographs of the gathering",
       "documents": []
     },
     {
       "page_type": "thematic",
-      "path": "gatherings-parades.html",
-      "collection_id": "community-gatherings",
-      "page_title": "Gatherings and Parades",
+      "path": "community-sports.html",
+      "collection_id": "community-baseball",
+      "page_title": "Community Sports",
       "page_eyebrow": "Community & Civic Life",
-      "page_lead": "Mounted riders in a city procession and people gathering outdoors for food, music, and conversation.",
+      "page_lead": "Photographs of community ball games and young athletes in uniform.",
       "parent_href": "community.html",
       "parent_label": "Recreation & Events",
-      "history_eyebrow": "Public gatherings",
-      "history_heading": "On the street and in the neighborhood",
+      "history_eyebrow": "Community recreation",
+      "history_heading": "At the ball field and on the bleachers",
       "history_paragraphs": [
-        "Horseback riders make their way along a city street, some wearing broad-brimmed hats. Other photographs show people talking, posing together, sharing food, and sitting in an outdoor audience near a brick building. The scenes place social gatherings and street processions alongside the neighborhood spaces in which they occurred."
+        "At an outdoor ball field, players take turns at bat while spectators gather near the fence. In other photographs, children wearing matching athletic jerseys sit on wooden bleachers, talking and posing together.",
+        "The scenes show participation in neighborhood sport, but the youth team's identity, its particular sport, and any relationship to the ball-field photographs have not been established."
       ],
       "gallery_eyebrow": "The photographs",
-      "gallery_heading": "Photographs of gatherings and parades",
+      "gallery_heading": "Photographs of community sports",
+      "documents": []
+    },
+    {
+      "page_type": "thematic",
+      "path": "festivals-parades.html",
+      "collection_id": "community-gatherings",
+      "page_title": "Festivals and Parades",
+      "page_eyebrow": "Community & Civic Life",
+      "page_lead": "Street processions, musical performances, and outdoor community gatherings.",
+      "parent_href": "community.html",
+      "parent_label": "Recreation & Events",
+      "history_eyebrow": "Community events",
+      "history_heading": "Music, processions, and outdoor gatherings",
+      "history_paragraphs": [
+        "Mounted riders wearing western attire proceed along a city street. Elsewhere, a singer performs beside an upright-bass player, while other photographs show people seated on grass, conversing and posing together outdoors.",
+        "These scenes may come from several different occasions. The festivals, procession dates, performers, organizers, and locations have not yet been established."
+      ],
+      "gallery_eyebrow": "The photographs",
+      "gallery_heading": "Photographs of festivals and parades",
       "documents": []
     },
     {

@@ -82,8 +82,8 @@ def check(root: Path) -> int:
         r'<section class="home-theme home-portraiture"[\s\S]*?</section>',
         read(root, "index.html"),
     )
-    if not portraiture or "Collection in development" in portraiture.group(0) or portraiture.group(0).count('class="collection-card-wrap"') != 2:
-        raise ValueError("Published Portraiture must have exactly two photographic previews")
+    if not portraiture or "Collection in development" in portraiture.group(0) or portraiture.group(0).count('class="collection-card-wrap"') != 1:
+        raise ValueError("Published Portraiture must have exactly one photographic preview")
     for page in ("index.html", "collections.html"):
         head = read(root, page).split("</head>", 1)[0]
         main = 'assets/css/curatorial.css'

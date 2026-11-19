@@ -92,6 +92,20 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
  if(!cs.ok||!ps.ok||!es.ok)throw Error('Catalog data unavailable');
  const [cols,all,bfhf]=await Promise.all([cs.json(),ps.json(),es.json()]);
  const params=new URLSearchParams(location.search),yearId=params.get('bfhf_year'),eventKey=params.get('event');
+ // A retired thematic collection without a selected photograph opens its successor.
+ if(!inlineCollection&&!yearId&&params.get('collection')==='environmental'&&!params.get('photo')){
+  const next=new URL(location.href);
+  next.searchParams.set('collection','community-gatherings');
+  location.replace(next.href);return;
+ }
+ // Preserve existing gallery citations when photographs move between thematic collections.
+ if(!inlineCollection&&!yearId&&params.get('photo')&&params.get('collection')){
+  const record=all.find(p=>p.id===params.get('photo')&&p.published!==false);
+  if(record&&record.collection_id!==params.get('collection')){
+   const next=new URL(location.href);next.searchParams.set('collection',record.collection_id);
+   location.replace(next.href);return;
+  }
+ }
  let isYear=false;
  if(yearId&&!inlineCollection){
   const cfg=bfhf.years&&bfhf.years[yearId];if(!cfg)throw Error('BFHF year not found');

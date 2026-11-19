@@ -176,17 +176,13 @@ def check(root: Path) -> tuple[int, int]:
             raise ValueError(f"{route}: no public photographs")
         checked += 1
 
-    # Portraits uses the direct photographic gallery; Environmental retains an interior gallery card.
+    # Portraits is the remaining portrait collection; Environmental is a legacy redirect.
     if "portraits" not in direct_ids or "environmental" in direct_ids:
-        raise ValueError("Portraits must be direct and Environmental must keep its card layout")
-    for cid, page_name in (("environmental", "environmental.html"),):
-        thematic_cards = cards(read(root, page_name), "archive-event")
-        display = collection_map[cid].get("display_title") or collection_map[cid]["title"]
-        if len(thematic_cards) != 1 or thematic_cards[0][0] != display:
-            raise ValueError(f"{page_name}: card title must match gallery heading {display!r}")
-        if parse_qs(urlsplit(thematic_cards[0][1]).query).get("collection") != [cid]:
-            raise ValueError(f"{page_name}: gallery card must link to {cid}")
-        checked += 1
+        raise ValueError("Portraits must remain a direct photographic collection")
+    if "environmental" in collection_map or "environmental" in subject_map:
+        raise ValueError("Environmental gallery was not retired")
+    if 'festivals-parades.html' not in read(root, 'environmental.html'):
+        raise ValueError("Legacy Environmental page must link to its successor")
 
     # Published civic subjects sit under exactly one thematic parent; archival galleries stay unchanged.
     groups = json.loads(read(root, "data/collection-groups.json"))

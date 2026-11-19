@@ -4,10 +4,10 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 | Role | Applies to | Rendering source | Intentional geometry |
 | --- | --- | --- | --- |
-| Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Recreation & Events, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
+| Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Recreation & Events, Portraits | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
 | Occasion/event index | BFHF years, BRG and thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
-| Direct photographic collection page | Event: Dellums gala; thematic: Community Baseball, Gatherings and Parades, Portraits | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
+| Direct photographic collection page | Event: Dellums gala; thematic: Community Sports, Festivals and Parades, Political Gatherings, Portraits | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
 
 ## Collection-preview contract
@@ -15,7 +15,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 1. Both Home and Collections use `collection-card-wrap > a.collection-card + p.featured-photo-credit`; **the whole card** links to the introduction. No link is nested in that anchor.
 2. The same collection uses the same photographic image, public subject title, destination and archival-record link on both pages; Home may have shorter text, and HTML heading levels appropriately differ.
 3. The credit is a separate subdued line **after the closing card link**: `Photograph by Jacob Blanchette · View photo record and citation →`. The link points to that specific published photograph, not automatically to the card's collection. Do not attribute an unattributed image to Jacob by layout convention.
-4. Every theme uses normal grid cells, even when only one collection is published. Portraiture now displays two published photographic collection cards, **Portraits** and **Environmental**, under the same preview-card contract as the other themes.
+4. Every theme uses normal grid cells, even when only one collection is published. Portraiture now displays one published photographic collection card, **Portraits**, under the same preview-card contract as the other themes.
 5. Load `assets/css/collection-previews.css` after the page and curatorial styles on both pages, so there is one preview design to maintain.
 6. **Preview call to action:** Every linked collection preview on both Home and Collections uses the exact visible label `Explore the collection →`, regardless of the subject title or destination. It appears once inside the linked card as `<span class="textlink">` and navigates with the whole card to the appropriate collection introduction. Do not reuse this label mechanically for deeper year, event, photograph, or document navigation, where the action has a different role.
 
@@ -23,10 +23,10 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 Community & Civic Life uses two public **parent collection** previews on Home and Collections: **Politics & Activism** and **Recreation & Events**. Their metadata and published subjects are maintained in `data/collection-groups.json`. Only published subjects belong on their index cards.
 
-- Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) → the existing 1987 gala gallery.
-- Recreation & Events → `community.html` → **Community Baseball** (`community-baseball.html`): its historical description and five published ball-field photographs appear together, with no intervening Sports level. Other team portraits remain separate and unpublished.
+- Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) and Political Gatherings (`political-gatherings.html`). The latter is an unidentified gathering interpreted by the collection steward as probably political; its eleven approved public photographs, including JB-000359, appear directly below the description, without an extra card.
+- Recreation & Events → `community.html` → **Community Sports** (`community-sports.html`) and **Festivals and Parades** (`festivals-parades.html`). Sports contains five existing ball-field photographs and three youth-team photographs; Festivals and Parades includes the mounted-rider procession, a singer beside an upright bassist, and four outdoor scenes formerly in Environmental. These thematic groups do not imply a single documented event. Permanent photo IDs and internal gallery identifiers remain stable.
 - The existing gallery identifiers, original subject pages, archival item IDs, and publication permissions remain unchanged. `data/subjects.json` records `parent_group_id` to keep group membership explicit.
-- Review possible future groupings such as **Gatherings & Parades** separately before making public changes. Do not add unpublished photographs to a published grouping without approval.
+- Keep probable political affiliation distinct from documented event identification: no specific organization, campaign, protest or demonstration is established. JB-000359 is included by steward judgment, not verified original co-location. Other unapproved photographs, including the elephant sequence JB-000411–JB-000413 and mounted riders JB-000415, remain private. Legacy `environmental.html`, `community-baseball.html` and `gatherings-parades.html` pages redirect to their successors; gallery citation redirects preserve older photo links.
 - Parent index cards use the same `archive-event` visual grammar for a published subject introduction as occasion cards use for gallery navigation. Preview credit lines stay outside the whole-card anchors; interior cards do not acquire duplicate credit lines.
 
 ## Interior-card contract

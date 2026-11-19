@@ -37,11 +37,22 @@
     "parent_group_id": "politics-activism"
   },
   {
+    "id": "political-gatherings",
+    "subject_type": "topic",
+    "title": "Political Gatherings",
+    "theme": "community-civic-life",
+    "page": "political-gatherings.html",
+    "collection_ids": [
+      "political-gatherings"
+    ],
+    "parent_group_id": "politics-activism"
+  },
+  {
     "id": "community-baseball",
     "subject_type": "topic",
-    "title": "Community Baseball",
+    "title": "Community Sports",
     "theme": "community-civic-life",
-    "page": "community-baseball.html",
+    "page": "community-sports.html",
     "collection_ids": [
       "community-baseball"
     ],
@@ -50,9 +61,9 @@
   {
     "id": "community-gatherings",
     "subject_type": "topic",
-    "title": "Gatherings and Parades",
+    "title": "Festivals and Parades",
     "theme": "community-civic-life",
-    "page": "gatherings-parades.html",
+    "page": "festivals-parades.html",
     "collection_ids": [
       "community-gatherings"
     ],
@@ -66,16 +77,6 @@
     "page": "portraits.html",
     "collection_ids": [
       "portraits"
-    ]
-  },
-  {
-    "id": "environmental",
-    "subject_type": "topic",
-    "title": "Environmental",
-    "theme": "portraiture",
-    "page": "environmental.html",
-    "collection_ids": [
-      "environmental"
     ]
   }
 ]
