@@ -1,75 +1,77 @@
-# Jacob Blanchette Photography Archive — draft website
+# Jacob Blanchette Photography Archive — public website
 
-This public repository contains the working website for the Jacob Blanchette Photography Archive. The collection steward has approved provisional public presentation of the BFHF images. Historical identifications, rights documentation, and higher-quality digitization are still under review; a public repository makes all committed assets accessible even if GitHub Pages is not enabled. The biography contains family-reported information under verification, and the portrait has an explicitly labeled AI-enhanced presentation image alongside a documentary phone capture.
+This repository contains the public website for the **Jacob Blanchette Photography Archive**. It presents selected photographs, historically grounded collection introductions and a biography of the photographer. The website is a working publication: identifications, historical context, rights, and digitization continue to be reviewed.
 
-## New: Black Repertory Group 1990 album
+**This repository is public.** Committing an image here makes that file publicly accessible even when the website carries a search-engine `noindex` directive. Do not commit private research, unapproved images, unredacted contact information, full-resolution archival masters, or sensitive catalog fields.
 
-- `brg-1990.html`: introduction to the album's documented 25th anniversary title page (July 20–22, 1990), original cover and opening-page photographs.
-- `gallery.html?collection=brg-1990`: tiled gallery and slideshow, with text search and filter by provisional album page P09–P14.
-- `data/photos.json`: 21 provisional photographs, identifiers `JB-000002` through `JB-000023`, excluding private business card `JB-000021`. The BFHF gallery is separately cataloged with 35 actual collection objects.
-- `assets/images/brg-1990/`: small first-pass WebP derivatives made by conventional cropping and tonal adjustment, **not generative AI**; includes cover and title page.
-- **Important:** Individual photograph dates, subject identifications, original photographer attribution, exact page order, crop boundaries, and publication rights require review. The printed title page establishes the album's stated celebration dates, not each print's date. Public GitHub repositories expose assets even if GitHub Pages is disabled.
-- The authoritative item-level catalog and original-arrangement photographs remain in the **private** `archive-catalog` repository. Do not publish internal file metadata or unreviewed business-card contact information.
+## Public pages and editorial structure
 
-## Website files
-- `index.html`: homepage and portrait placeholder
-- `biography.html`: preliminary biography
-- `collections.html`: collections index
-- `bfhf.html`: Black Filmmakers Hall of Fame introduction
-- `gallery.html?collection=bfhf-pilot`: searchable tiled gallery and slideshow
-- `about.html`: archival project description
-- `assets/css/site.css`: responsive design
-- `assets/js/gallery.js`: search, pagination, image viewer
-- `data/collections.json` and `data/photos.json`: public collection metadata
+| Page or route | Purpose |
+| --- | --- |
+| `index.html` | Home and selected collection previews |
+| `collections.html` | Collection overview |
+| `biography.html` | Jacob Blanchette's public biography |
+| `bfhf.html`, `bfhf-1987.html`, `bfhf-1988.html`, `bfhf-1990.html` | Black Filmmakers Hall of Fame history and year/occasion navigation |
+| `brg-1990.html` | Black Repertory Group organization-level introduction and gallery links, including 1985, building-campaign, and 1990 collections |
+| `politics-activism.html` | Politics & Activism parent collection |
+| `dellums-1987.html`, `political-gatherings.html` | Direct photographic presentations for the Dellums gala and provisional political gatherings |
+| `community.html` | Recreation & Events parent collection |
+| `community-sports.html`, `festivals-parades.html` | Direct community sports and festivals/parades galleries |
+| `portraits.html` | Direct Portraits gallery |
+| `gallery.html?collection=...` | Individual gallery and permanent-ID photographic records |
+| `about.html` | Purpose and stewardship of the archive |
 
-## Black Filmmakers Hall of Fame — provisional gallery
+Some older routes, including `community-baseball.html`, `gatherings-parades.html` and `environmental.html`, are maintained as redirects; do not treat them as separate current collections.
 
-- `bfhf.html`: BFHF history and collection introduction.
-- `gallery.html?collection=bfhf-pilot`: gallery of 35 cataloged binder objects (one printed awards announcement, 27 mounted photographic prints, seven provisional film/contact assemblies).
-- `assets/images/bfhf/`: reduced-resolution, non-generative presentation crops; `assets/images/bfhf/as-found/`: 17 documentary binder-page reproductions for comparison.
-- The expanded viewer switches between the cropped image and the binder page as photographed. The latter is **not a preservation-grade scan of an individual print**. Item IDs are displayed in the expanded viewer, not beneath thumbnails.
-- These are provisional exhibition images; no new AI restoration was applied to the BFHF gallery, and the image-treatment review has not yet been carried out as an image replacement campaign. Preserve source captures and master files in private storage.
-- The 1987 printed program and the Chicago June 1987 contact frames do not individually date all items. Attribution to Jacob Blanchette is family-reported; individual people, exposure dates, and rights documentation remain under research.
+## How the website is assembled
 
-## View locally
-Run `python3 -m http.server 8000` in the repository folder, then open `http://localhost:8000/`. Loading the gallery data requires HTTP rather than opening the file directly.
+- `data/photos.json`: public, approved image and descriptive records. It is **not** the authoritative internal item catalog.
+- `data/collections.json`, `data/subjects.json`, `data/collection-groups.json`: gallery, subject, and parent-category metadata.
+- `data/bfhf-events.json`: BFHF year and documented occasion/program groupings.
+- `data/direct-collection-pages.json`: historical and thematic text for direct photographic pages.
+- `templates/direct-collection-page.html`, `scripts/build_direct_collection_pages.py`: shared rendering of direct collection pages.
+- `assets/images/`: reduced-resolution public derivatives only.
+- `assets/css/`, `assets/js/`: shared presentation and photographic viewer behavior.
+- [`docs/presentation-standards.md`](docs/presentation-standards.md): **current** layout, navigation, card, spacing, and editorial interaction contract.
 
-## First cataloged portrait — JB-000001
-The homepage displays `assets/images/JB-000001_enhanced_web.webp`, derived by generative AI from a phone photograph of a print. The biography provides a comparison with `assets/images/JB-000001_phone_web.webp`. `data/portrait.json` provides public-facing metadata. Both files are resized derivatives for web display. The original phone capture and full-resolution AI result are retained outside the public repository, and the underlying physical print's date, photographer, and original container are not yet documented. Do not mistake generative restoration for archival reproduction.
+The museum-style introductory copy focuses on historical subjects and events. Item provenance, exposure-date qualifications, sources, and detailed image records stay in appropriate source notes and archival records. Published collection membership is not proof that an event, person, location or individual exposure date has been verified.
 
-## Add photographs
-Use cataloged IDs and approved web-resolution derivatives in `data/photos.json`. The BFHF demonstration entries have already been replaced by 35 provisional gallery records. Place subsequent approved display files in collection-specific image directories and point each record's `image` field to its relative path. Do **not** put original phone photographs, TIFF masters, confidential archival metadata, or unreleased photographs in this public repository. Keep those in appropriately backed-up private storage.
+## Private source of truth and work continuity
 
-Records can include `id`, `collection_id`, `order`, `title`, `caption`, `description`, `people`, `date`, `place`, `original_group`, `image`, `identification_status`, `digitization_tier`, and `published`. Review any original storage-location metadata before releasing it publicly.
+Internal metadata, permanent `JB-######` identifiers, digital file IDs, original arrangement, source/claim registers, rights review and project coordination are managed in the separate **private** `jacob-blanchette-archive/archive-catalog` repository. It contains `documentation/PROJECT_STATUS.md`, `DECISIONS.md`, `RESEARCH_TODO.md` and `SESSION_WORKFLOW.md`, which are the handoff for new ChatGPT working conversations. Their contents are intentionally not copied into this public repository.
 
-## Publication
-This repository is public, and provisional public display of the BFHF collection has been approved by the collection steward. GitHub Pages deployment has **not been verified in this repository review**. HTML pages retain `noindex,nofollow` because the site is a working historical archive, not yet approved for search-engine discovery. This does **not** provide privacy. Pages can be configured in repository settings using `main` and `/(root)`; remove `noindex` only after a separate discovery-readiness review.
+This public repository is the authority for **what the website code and public metadata currently display**. Publication approval, documentary evidence, and preservation status must be checked in the private repository and against original materials. Do not use this README as a live progress tracker.
 
-## Historical sources
-- [Oakland Public Library — Black Filmmakers Hall of Fame collection](https://oaklandlibrary.org/archival_post/black-filmmakers-hall-of-fame-collection-1974-2015/)
-- [Indiana University Black Film Center & Archive](https://www.bfca.iu.edu/)
+## Work locally
 
-These institutional sources provide general context, not verification for particular photo captions or every family-reported biographical detail.
-
-## Gallery consistency check
-
-Before publishing a change to an event/occasion gallery card, gallery title, `data/collections.json`, `data/bfhf-events.json`, or the shared gallery layout, run:
+Run a local HTTP server from the repository root:
 
 ```bash
-python3 scripts/check_gallery_contract.py
+python3 -m http.server 8000
 ```
 
-This standard-library check verifies that the BFHF and BRG event/occasion card titles match their destination gallery headings and that the shared `gallery-source-note` stays below the photographic grid rather than under the Back link. It also checks the gallery's field fallbacks and responsive hidden state. Historical verification, copyright review, and browser/mobile inspection remain separate requirements. The skill's `references/site-presentation.md` documents the editorial rule.
+Open `http://localhost:8000/`; dynamic gallery data should be tested over HTTP, not through `file://`.
 
-## Presentation standards and checks
-
-The role-based card system and editorial hierarchy are documented in [`docs/presentation-standards.md`](docs/presentation-standards.md). The **Collections** design is the reference for the **Home and Collections** preview cards, implemented once in `assets/css/collection-previews.css`. Interior **BFHF year cards** and shared **BFHF/BRG/Dellums occasion cards** have deliberately different spacing, proportions and information density, defined in `assets/css/bfhf-years.css`; consistency applies **within each role**, not between roles. The preview photographer credit and item-level archival citation appear below (outside) the linked card. Portraiture's Home placeholder is not linked until a substantive collection is published.
-
-Before publication of relevant site or metadata changes, run:
+Before publishing relevant content or structural changes:
 
 ```bash
+python3 scripts/build_direct_collection_pages.py --check
 python3 scripts/check_preview_contract.py
 python3 scripts/check_gallery_contract.py
+python3 scripts/check_spacing_contract.py
 ```
 
-These are structural checks only. Review desktop/mobile appearance, navigation, image fidelity, attribution and historical claims separately.
+When changing direct-page content, edit the manifest/template and generate the affected HTML with `python3 scripts/build_direct_collection_pages.py`, then run the checks. These checks verify structural conventions only; independently review images, references, links, credits, document interactions, responsiveness, and real browser rendering.
+
+## Current operating safeguards
+
+- Use **Jacob Blanchette** as the public name. His formal full name, **Jacob Samuel Blanchette Jr.**, belongs in appropriate biographical or authority-record context.
+- Never infer photographic authorship or reproduction rights from possession of a print; photographic attribution and legal permission require separate evidence.
+- Clearly distinguish faithful scans/crops from any AI-enhanced derivative. The public biography uses a non-generative portrait reproduction for JB-000001.
+- Preserve the site's existing `noindex,nofollow` policy until the collection steward explicitly changes it. This is **not** access control.
+- Do not imply that an internally cataloged object is approved for public display. Keep master files in separately backed-up, private preservation storage.
+- Before declaring work complete, verify its GitHub commit and actual site behavior; a commit alone does not establish successful live-site or mobile-browser verification.
+
+## Research context
+
+For general historical context, consult institutional sources such as the [Oakland Public Library's Black Filmmakers Hall of Fame collection](https://oaklandlibrary.org/archival_post/black-filmmakers-hall-of-fame-collection-1974-2015/) and the [Indiana University Black Film Center & Archive](https://www.bfca.iu.edu/). These support background history, not the identification, authorship, or exposure date of each photograph.
