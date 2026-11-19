@@ -73,6 +73,24 @@
       "gallery_eyebrow": "The photographs",
       "gallery_heading": "Photographs of gatherings and parades",
       "documents": []
+    },
+    {
+      "page_type": "thematic",
+      "path": "portraits.html",
+      "collection_id": "portraits",
+      "page_title": "Portraits",
+      "page_eyebrow": "Portraiture",
+      "page_lead": "Close portraits centered on expression, gesture, and composition.",
+      "parent_href": "collections.html",
+      "parent_label": "All collections",
+      "history_eyebrow": "The photographs",
+      "history_heading": "Expression and gesture",
+      "history_paragraphs": [
+        "Portraiture brings attention to the person photographed. In these photographs, framing, expression, and gesture take precedence over the surrounding setting. The identities, dates, and locations of individual portraits remain under research."
+      ],
+      "gallery_eyebrow": "Portraiture",
+      "gallery_heading": "The portraits",
+      "documents": []
     }
   ]
 }

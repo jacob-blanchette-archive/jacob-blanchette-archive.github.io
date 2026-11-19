@@ -176,8 +176,10 @@ def check(root: Path) -> tuple[int, int]:
             raise ValueError(f"{route}: no public photographs")
         checked += 1
 
-    # Topic-led collections use the same matched gallery title contract.
-    for cid, page_name in (("portraits", "portraits.html"), ("environmental", "environmental.html")):
+    # Portraits uses the direct photographic gallery; Environmental retains an interior gallery card.
+    if "portraits" not in direct_ids or "environmental" in direct_ids:
+        raise ValueError("Portraits must be direct and Environmental must keep its card layout")
+    for cid, page_name in (("environmental", "environmental.html"),):
         thematic_cards = cards(read(root, page_name), "archive-event")
         display = collection_map[cid].get("display_title") or collection_map[cid]["title"]
         if len(thematic_cards) != 1 or thematic_cards[0][0] != display:
