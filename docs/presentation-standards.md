@@ -7,7 +7,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 | Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Recreation & Events, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
 | Occasion/event index | BFHF years, BRG and thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
-| Direct photographic collection page | Event: Dellums gala; thematic: Sports | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
+| Direct photographic collection page | Event: Dellums gala; thematic: Community Baseball | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
 
 ## Collection-preview contract
@@ -23,9 +23,9 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 Community & Civic Life uses two public **parent collection** previews on Home and Collections: **Politics & Activism** and **Recreation & Events**. Their metadata and published subjects are maintained in `data/collection-groups.json`. Only published subjects belong on their index cards.
 
 - Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) → the existing 1987 gala gallery.
-- Recreation & Events → `community.html` → **Sports** (`community-baseball.html`, stable public route) → the existing **Community Baseball** photographic grouping. Other sports-team portraits may be discussed, but remain unpublished.
+- Recreation & Events → `community.html` → **Community Baseball** (`community-baseball.html`): its historical description and five published ball-field photographs appear together, with no intervening Sports level. Other team portraits remain separate and unpublished.
 - The existing gallery identifiers, original subject pages, archival item IDs, and publication permissions remain unchanged. `data/subjects.json` records `parent_group_id` to keep group membership explicit.
-- Continue reviewing the possible future titles **Sports**, **Gatherings & Parades**, and other reported political/community subjects before making additional public changes. No new unpublished photograph is exposed by creating these parent pages.
+- Review possible future groupings such as **Gatherings & Parades** separately before making public changes. Do not add unpublished photographs to a published grouping without approval.
 - Parent index cards use the same `archive-event` visual grammar for a published subject introduction as occasion cards use for gallery navigation. Preview credit lines stay outside the whole-card anchors; interior cards do not acquire duplicate credit lines.
 
 ## Interior-card contract
@@ -38,7 +38,7 @@ Community & Civic Life uses two public **parent collection** previews on Home an
 
 ## Gallery and writing contract
 
-- An occasion-card title matches its destination gallery title. A direct page may have a broader historical or subject heading (Sports) and a narrower photographic heading (Community Baseball), preserving the gallery's established name.
+- An occasion-card title matches its destination gallery title. A direct page such as Community Baseball can present a focused description and its photographs without an additional subject-level index.
 - Lead with the historic occasion and photographed activity. Keep counts, crop workflow and uncertain binder assignments out of public introductory prose.
 - Put qualified dates, attribution/rights caveats and documentary provenance in a restrained `gallery_source_note` **after** the photographic grid; full evidence remains in item records.
 - Preserve permanent `JB-######` IDs, approved publication scope, photo sources, rights and as-found arrangement.
@@ -90,6 +90,6 @@ The common `templates/direct-collection-page.html` and optional `templates/compo
 
 **Page order:** subject title and introduction → historical/event or thematic context → associated published document when relevant → photographic grid → concise source note. Shared spacing comes from `.direct-collection-gallery` and `--space-internal-divider`. The existing `assets/js/gallery.js` viewer reads `#photo-grid[data-inline-collection="<collection_id>"][data-photographs-only="true"]` and the approved public records; do not duplicate images, alter IDs, or intermingle printed ephemera in photograph counts. Canonical `gallery.html?collection=...` URLs remain accessible for record citations and older links.
 
-**Current variants:** `dellums-1987.html` presents the May 31, 1987 gala and 41 published photographs, with its invitation separately viewable. `community-baseball.html` now presents **Sports**, retaining the historic five-image **Community Baseball** grouping. Its broader narrative may mention the unexhibited **ALL WRIGHT** team and a men's trophy portrait with **BK** lettering without equating them with the outdoor ball game or publishing their photographs. Their dates, sports, exact names, and affiliations are unverified. The parent index remains **Recreation & Events** and the established URLs and collection IDs do not change.
+**Current variants:** `dellums-1987.html` presents the May 31, 1987 gala and 41 published photographs, with its invitation separately viewable. `community-baseball.html` presents **Community Baseball** directly, with a focused description and five approved ball-field photographs. The separate **ALL WRIGHT** and men's trophy team portraits are not included in this grouping and remain unpublished. No intermediate Sports level is shown; the parent remains **Recreation & Events**, and established URLs and IDs are unchanged.
 
 Validate the generated pages, gallery contract, preview contract and spacing contract. Inspect responsive layouts, viewer behavior, source notes, keyboard interaction, and archival attribution separately.
