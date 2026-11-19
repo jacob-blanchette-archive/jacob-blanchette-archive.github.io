@@ -1,0 +1,29 @@
+name: Website contracts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify direct collection pages are current
+        run: python3 scripts/build_direct_collection_pages.py --check
+      - name: Check preview cards
+        run: python3 scripts/check_preview_contract.py
+      - name: Check gallery contract
+        run: python3 scripts/check_gallery_contract.py
+      - name: Check spacing contract
+        run: python3 scripts/check_spacing_contract.py
