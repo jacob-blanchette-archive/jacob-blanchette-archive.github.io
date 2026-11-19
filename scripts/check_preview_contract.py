@@ -116,12 +116,16 @@ def check(root: Path) -> int:
                 raise ValueError(f"{page}: missing interior card role {name}")
         if 'assets/css/bfhf-years.css' not in source.split("</head>", 1)[0]:
             raise ValueError(f"{page}: missing shared interior-card stylesheet")
-    # Dellums is a single documented occasion: published photographs follow the historical prose.
-    dellums = read(root, 'dellums-1987.html')
-    if 'id="photo-grid"' not in dellums or 'data-inline-collection="dellums-1987"' not in dellums:
-        raise ValueError('Dellums: missing embedded photographic gallery')
-    if 'class="archive-event"' in dellums or 'class="collection-feature-figure"' in dellums:
-        raise ValueError('Dellums: unexpected intermediate occasion card or redundant featured photograph')
+    # Shared role: event or thematic collection with photographs below context.
+    direct_pages = json.loads(read(root, 'data/direct-collection-pages.json'))['pages']
+    if {p['page_type'] for p in direct_pages} != {'event', 'thematic'}:
+        raise ValueError('Expected both direct photographic page variants')
+    for spec in direct_pages:
+        source = read(root, spec['path'])
+        if f'data-inline-collection="{spec["collection_id"]}"' not in source:
+            raise ValueError(f'{spec["path"]}: missing direct gallery')
+        if 'class="archive-event"' in source or 'class="collection-feature-figure"' in source:
+            raise ValueError(f'{spec["path"]}: unexpected intermediate card')
     return len(home)
 
 

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "page_type": "event",
+      "path": "dellums-1987.html",
+      "collection_id": "dellums-1987",
+      "page_title": "Ronald V. Dellums",
+      "page_eyebrow": "Community & Civic Life · Oakland and Berkeley",
+      "page_lead": "Photographs from a 1987 Oakland celebration honoring Ronald V. Dellums’s first twenty years in elected public service.",
+      "parent_href": "politics-activism.html",
+      "parent_label": "Politics & Activism",
+      "history_eyebrow": "May 31, 1987 · Oakland",
+      "history_heading": "Twenty Years of Public Service",
+      "history_paragraphs": [
+        "Ronald V. Dellums began his elected career on the Berkeley City Council in 1967 and entered the U.S. House of Representatives in January 1971. He became known for his opposition to the Vietnam War and military spending, his advocacy for civil rights, and his work against apartheid in South Africa. For additional context, see <a href=\"https://history.house.gov/People/Detail/12109\">the U.S. House of Representatives’ historical biography</a>.",
+        "On May 31, 1987, supporters and guests gathered at Oakland’s Hyatt Regency Hotel to celebrate twenty years since Dellums first took elected office. Photographs preserved with the celebration show speeches, musical performances, portraits of guests, and the presentation of a commemorative plaque."
+      ],
+      "gallery_eyebrow": "The photographs",
+      "gallery_heading": "Photographs of the celebration",
+      "documents": [
+        {
+          "trigger_id": "dellums-1987-invitation",
+          "href": "gallery.html?collection=dellums-1987&photo=JB-000103",
+          "image": "assets/images/dellums-1987/printed_invitation.webp",
+          "title": "Invitation to the 1987 Ronald V. Dellums gala",
+          "type": "document",
+          "item_id": "JB-000103",
+          "creator": "Creator not established",
+          "credit": "Printed invitation · Creator not established",
+          "alt": "Printed invitation for the May 31, 1987 Ronald V. Dellums gala in Oakland",
+          "date": "1987 (event date: May 31; printing date not established)",
+          "context": "Invitation for A Gala Celebration in Honor of Congressman Ronald V. Dellums at the Hyatt Regency Hotel, Oakland, advertising guest appearances and performances. The advertised program does not establish any named person's attendance or individual photographic exposure dates.",
+          "collection_title": "Ronald V. Dellums — Twenty Years of Public Service",
+          "collection_id": "dellums-1987",
+          "aria_label": "View the gala invitation in the document viewer",
+          "label": "View original invitation →"
+        }
+      ]
+    },
+    {
+      "page_type": "thematic",
+      "path": "community-baseball.html",
+      "collection_id": "community-baseball",
+      "page_title": "Sports",
+      "page_eyebrow": "Community & Civic Life",
+      "page_lead": "Community teams, neighborhood games, and the social life of sport.",
+      "parent_href": "community.html",
+      "parent_label": "Recreation & Events",
+      "history_eyebrow": "Community sport",
+      "history_heading": "Teams and Games",
+      "history_paragraphs": [
+        "At an outdoor ball field, players take turns at bat as a catcher, other participants, and spectators gather nearby. These photographs record both the game and the people drawn together around it. The field’s location, the date, and the participants have not been established.",
+        "Other photographs in the collection show a women’s team in uniforms marked “ALL WRIGHT” and an indoor portrait of men posing with a trophy, some wearing “BK” lettering. The sports, team identities, and dates of these separate portraits remain under research; they are not included in the photographs below."
+      ],
+      "gallery_eyebrow": "The photographs",
+      "gallery_heading": "Community Baseball",
+      "documents": []
+    }
+  ]
+}

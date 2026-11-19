@@ -140,31 +140,44 @@ def check(root: Path) -> tuple[int, int]:
     if not dellums or dellums["subject_type"] != "person":
         raise ValueError("Dellums should be a person subject")
     dellums_page = read(root, dellums["page"])
-    # The documented Dellums occasion embeds its photographs below the narrative.
-    expected_title = collection_map["dellums-1987"].get("display_title")
-    if cards(dellums_page, "archive-event"):
-        raise ValueError("Dellums single-occasion page must not introduce a gallery card")
-    if f"<h2>{expected_title}</h2>" not in dellums_page:
-        raise ValueError("Dellums occasion heading must match the gallery display title")
-    if 'id="photographs"' not in dellums_page or 'id="photo-grid"' not in dellums_page:
-        raise ValueError("Dellums must show photographs directly below the historical introduction")
-    if 'data-inline-collection="dellums-1987"' not in dellums_page or 'data-photographs-only="true"' not in dellums_page:
-        raise ValueError("Dellums grid must load its approved photographs without printed objects")
-    if 'id="photo-dialog"' not in dellums_page or 'id="viewer-stage"' not in dellums_page:
-        raise ValueError("Dellums inline photographs need the shared image viewer")
-    if 'src="assets/js/gallery.js"' not in dellums_page:
-        raise ValueError("Dellums inline gallery renderer is missing")
-    if dellums_page.index('class="prose collection-history"') > dellums_page.index('id="photo-grid"'):
-        raise ValueError("Dellums gallery must follow its historical prose")
-    if 'data-id="JB-000103"' not in dellums_page or 'data-type="document"' not in dellums_page:
-        raise ValueError("Dellums invitation must use the shared document viewer")
-    if 'src="assets/js/editorial-photo.js"' not in dellums_page:
-        raise ValueError("Dellums document viewer script is missing")
-    checked += 1
+    # Reusable direct photographic collection pages: one event and one thematic.
+    direct = json.loads(read(root, "data/direct-collection-pages.json"))["pages"]
+    all_photos = json.loads(read(root, "data/photos.json"))
+    direct_ids = set()
+    for spec in direct:
+        route, cid = spec["path"], spec["collection_id"]
+        if cid in direct_ids or collection_map[cid]["intro"] != route:
+            raise ValueError(f"{route}: inconsistent direct collection identity")
+        direct_ids.add(cid)
+        page = read(root, route)
+        if f'<h1 class="page-title">{spec["page_title"]}</h1>' not in page:
+            raise ValueError(f"{route}: title mismatch")
+        if f'<h2>{spec["history_heading"]}</h2>' not in page:
+            raise ValueError(f"{route}: history heading mismatch")
+        if f'id="direct-gallery-heading">{spec["gallery_heading"]}</h2>' not in page:
+            raise ValueError(f"{route}: photographic heading mismatch")
+        if f'data-inline-collection="{cid}"' not in page or 'data-photographs-only="true"' not in page:
+            raise ValueError(f"{route}: missing in-page gallery configuration")
+        if f'data-direct-collection-type="{spec["page_type"]}"' not in page:
+            raise ValueError(f"{route}: direct page role missing")
+        if cards(page, "archive-event") or 'class="collection-feature-figure"' in page:
+            raise ValueError(f"{route}: redundant event card or hero")
+        if not (page.index('class="prose collection-history"') < page.index('id="photographs"') <
+                page.index('id="photo-grid"') < page.index('id="gallery-notice"')):
+            raise ValueError(f"{route}: photographs must follow interpretation and precede source note")
+        for required in ('id="photo-dialog"', 'id="viewer-stage"', 'src="assets/js/gallery.js"'):
+            if required not in page:
+                raise ValueError(f"{route}: missing shared viewer")
+        for item in spec.get("documents", []):
+            if f'data-id="{item["item_id"]}"' not in page or 'src="assets/js/editorial-photo.js"' not in page:
+                raise ValueError(f"{route}: documentary viewer missing")
+        if not any(p["collection_id"] == cid and p.get("published") is not False and
+                   "Jacob Blanchette" in p.get("photographer", "") for p in all_photos):
+            raise ValueError(f"{route}: no public photographs")
+        checked += 1
 
     # Topic-led collections use the same matched gallery title contract.
-    for cid, page_name in (("community-baseball", "community-baseball.html"),
-                           ("portraits", "portraits.html"), ("environmental", "environmental.html")):
+    for cid, page_name in (("portraits", "portraits.html"), ("environmental", "environmental.html")):
         thematic_cards = cards(read(root, page_name), "archive-event")
         display = collection_map[cid].get("display_title") or collection_map[cid]["title"]
         if len(thematic_cards) != 1 or thematic_cards[0][0] != display:

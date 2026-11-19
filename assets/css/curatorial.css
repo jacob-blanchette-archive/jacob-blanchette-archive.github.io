@@ -261,7 +261,7 @@ select:focus-visible, summary:focus-visible { outline: 2px solid #444; outline-o
 /* A single documented occasion can be presented directly, without an intermediate card. */
 .single-occasion-actions{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 22px;margin-top:25px}
 .single-occasion-actions .editorial-photo-trigger{width:auto}
-.dellums-gallery-inline{margin-top:var(--space-internal-divider)}
+.direct-collection-gallery{margin-top:var(--space-internal-divider)}
 
 /* Shared museum-style organizational collection layouts. */
 .collection-feature-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:6%;align-items:start}
