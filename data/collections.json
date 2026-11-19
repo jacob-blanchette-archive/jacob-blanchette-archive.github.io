@@ -100,5 +100,47 @@
     "credits": "Photographs attributed to Jacob Blanchette by the collection steward; individual dates and rights status under review.",
     "theme": "arts-culture",
     "subject_id": "black-filmmakers-hall-of-fame"
+  },
+  {
+    "id": "community-baseball",
+    "title": "Community Baseball",
+    "display_title": "Community Baseball",
+    "eyebrow": "Community & Civic Life",
+    "status": "Initial curated photographic presentation · identification, dating and rights research ongoing",
+    "intro": "community-baseball.html",
+    "description": "Photographs of people playing baseball and gathering by a neighborhood ball field.",
+    "gallery_description": "Players take turns at bat while spectators and other participants gather beside an outdoor ball field. The photographs show moments of play and the social life surrounding the game.",
+    "gallery_source_note": "The exact date, location, event and participants remain unidentified. The photographs are presented as non-generative crops from office scans. Attribution to Jacob Blanchette is based on the collection steward; reproduction rights remain under review.",
+    "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
+    "theme": "community-civic-life",
+    "subject_id": "community-baseball"
+  },
+  {
+    "id": "portraits",
+    "title": "Portraits",
+    "display_title": "Portraits",
+    "eyebrow": "Portraiture",
+    "status": "Initial curated photographic presentation · identification, dating and rights research ongoing",
+    "intro": "portraits.html",
+    "description": "Close and carefully composed portraits emphasizing their subjects.",
+    "gallery_description": "An intimate close-up focuses on the expression and gesture of a man in a reflective pose.",
+    "gallery_source_note": "The sitter, exposure date and location have not been established. The photograph is presented as a non-generative crop from an office scan. Attribution is based on the collection steward; reproduction rights remain under review.",
+    "credits": "Photograph attributed to Jacob Blanchette by the collection steward.",
+    "theme": "portraiture",
+    "subject_id": "portraits"
+  },
+  {
+    "id": "environmental",
+    "title": "Environmental",
+    "display_title": "Environmental",
+    "eyebrow": "Portraiture",
+    "status": "Initial curated photographic presentation · identification, dating and rights research ongoing",
+    "intro": "environmental.html",
+    "description": "People photographed outdoors and in everyday settings, with the setting integral to the image.",
+    "gallery_description": "People converse, pose, and gather outdoors in residential and community settings. The surroundings remain visible alongside expressions and gestures.",
+    "gallery_source_note": "The photographs’ original physical sequence, exposure dates, precise locations and most identities are not established. These are non-generative crops from office scans. Attribution is based on the collection steward; reproduction rights remain under review.",
+    "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
+    "theme": "portraiture",
+    "subject_id": "environmental"
   }
 ]

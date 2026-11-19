@@ -114,7 +114,7 @@ def check(root: Path) -> tuple[int, int]:
     gallery_to_subject = {}
     for subj in subjects:
         sid = subj["id"]
-        if subj["subject_type"] not in {"person", "organization"}:
+        if subj["subject_type"] not in {"person", "organization", "topic"}:
             raise ValueError(f"{sid}: invalid subject_type")
         if not (root / subj["page"]).is_file():
             raise ValueError(f"{sid}: subject page not found: {subj['page']}")
@@ -151,6 +151,17 @@ def check(root: Path) -> tuple[int, int]:
     if 'src="assets/js/editorial-photo.js"' not in dellums_page:
         raise ValueError("Dellums document viewer script is missing")
     checked += len(dellums_cards)
+
+    # Topic-led collections use the same matched gallery title contract.
+    for cid, page_name in (("community-baseball", "community-baseball.html"),
+                           ("portraits", "portraits.html"), ("environmental", "environmental.html")):
+        thematic_cards = cards(read(root, page_name), "archive-event")
+        display = collection_map[cid].get("display_title") or collection_map[cid]["title"]
+        if len(thematic_cards) != 1 or thematic_cards[0][0] != display:
+            raise ValueError(f"{page_name}: card title must match gallery heading {display!r}")
+        if parse_qs(urlsplit(thematic_cards[0][1]).query).get("collection") != [cid]:
+            raise ValueError(f"{page_name}: gallery card must link to {cid}")
+        checked += 1
 
     # The common gallery template must not place a source note below Back.
     gallery = read(root, "gallery.html")

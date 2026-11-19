@@ -32,5 +32,35 @@
     "collection_ids": [
       "dellums-1987"
     ]
+  },
+  {
+    "id": "community-baseball",
+    "subject_type": "topic",
+    "title": "Community Baseball",
+    "theme": "community-civic-life",
+    "page": "community-baseball.html",
+    "collection_ids": [
+      "community-baseball"
+    ]
+  },
+  {
+    "id": "portraits",
+    "subject_type": "topic",
+    "title": "Portraits",
+    "theme": "portraiture",
+    "page": "portraits.html",
+    "collection_ids": [
+      "portraits"
+    ]
+  },
+  {
+    "id": "environmental",
+    "subject_type": "topic",
+    "title": "Environmental",
+    "theme": "portraiture",
+    "page": "environmental.html",
+    "collection_ids": [
+      "environmental"
+    ]
   }
 ]

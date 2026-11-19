@@ -4,9 +4,9 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 | Role | Applies to | Rendering source | Intentional geometry |
 | --- | --- | --- | --- |
-| Collection preview | Home and Collections: BFHF, BRG, Dellums | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
+| Collection preview | Home and Collections: BFHF, BRG, Dellums, Community Baseball, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
-| Occasion/event index | BFHF years, BRG, Dellums | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
+| Occasion/event index | BFHF years, BRG, Dellums, thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
 
 ## Collection-preview contract
@@ -14,7 +14,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 1. Both Home and Collections use `collection-card-wrap > a.collection-card + p.featured-photo-credit`; **the whole card** links to the introduction. No link is nested in that anchor.
 2. The same collection uses the same photographic image, public subject title, destination and archival-record link on both pages; Home may have shorter text, and HTML heading levels appropriately differ.
 3. The credit is a separate subdued line **after the closing card link**: `Photograph by Jacob Blanchette · View photo record and citation →`. The link points to that specific published photograph, not automatically to the card's collection. Do not attribute an unattributed image to Jacob by layout convention.
-4. Every theme uses normal grid cells, even when only one collection is published. Portraiture stays a quiet `Collection in development` label with no `Learn more` action until there is content worth navigating to.
+4. Every theme uses normal grid cells, even when only one collection is published. Portraiture now displays two published photographic collection cards, **Portraits** and **Environmental**, under the same preview-card contract as the other themes.
 5. Load `assets/css/collection-previews.css` after the page and curatorial styles on both pages, so there is one preview design to maintain.
 
 ## Interior-card contract
@@ -69,4 +69,4 @@ separately: automated structure checks cannot prove visual balance.
 
 ## Review before publication
 
-Run `python3 scripts/check_spacing_contract.py` for shared major-section and internal-divider rules. Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture behavior and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
+Run `python3 scripts/check_spacing_contract.py` for shared major-section and internal-divider rules. Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture previews and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
