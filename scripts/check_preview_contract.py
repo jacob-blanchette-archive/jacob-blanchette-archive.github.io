@@ -41,6 +41,8 @@ def previews(root: Path, page: str, photos: dict) -> dict:
         record = re.search(r'<a href="([^"]+)"[^>]*>', credit)
         if not (title and image and action and record):
             raise ValueError(f"{page}: incomplete preview card {destination}")
+        if unescape(action.group(1)).strip() != "Explore the collection →" or body.count('<span class="textlink">') != 1:
+            raise ValueError(f"{page}: collection preview must have one standard Explore the collection action: {destination}")
         if '<a ' in body or '<a\n' in body:
             raise ValueError(f"{page}: nested link inside preview card {destination}")
         if "Photograph by Jacob Blanchette" not in credit or "View photo record and citation" not in credit:

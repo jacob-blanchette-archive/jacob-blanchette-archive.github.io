@@ -17,6 +17,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 3. The credit is a separate subdued line **after the closing card link**: `Photograph by Jacob Blanchette · View photo record and citation →`. The link points to that specific published photograph, not automatically to the card's collection. Do not attribute an unattributed image to Jacob by layout convention.
 4. Every theme uses normal grid cells, even when only one collection is published. Portraiture now displays two published photographic collection cards, **Portraits** and **Environmental**, under the same preview-card contract as the other themes.
 5. Load `assets/css/collection-previews.css` after the page and curatorial styles on both pages, so there is one preview design to maintain.
+6. **Preview call to action:** Every linked collection preview on both Home and Collections uses the exact visible label `Explore the collection →`, regardless of the subject title or destination. It appears once inside the linked card as `<span class="textlink">` and navigates with the whole card to the appropriate collection introduction. Do not reuse this label mechanically for deeper year, event, photograph, or document navigation, where the action has a different role.
 
 ## Community & Civic Life grouping contract
 
