@@ -7,7 +7,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 | Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Recreation & Events, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
 | Occasion/event index | BFHF years, BRG and thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
-| Direct photographic collection page | Event: Dellums gala; thematic: Community Baseball, Gatherings and Parades, Portraits | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
+| Direct photographic collection page | Event: Dellums gala; thematic: Community Baseball, Gatherings and Parades, Political Gatherings, Portraits | `templates/direct-collection-page.html`, `data/direct-collection-pages.json`, `scripts/build_direct_collection_pages.py`, shared `assets/js/gallery.js` | Historical narrative followed by an inline grid of approved photographs using the shared research viewer; no intermediate card |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
 
 ## Collection-preview contract
@@ -23,10 +23,10 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 Community & Civic Life uses two public **parent collection** previews on Home and Collections: **Politics & Activism** and **Recreation & Events**. Their metadata and published subjects are maintained in `data/collection-groups.json`. Only published subjects belong on their index cards.
 
-- Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) → the existing 1987 gala gallery.
-- Recreation & Events → `community.html` → **Community Baseball** (`community-baseball.html`): its historical description and five published ball-field photographs appear together, with no intervening Sports level. Other team portraits remain separate and unpublished.
+- Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) and Political Gatherings (`political-gatherings.html`). The latter is an unidentified brick-building gathering interpreted by the collection steward as probably political; its ten approved public photographs appear directly below the description, without an extra card.
+- Recreation & Events → `community.html` → **Community Baseball** (`community-baseball.html`) and **Gatherings and Parades** (`gatherings-parades.html`). The latter currently shows a mounted-rider procession; brick-building photographs belong to Political Gatherings. Baseball remains a direct photographic page without an intermediate Sports level. Other team portraits remain separate and unpublished.
 - The existing gallery identifiers, original subject pages, archival item IDs, and publication permissions remain unchanged. `data/subjects.json` records `parent_group_id` to keep group membership explicit.
-- Review possible future groupings such as **Gatherings & Parades** separately before making public changes. Do not add unpublished photographs to a published grouping without approval.
+- Keep probable political affiliation distinct from documented event identification: no specific organization, campaign, protest or demonstration is established for the brick-building gathering. Do not publish other unapproved photographs, including the separate mounted-rider image JB-000415.
 - Parent index cards use the same `archive-event` visual grammar for a published subject introduction as occasion cards use for gallery navigation. Preview credit lines stay outside the whole-card anchors; interior cards do not acquire duplicate credit lines.
 
 ## Interior-card contract

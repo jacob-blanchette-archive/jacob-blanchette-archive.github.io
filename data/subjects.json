@@ -37,6 +37,17 @@
     "parent_group_id": "politics-activism"
   },
   {
+    "id": "political-gatherings",
+    "subject_type": "topic",
+    "title": "Political Gatherings",
+    "theme": "community-civic-life",
+    "page": "political-gatherings.html",
+    "collection_ids": [
+      "political-gatherings"
+    ],
+    "parent_group_id": "politics-activism"
+  },
+  {
     "id": "community-baseball",
     "subject_type": "topic",
     "title": "Community Baseball",
