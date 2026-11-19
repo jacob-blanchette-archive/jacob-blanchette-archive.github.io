@@ -65,6 +65,17 @@ def check(root: Path) -> int:
     overview = previews(root, "collections.html", photos)
     if home != overview:
         raise ValueError("Home and Collections previews differ in title, image, route or credit link")
+    # A theme preview opens the parent collection, not an individual Dellums or baseball subject.
+    groups = json.loads(read(root, "data/collection-groups.json"))
+    if [g["id"] for g in groups] != ["politics-activism", "community"]:
+        raise ValueError("Expected two Community & Civic Life parent collections")
+    for group in groups:
+        destination = group["page"]
+        expected = (group["title"], group["featured_image"], group["featured_photo_id"])
+        if destination not in home or home[destination][:3] != expected:
+            raise ValueError(f"{destination}: parent preview title, image or archival credit differs")
+    if any(p in home for p in ("dellums-1987.html", "community-baseball.html")):
+        raise ValueError("Thematic previews must link to group pages")
     portraiture = re.search(
         r'<section class="home-theme home-portraiture"[\s\S]*?</section>',
         read(root, "index.html"),

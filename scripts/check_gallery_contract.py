@@ -163,6 +163,29 @@ def check(root: Path) -> tuple[int, int]:
             raise ValueError(f"{page_name}: gallery card must link to {cid}")
         checked += 1
 
+    # Published civic subjects sit under exactly one thematic parent; archival galleries stay unchanged.
+    groups = json.loads(read(root, "data/collection-groups.json"))
+    seen_subjects = set()
+    for group in groups:
+        if group["theme"] != "community-civic-life":
+            raise ValueError(f"{group['id']}: unexpected theme")
+        page = read(root, group["page"])
+        if "collection-history" not in page or 'class="archive-event-grid"' not in page:
+            raise ValueError(f"{group['page']}: missing parent introduction or photograph index")
+        if not group["subject_ids"]:
+            raise ValueError(f"{group['id']}: empty public subject group")
+        for sid in group["subject_ids"]:
+            if sid not in subject_map or sid in seen_subjects:
+                raise ValueError(f"Missing or duplicated subject in groups: {sid}")
+            seen_subjects.add(sid)
+            subject = subject_map[sid]
+            if subject.get("parent_group_id") != group["id"]:
+                raise ValueError(f"{sid}: parent group mismatch")
+            if ('href="' + subject["page"] + '"') not in page or ('<h3>' + subject["title"] + '</h3>') not in page:
+                raise ValueError(f"{sid}: parent page missing the subject card")
+    if seen_subjects != {s["id"] for s in subjects if s["theme"] == "community-civic-life"}:
+        raise ValueError("Not all published civic subjects are present in parent groups")
+
     # The common gallery template must not place a source note below Back.
     gallery = read(root, "gallery.html")
     header_start = gallery.find('<section class="page-header">')

@@ -32,7 +32,8 @@
     "page": "dellums-1987.html",
     "collection_ids": [
       "dellums-1987"
-    ]
+    ],
+    "parent_group_id": "politics-activism"
   },
   {
     "id": "community-baseball",
@@ -42,7 +43,8 @@
     "page": "community-baseball.html",
     "collection_ids": [
       "community-baseball"
-    ]
+    ],
+    "parent_group_id": "community"
   },
   {
     "id": "portraits",
