@@ -7,7 +7,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 | Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Sports & Events, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
 | Occasion/event index | BFHF years, BRG and thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
-| Single-occasion feature | Dellums subject introduction (1987 gala) | `assets/css/curatorial.css` (`.collection-feature-row`, `.collection-feature-figure`, `.single-occasion-actions`) | Historical narrative and a prominent clickable photograph lead directly to the gallery, without an intermediate occasion card |
+| Single-occasion photographic gallery | Dellums subject introduction (1987 gala) | `assets/js/gallery.js`, `assets/css/site.css`, `assets/css/curatorial.css` | Historical narrative followed by an inline grid of approved photographs, using the shared archival viewer; no redundant card or duplicated featured photograph |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
 
 ## Collection-preview contract
@@ -33,12 +33,12 @@ Community & Civic Life uses two public **parent collection** previews on Home an
 1. **BFHF year cards** are navigational indexes by year. Keep their own card proportions and spacing; do not force the preview-card image ratio or event-card typography onto them.
 2. **Occasion/event cards** on BFHF year pages and BRG introductions use the shared `bfhf-event` / `archive-event` rules in `assets/css/bfhf-years.css`. Within this role, match photograph height, padding, title scale, CTA alignment and mobile breakpoints. The event/occasion title must equal the destination gallery H1.
 3. The primary photo and CTA open the corresponding gallery. An occasion-specific document is a separate action in the **same action row**, opening the shared document viewer. A schedule covering several events belongs under the broader year history instead. Do not add documents to photographic counts.
-4. Preserve distinct page hierarchies: organization → year or occasion → gallery. A long-running organization with a single published gallery retains a normal index card. **Exception:** a subject page devoted to one documented occasion (currently Ronald V. Dellums’s 1987 gala) may present that occasion directly with context and an expandable photograph, with a link to the complete gallery rather than an unnecessary card index.
+4. Preserve distinct page hierarchies: organization → year or occasion → gallery. A long-running organization with a single published gallery retains a normal index card. **Exception:** a subject page devoted to one documented occasion (currently Ronald V. Dellums’s 1987 gala) may present the occasion's full approved photographic grid directly beneath historical context, without an intermediate gallery card, featured-photo duplicate or extra gallery-navigation step. The existing `gallery.html?collection=dellums-1987` route remains available for established deep links and citations.
 5. Differences **between roles** are deliberate: the shared system is typography, photographic fidelity, attribution and action semantics, not an identical `padding` or `gap` value on every component.
 
 ## Gallery and writing contract
 
-- A gallery title matches its incoming occasion card or the heading on a direct single-occasion subject feature; context such as organization/year belongs in an eyebrow when useful.
+- A gallery title matches its incoming occasion card or the historical heading on a directly embedded single-occasion gallery; context such as organization/year belongs in an eyebrow when useful.
 - Lead with the historic occasion and photographed activity. Keep counts, crop workflow and uncertain binder assignments out of public introductory prose.
 - Put qualified dates, attribution/rights caveats and documentary provenance in a restrained `gallery_source_note` **after** the photographic grid; full evidence remains in item records.
 - Preserve permanent `JB-######` IDs, approved publication scope, photo sources, rights and as-found arrangement.
@@ -81,3 +81,7 @@ separately: automated structure checks cannot prove visual balance.
 ## Review before publication
 
 Run `python3 scripts/check_spacing_contract.py` for shared major-section and internal-divider rules. Run `python3 scripts/check_gallery_contract.py` for occasion titles, subject mapping and gallery-source-note placement. Run `python3 scripts/check_preview_contract.py` for Home/Collections preview alignment, credit position, Portraiture previews and role-specific interior-card styling. Both are structural checks; inspect desktop/mobile rendering, link behavior, image framing, alt text and documentary viewers separately. Do not change the indexing/rights policy during a presentation-only cleanup.
+
+## Direct single-occasion galleries
+
+The Ronald V. Dellums page uses `#photo-grid[data-inline-collection="dellums-1987"][data-photographs-only="true"]` below its historical interpretation. The same `assets/js/gallery.js` renderer and archival slideshow/viewer power both this inline presentation and the canonical `gallery.html` route. On the Dellums subject page, display the 41 approved photographs; supporting printed objects remain in their existing records and the original gala invitation opens through the editorial document viewer. The separate gallery URL remains functional for existing citations and direct item links. Preserve photograph IDs, publication state, archival source comparisons, labels, and keyboard controls; do not duplicate photo records or create a second dataset. The inline grid is ordered by existing collection order and may be searched or filtered using the shared controls.

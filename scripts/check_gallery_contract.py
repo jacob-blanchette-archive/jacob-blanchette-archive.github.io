@@ -140,18 +140,22 @@ def check(root: Path) -> tuple[int, int]:
     if not dellums or dellums["subject_type"] != "person":
         raise ValueError("Dellums should be a person subject")
     dellums_page = read(root, dellums["page"])
-    # The single Dellums occasion is presented directly, without an extra card.
+    # The documented Dellums occasion embeds its photographs below the narrative.
     expected_title = collection_map["dellums-1987"].get("display_title")
     if cards(dellums_page, "archive-event"):
         raise ValueError("Dellums single-occasion page must not introduce a gallery card")
     if f"<h2>{expected_title}</h2>" not in dellums_page:
         raise ValueError("Dellums occasion heading must match the gallery display title")
-    if 'class="collection-feature-row"' not in dellums_page:
-        raise ValueError("Dellums occasion must have a direct photographic feature")
-    if 'href="gallery.html?collection=dellums-1987"' not in dellums_page:
-        raise ValueError("Dellums direct gallery link is missing")
-    if 'data-id="JB-000088"' not in dellums_page or 'data-collection="dellums-1987"' not in dellums_page:
-        raise ValueError("Dellums featured photograph must link to its published record")
+    if 'id="photographs"' not in dellums_page or 'id="photo-grid"' not in dellums_page:
+        raise ValueError("Dellums must show photographs directly below the historical introduction")
+    if 'data-inline-collection="dellums-1987"' not in dellums_page or 'data-photographs-only="true"' not in dellums_page:
+        raise ValueError("Dellums grid must load its approved photographs without printed objects")
+    if 'id="photo-dialog"' not in dellums_page or 'id="viewer-stage"' not in dellums_page:
+        raise ValueError("Dellums inline photographs need the shared image viewer")
+    if 'src="assets/js/gallery.js"' not in dellums_page:
+        raise ValueError("Dellums inline gallery renderer is missing")
+    if dellums_page.index('class="prose collection-history"') > dellums_page.index('id="photo-grid"'):
+        raise ValueError("Dellums gallery must follow its historical prose")
     if 'data-id="JB-000103"' not in dellums_page or 'data-type="document"' not in dellums_page:
         raise ValueError("Dellums invitation must use the shared document viewer")
     if 'src="assets/js/editorial-photo.js"' not in dellums_page:
@@ -219,6 +223,8 @@ def check(root: Path) -> tuple[int, int]:
         raise ValueError("Missing shared source-note CSS/hidden behavior")
 
     js = read(root, "assets/js/gallery.js")
+    if "inlineCollection=grid.dataset.inlineCollection" not in js or "photographsOnly=grid.dataset.photographsOnly" not in js:
+        raise ValueError("The gallery renderer must support Dellums inline photographs")
     if "collection.gallery_source_note||collection.notice" not in js:
         raise ValueError("The gallery renderer must prefer gallery_source_note")
     if "collection.display_title||collection.title" not in js:

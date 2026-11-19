@@ -116,12 +116,12 @@ def check(root: Path) -> int:
                 raise ValueError(f"{page}: missing interior card role {name}")
         if 'assets/css/bfhf-years.css' not in source.split("</head>", 1)[0]:
             raise ValueError(f"{page}: missing shared interior-card stylesheet")
-    # Dellums is a documented single occasion, presented as a feature rather than a one-item card index.
+    # Dellums is a single documented occasion: published photographs follow the historical prose.
     dellums = read(root, 'dellums-1987.html')
-    if 'class="collection-feature-row"' not in dellums or 'class="collection-feature-figure"' not in dellums:
-        raise ValueError('Dellums: missing direct single-occasion feature')
-    if 'class="archive-event"' in dellums:
-        raise ValueError('Dellums: unexpected intermediate occasion card')
+    if 'id="photo-grid"' not in dellums or 'data-inline-collection="dellums-1987"' not in dellums:
+        raise ValueError('Dellums: missing embedded photographic gallery')
+    if 'class="archive-event"' in dellums or 'class="collection-feature-figure"' in dellums:
+        raise ValueError('Dellums: unexpected intermediate occasion card or redundant featured photograph')
     return len(home)
 
 

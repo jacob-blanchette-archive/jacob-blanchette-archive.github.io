@@ -1,5 +1,5 @@
 (()=>{'use strict';const $=id=>document.getElementById(id);const grid=$('photo-grid');if(!grid)return;
-const dialog=$('photo-dialog'),search=$('gallery-search'),more=$('load-more'),gridBtn=$('grid-view-button'),slidesBtn=$('slides-view-button'),pageFilter=$('page-filter'),pageLabel=$('page-filter-label');let records=[],filtered=[],visible=0,current=0,collection=null,viewerVersion='presentation';
+const dialog=$('photo-dialog'),search=$('gallery-search'),more=$('load-more'),gridBtn=$('grid-view-button'),slidesBtn=$('slides-view-button'),pageFilter=$('page-filter'),pageLabel=$('page-filter-label'),inlineCollection=grid.dataset.inlineCollection||'',photographsOnly=grid.dataset.photographsOnly==='true';let records=[],filtered=[],visible=0,current=0,collection=null,viewerVersion='presentation';
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=String(text);return node};
 const isGenerativeImage=r=>/\b(?:AI-enhanced|AI-generated|generatively enhanced)\b/i.test(String(r.image_processing||''))&&!/\b(?:non[- ]generative|no generative AI)\b/i.test(String(r.image_processing||''));
 const displayCaption=r=>{const caption=String(r.caption||'').trim(),title=String(r.title||'').trim();const simplify=s=>s.toLocaleLowerCase().replace(/[.!?,:;\s]+/g,' ').trim();return !caption||simplify(caption)===simplify(title)?'':caption};
@@ -93,7 +93,7 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
  const [cols,all,bfhf]=await Promise.all([cs.json(),ps.json(),es.json()]);
  const params=new URLSearchParams(location.search),yearId=params.get('bfhf_year'),eventKey=params.get('event');
  let isYear=false;
- if(yearId){
+ if(yearId&&!inlineCollection){
   const cfg=bfhf.years&&bfhf.years[yearId];if(!cfg)throw Error('BFHF year not found');
   isYear=true;const wanted=new Set(cfg.collection_ids);
   let rows=all.filter(p=>wanted.has(p.collection_id)&&p.published!==false);
@@ -111,15 +111,17 @@ let start=0;$('viewer-stage').addEventListener('touchstart',evt=>{start=evt.chan
   collection={title,display_title:title,gallery_description:description,eyebrow:'Black Filmmakers Hall of Fame · '+yearId,intro:'bfhf-'+yearId+'.html',notice:'The photographs are presented with their original album references. Names, exact exposure dates, and reproduction rights remain under review.'};
   records=rows.sort((a,b)=>cfg.collection_ids.indexOf(a.collection_id)-cfg.collection_ids.indexOf(b.collection_id)||(a.order||0)-(b.order||0));
  }else{
-  const id=params.get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');
-  records=all.filter(p=>p.collection_id===id&&p.published!==false).sort((a,b)=>(a.order||0)-(b.order||0));
+  const id=inlineCollection||params.get('collection')||'bfhf-pilot';collection=cols.find(c=>c.id===id);if(!collection)throw Error('Collection not found');
+  records=all.filter(p=>p.collection_id===id&&p.published!==false&&(!photographsOnly||isJacobPhotograph(p))).sort((a,b)=>(a.order||0)-(b.order||0));
  }
- document.title=collection.title+' | Jacob Blanchette Photography Archive';
- $('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';
- $('gallery-eyebrow').textContent=isYear?('Black Filmmakers Hall of Fame · '+yearId):(collection.eyebrow||'Collection');
- $('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';
- $('gallery-back').href=collection.intro||'collections.html';
- $('gallery-back').textContent=isYear?'← Back to '+yearId+' events':'← Back to collection introduction';
+ if(!inlineCollection){
+  document.title=collection.title+' | Jacob Blanchette Photography Archive';
+  $('gallery-title').textContent=collection.display_title||collection.title||'Photographic gallery';
+  $('gallery-eyebrow').textContent=isYear?('Black Filmmakers Hall of Fame · '+yearId):(collection.eyebrow||'Collection');
+  $('gallery-description').textContent=collection.gallery_description||collection.description||'Browse the photographs';
+  $('gallery-back').href=collection.intro||'collections.html';
+  $('gallery-back').textContent=isYear?'← Back to '+yearId+' events':'← Back to collection introduction';
+ }
  const eventNav=$('bfhf-event-nav');
  if(eventNav&&isYear){
   const spec=bfhf.years[yearId];
