@@ -155,9 +155,9 @@
     "eyebrow": "Community & Civic Life",
     "status": "Initial photographic presentation · identification, dating and rights research ongoing",
     "intro": "gatherings-parades.html",
-    "description": "Photographs of mounted riders proceeding along a city street.",
-    "gallery_description": "Mounted riders proceed along a city street, with onlookers beside the route.",
-    "gallery_source_note": "The occasion, date, exact location, and identities of the mounted riders have not been independently established. This photograph is a non-generative crop from an office scan. Attribution to Jacob Blanchette is supplied by the collection steward, and reproduction rights remain under review.",
+    "description": "Street processions and outdoor gatherings in black-and-white photographs.",
+    "gallery_description": "Mounted riders proceed along a city street. In other photographs, people prepare food, talk, pose together, and sit outdoors near a brick building.",
+    "gallery_source_note": "The exact occasion, date and location of the mounted-rider procession have not been established. Nor has it been established whether the other photographs depict one gathering. The photographs are non-generative crops from office scans; attribution and reproduction rights remain under review.",
     "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
     "theme": "community-civic-life",
     "subject_id": "community-gatherings"
@@ -189,19 +189,5 @@
     "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
     "theme": "portraiture",
     "subject_id": "environmental"
-  },
-  {
-    "id": "political-gatherings",
-    "title": "Political Gatherings",
-    "display_title": "Political Gatherings",
-    "eyebrow": "Politics & Activism · Community & Civic Life",
-    "status": "Provisional thematic gallery; occasion, identification, dating, and rights research ongoing",
-    "intro": "political-gatherings.html",
-    "description": "Photographs of people at an outdoor gathering near a brick building, provisionally associated with political activity.",
-    "gallery_description": "People talk, pose together, share food, and sit in an outdoor audience near a brick building. The gathering is provisionally associated with political activity; its occasion and participants remain unidentified.",
-    "gallery_source_note": "The collection steward considers this brick-building group likely to show a political gathering. No specific campaign, organization, event, date, place, or original physical grouping has been verified. Attribution to Jacob Blanchette is based on the collection steward; the images are non-generative office-scan derivatives, and reproduction rights remain under review.",
-    "credits": "Photographs attributed to Jacob Blanchette by the collection steward; specific political identification remains unverified.",
-    "theme": "community-civic-life",
-    "subject_id": "political-gatherings"
   }
 ]

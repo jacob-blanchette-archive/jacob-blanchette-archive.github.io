@@ -40,25 +40,6 @@
     },
     {
       "page_type": "thematic",
-      "path": "political-gatherings.html",
-      "collection_id": "political-gatherings",
-      "page_title": "Political Gatherings",
-      "page_eyebrow": "Community & Civic Life · Politics & Activism",
-      "page_lead": "Photographs of people gathered outdoors near a brick building, provisionally associated with political activity.",
-      "parent_href": "politics-activism.html",
-      "parent_label": "Politics & Activism",
-      "history_eyebrow": "Political and civic life",
-      "history_heading": "An outdoor gathering",
-      "history_paragraphs": [
-        "The photographs show people talking and posing together, preparing food, and sitting in an outdoor audience near a brick building. Some participants hold papers, while others appear to wear buttons. Group portraits, conversations, and views of the surrounding building place the people in the setting of a larger gathering.",
-        "The collection steward considers these scenes likely to be associated with political activity. The specific occasion, organizers, participants, date, and location have not been established."
-      ],
-      "gallery_eyebrow": "The photographs",
-      "gallery_heading": "Photographs of the gathering",
-      "documents": []
-    },
-    {
-      "page_type": "thematic",
       "path": "community-baseball.html",
       "collection_id": "community-baseball",
       "page_title": "Community Baseball",
@@ -81,16 +62,16 @@
       "collection_id": "community-gatherings",
       "page_title": "Gatherings and Parades",
       "page_eyebrow": "Community & Civic Life",
-      "page_lead": "Mounted riders proceeding along a city street, with onlookers beside the route.",
+      "page_lead": "Mounted riders in a city procession and people gathering outdoors for food, music, and conversation.",
       "parent_href": "community.html",
       "parent_label": "Recreation & Events",
-      "history_eyebrow": "Street processions",
-      "history_heading": "Riders on the street",
+      "history_eyebrow": "Public gatherings",
+      "history_heading": "On the street and in the neighborhood",
       "history_paragraphs": [
-        "Mounted riders wearing western attire proceed along a paved city street as people watch. The occasion, participants, date, and exact location remain under research."
+        "Horseback riders make their way along a city street, some wearing broad-brimmed hats. Other photographs show people talking, posing together, sharing food, and sitting in an outdoor audience near a brick building. The scenes place social gatherings and street processions alongside the neighborhood spaces in which they occurred."
       ],
       "gallery_eyebrow": "The photographs",
-      "gallery_heading": "Photographs of the procession",
+      "gallery_heading": "Photographs of gatherings and parades",
       "documents": []
     },
     {
