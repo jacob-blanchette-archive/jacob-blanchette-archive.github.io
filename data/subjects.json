@@ -48,6 +48,17 @@
     "parent_group_id": "community"
   },
   {
+    "id": "community-gatherings",
+    "subject_type": "topic",
+    "title": "Gatherings and Parades",
+    "theme": "community-civic-life",
+    "page": "gatherings-parades.html",
+    "collection_ids": [
+      "community-gatherings"
+    ],
+    "parent_group_id": "community"
+  },
+  {
     "id": "portraits",
     "subject_type": "topic",
     "title": "Portraits",

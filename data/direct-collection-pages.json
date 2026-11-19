@@ -55,6 +55,24 @@
       "gallery_eyebrow": "The photographs",
       "gallery_heading": "Photographs from the ball field",
       "documents": []
+    },
+    {
+      "page_type": "thematic",
+      "path": "gatherings-parades.html",
+      "collection_id": "community-gatherings",
+      "page_title": "Gatherings and Parades",
+      "page_eyebrow": "Community & Civic Life",
+      "page_lead": "Mounted riders in a city procession and people gathering outdoors for food, music, and conversation.",
+      "parent_href": "community.html",
+      "parent_label": "Recreation & Events",
+      "history_eyebrow": "Public gatherings",
+      "history_heading": "On the street and in the neighborhood",
+      "history_paragraphs": [
+        "Horseback riders make their way along a city street, some wearing broad-brimmed hats. Other photographs show people talking, posing together, sharing food, and sitting in an outdoor audience near a brick building. The scenes place social gatherings and street processions alongside the neighborhood spaces in which they occurred."
+      ],
+      "gallery_eyebrow": "The photographs",
+      "gallery_heading": "Photographs of gatherings and parades",
+      "documents": []
     }
   ]
 }

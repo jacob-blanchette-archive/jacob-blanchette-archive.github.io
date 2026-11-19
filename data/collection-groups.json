@@ -16,7 +16,8 @@
     "theme": "community-civic-life",
     "page": "community.html",
     "subject_ids": [
-      "community-baseball"
+      "community-baseball",
+      "community-gatherings"
     ],
     "featured_photo_id": "JB-000363",
     "featured_image": "assets/images/community-baseball/JB-000363.webp"

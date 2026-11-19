@@ -149,6 +149,20 @@
     "subject_id": "community-baseball"
   },
   {
+    "id": "community-gatherings",
+    "title": "Gatherings and Parades",
+    "display_title": "Gatherings and Parades",
+    "eyebrow": "Community & Civic Life",
+    "status": "Initial photographic presentation · identification, dating and rights research ongoing",
+    "intro": "gatherings-parades.html",
+    "description": "Street processions and outdoor gatherings in black-and-white photographs.",
+    "gallery_description": "Mounted riders proceed along a city street. In other photographs, people prepare food, talk, pose together, and sit outdoors near a brick building.",
+    "gallery_source_note": "The collection steward describes the mounted riders as participants in a Black cowboy parade; the precise date and location have not been verified. A common occasion for the other photographs has not been established. These are non-generative crops from office scans. Photographer attribution and reproduction rights remain under review.",
+    "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
+    "theme": "community-civic-life",
+    "subject_id": "community-gatherings"
+  },
+  {
     "id": "portraits",
     "title": "Portraits",
     "display_title": "Portraits",
