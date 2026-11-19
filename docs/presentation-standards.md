@@ -4,7 +4,7 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 | Role | Applies to | Rendering source | Intentional geometry |
 | --- | --- | --- | --- |
-| Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Community, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
+| Collection preview | Home and Collections: BFHF, BRG, Politics & Activism, Sports & Events, Portraits, Environmental | `assets/css/collection-previews.css` | Same linked card, 16:10 crop, padding, heading weight, CTA, and credit **below** the card on both pages |
 | Year index | BFHF organization overview | `assets/css/bfhf-years.css` (`.bfhf-year-*`) | Distinct three-column year cards, large year numerals, compact copy, different image and text spacing |
 | Occasion/event index | BFHF years, BRG, Dellums, thematic introductions | `assets/css/bfhf-years.css` (`.bfhf-event-*` and `.archive-event-*`) | Shared two-column card grammar and action row; intentional padding and image-height differences from previews and year cards |
 | Photographic gallery tiles | Individual galleries | `assets/css/site.css`, `assets/css/curatorial.css`, gallery viewer | Denser image-led browsing, archival metadata in the expanded viewer |
@@ -19,10 +19,10 @@ These are **role-based** design and editorial conventions. Reuse styles **within
 
 ## Community & Civic Life grouping contract
 
-Community & Civic Life uses two public **parent collection** previews on Home and Collections: **Politics & Activism** and **Community**. Their metadata and published subjects are maintained in `data/collection-groups.json`. Only published subjects belong on their index cards.
+Community & Civic Life uses two public **parent collection** previews on Home and Collections: **Politics & Activism** and **Sports & Events**. Their metadata and published subjects are maintained in `data/collection-groups.json`. Only published subjects belong on their index cards.
 
 - Politics & Activism → `politics-activism.html` → Ronald V. Dellums (`dellums-1987.html`) → the existing 1987 gala gallery.
-- Community → `community.html` → Community Baseball (`community-baseball.html`) → the existing ball-field gallery.
+- Sports & Events → `community.html` → Community Baseball (`community-baseball.html`) → the existing ball-field gallery. The stable parent route and internal group ID remain `community` during this editorial rename; new gallery names are still subject to review.
 - The existing gallery identifiers, original subject pages, archival item IDs, and publication permissions remain unchanged. `data/subjects.json` records `parent_group_id` to keep group membership explicit.
 - Continue reviewing the possible future titles **Sports**, **Gatherings & Parades**, and other reported political/community subjects before making additional public changes. No new unpublished photograph is exposed by creating these parent pages.
 - Parent index cards use the same `archive-event` visual grammar for a published subject introduction as occasion cards use for gallery navigation. Preview credit lines stay outside the whole-card anchors; interior cards do not acquire duplicate credit lines.
