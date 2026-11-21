@@ -15,7 +15,7 @@ function show(link){
  const heading=card.querySelector('h3,strong')?.textContent?.trim()||'Featured photograph';
  const title=item?.title||img.alt||heading;
  const context=item?.caption||card.querySelector('.bfhf-event-copy p:not(.eyebrow),.archive-event-copy p:not(.eyebrow)')?.textContent?.trim()||'';
- const credit=item?.photographer||'Photographer not independently established';
+ const credit=item?.photographer||'Photographer not established for this preview';
  stage.src=src;stage.alt=img.alt||title;
  one('h2').textContent=title;one('.featured-image-description').textContent=context;
  one('.featured-image-credit').textContent=credit;
@@ -28,7 +28,7 @@ function show(link){
 }
 for(const link of links){
  const img=link.querySelector('img');if(!img)continue;
- const parent=link.parentElement;parent.classList.add('featured-image-host');
+ let parent=link.parentElement;if(link.classList.contains('bfhf-year-card')){const wrapper=document.createElement('div');wrapper.className='featured-image-year-wrap';link.replaceWith(wrapper);wrapper.append(link);parent=wrapper}parent.classList.add('featured-image-host');
  const btn=document.createElement('button');btn.type='button';btn.className='featured-image-expand';
  btn.textContent='Enlarge photo';btn.setAttribute('aria-label','Enlarge and view details for '+(img.alt||'featured photograph'));
  parent.append(btn);btn.addEventListener('click',()=>show(link));
