@@ -48,7 +48,7 @@ def check_featured(page, base):
     expect(dialog).not_to_be_visible()
     assert expand.evaluate("(e) => document.activeElement === e"), "Featured viewer did not restore focus"
     page.locator("a.collection-card").first.click()
-    expect(page).to_have_url(re.compile(r"/bfhf\\.html$"))
+    expect(page).to_have_url(re.compile(r"/bfhf\.html$"))
     print("PASS: collection featured enlargement, citation/copy, focus return, card navigation")
 
     page.goto(base + "/bfhf-1987.html")
@@ -59,7 +59,7 @@ def check_featured(page, base):
     page.locator(".featured-image-close").click()
     expect(page.locator(".featured-image-dialog")).not_to_be_visible()
     page.locator("a.bfhf-event-photo").first.click()
-    expect(page).to_have_url(re.compile(r"/gallery\\.html\\?bfhf_year=1987&event=symposium"))
+    expect(page).to_have_url(re.compile(r"/gallery\.html\?bfhf_year=1987&event=symposium"))
     expect(page.locator("#photo-grid .photo-card").first).to_be_visible()
     print("PASS: BFHF featured photo enlargement does not intercept event navigation")
 
