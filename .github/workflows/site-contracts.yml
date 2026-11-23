@@ -31,3 +31,9 @@ jobs:
         run: python3 scripts/check_site_integrity.py
       - name: Check public photographic metadata
         run: python3 scripts/check_public_metadata.py
+      - name: Install Chromium interaction test dependencies
+        run: |
+          python3 -m pip install playwright==1.56.0
+          python3 -m playwright install --with-deps chromium
+      - name: Check viewer interactions in Chromium
+        run: python3 scripts/check_viewer_interactions.py
