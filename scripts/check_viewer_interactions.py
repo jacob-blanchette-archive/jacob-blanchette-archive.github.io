@@ -125,7 +125,7 @@ def check_gallery(page, base):
     expect(dialog.locator("#viewer-photo-id")).to_contain_text("JB-000024")
     page.keyboard.press("Escape")
     expect(dialog).not_to_be_visible()
-    assert "photo=" not in page.url
+    page.wait_for_function("!new URLSearchParams(location.search).has('photo')")
     print("PASS: gallery viewer, source comparison, citation/copy, arrows, Escape and URL cleanup")
 
     page.goto(base + "/gallery.html?collection=bfhf-pilot&photo=JB-000025")
