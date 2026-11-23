@@ -12,7 +12,7 @@ ASSET_FIELDS = {"src", "poster"}
 LINK_TAGS = {"a", "area"}
 RESOURCE_TAGS = {"link", "script", "img", "source", "video", "audio", "iframe"}
 SKIP_SCHEMES = ("mailto:", "tel:", "javascript:", "data:", "blob:")
-CSS_URL = re.compile(r"url\\(\\s*['\\\"]?([^)'\\\"]+)", re.I)
+CSS_URL = re.compile(r'''url\(\s*['"]?([^)'"]+)''', re.I)
 
 class Scan(HTMLParser):
     def __init__(self):
