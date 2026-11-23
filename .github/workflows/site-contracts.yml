@@ -27,3 +27,5 @@ jobs:
         run: python3 scripts/check_gallery_contract.py
       - name: Check spacing contract
         run: python3 scripts/check_spacing_contract.py
+      - name: Check internal links and local assets
+        run: python3 scripts/check_site_integrity.py
