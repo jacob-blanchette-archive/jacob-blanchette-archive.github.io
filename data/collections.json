@@ -166,14 +166,14 @@
     "id": "portraits",
     "title": "Portraits",
     "display_title": "Portraits",
-    "eyebrow": "Portraiture",
+    "eyebrow": "People & Places",
     "status": "Initial curated photographic presentation · identification, dating and rights research ongoing",
     "intro": "portraits.html",
     "description": "Close portraits emphasizing expression, gesture, and composition.",
     "gallery_description": "Two close portraits of unidentified men, photographed with attention to expression and gesture.",
     "gallery_source_note": "The sitter, exposure date and location have not been established. The photograph is presented as a non-generative crop from an office scan. Attribution is based on the collection steward; reproduction rights remain under review.",
     "credits": "Photograph attributed to Jacob Blanchette by the collection steward.",
-    "theme": "portraiture",
+    "theme": "people-places",
     "subject_id": "portraits"
   },
   {
@@ -189,5 +189,19 @@
     "credits": "Photographs attributed to Jacob Blanchette by the collection steward; specific political identification remains unverified.",
     "theme": "community-civic-life",
     "subject_id": "political-gatherings"
+  },
+  {
+    "id": "landscapes",
+    "title": "Landscapes",
+    "display_title": "Landscapes",
+    "eyebrow": "People & Places",
+    "status": "Initial photographic presentation · identification, dating and rights research ongoing",
+    "intro": "landscapes.html",
+    "description": "Views of parkland, paths, water and the urban skyline.",
+    "gallery_description": "Lawn and trees frame city buildings and water in one photograph; in the other, people follow a path beside the waterfront.",
+    "gallery_source_note": "A curved tower in both views suggests Lake Merritt near the Kaiser Center in Oakland, but the precise location and exposure dates are not independently verified. Faithful non-generative office-scan derivatives are attributed to Jacob Blanchette by the collection steward; reproduction rights remain under review.",
+    "credits": "Photographs attributed to Jacob Blanchette by the collection steward.",
+    "theme": "people-places",
+    "subject_id": "landscapes"
   }
 ]

@@ -100,17 +100,36 @@
       "path": "portraits.html",
       "collection_id": "portraits",
       "page_title": "Portraits",
-      "page_eyebrow": "Portraiture",
+      "page_eyebrow": "People & Places",
       "page_lead": "Close portraits centered on expression, gesture, and composition.",
       "parent_href": "collections.html",
       "parent_label": "All collections",
       "history_eyebrow": "The photographs",
       "history_heading": "Expression and gesture",
       "history_paragraphs": [
-        "Portraiture brings attention to the person photographed. In these photographs, framing, expression, and gesture take precedence over the surrounding setting. The identities, dates, and locations of individual portraits remain under research."
+        "A portrait draws attention to its sitter. In these photographs, framing, expression, and gesture take precedence over the surrounding setting. The identities, dates, and locations remain under research."
       ],
-      "gallery_eyebrow": "Portraiture",
+      "gallery_eyebrow": "The photographs",
       "gallery_heading": "The portraits",
+      "documents": []
+    },
+    {
+      "page_type": "thematic",
+      "path": "landscapes.html",
+      "collection_id": "landscapes",
+      "page_title": "Landscapes",
+      "page_eyebrow": "People & Places",
+      "page_lead": "Photographs of open parkland, pathways, water, and the urban skyline.",
+      "parent_href": "collections.html",
+      "parent_label": "All collections",
+      "history_eyebrow": "Along the water's edge",
+      "history_heading": "Parkland and city views",
+      "history_paragraphs": [
+        "An open lawn and trees frame buildings across the waterfront. In another photograph, several people walk and jog along a paved path beside water, with office towers rising in the distance.",
+        "A distinctive curved building appears in both views, suggesting they may depict the same area. The location and exposure dates are still under research."
+      ],
+      "gallery_eyebrow": "The photographs",
+      "gallery_heading": "Views of the landscape",
       "documents": []
     }
   ]

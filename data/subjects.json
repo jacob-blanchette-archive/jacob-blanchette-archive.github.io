@@ -73,10 +73,20 @@
     "id": "portraits",
     "subject_type": "topic",
     "title": "Portraits",
-    "theme": "portraiture",
+    "theme": "people-places",
     "page": "portraits.html",
     "collection_ids": [
       "portraits"
+    ]
+  },
+  {
+    "id": "landscapes",
+    "subject_type": "topic",
+    "title": "Landscapes",
+    "theme": "people-places",
+    "page": "landscapes.html",
+    "collection_ids": [
+      "landscapes"
     ]
   }
 ]
