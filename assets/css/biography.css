@@ -48,3 +48,15 @@
 .bio-dialog .bio-dialog-close{font-size:12px;border:1px solid var(--line);background:#fff;padding:10px 16px;cursor:pointer;margin:12px 20px 0}
 @media(max-width:850px){.bio-lead-grid{grid-template-columns:1fr;gap:37px}.bio-hero{max-width:480px}.bio-story{font-size:18px}}
 @media(max-width:620px){.bio-narrative{font-size:17px;line-height:1.79}.bio-duo{grid-template-columns:1fr;gap:24px}.bio-photo-stage{height:270px}}
+
+/* Family illustrations follow the relevant early-life paragraph; keep Jacob's main portrait prominent. */
+.bio-family-figure{margin:26px 0 36px;max-width:100%}
+.bio-family-figure--portrait{max-width:315px}
+.bio-family-figure--group{max-width:550px}
+.bio-family-photo-trigger{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:inherit}
+.bio-family-photo-trigger img{display:block;width:100%;height:auto;object-fit:contain}
+.bio-family-photo-trigger:hover img{outline:2px solid var(--accent);outline-offset:2px}
+.bio-family-photo-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.bio-family-figure figcaption{font:13px/1.65 var(--sans);color:var(--muted);margin-top:11px}
+.bio-family-figure figcaption strong{color:var(--accent)}
+.bio-family-figure figcaption span{display:block;margin-top:7px}
