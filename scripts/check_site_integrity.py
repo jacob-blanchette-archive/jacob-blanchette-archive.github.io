@@ -38,7 +38,7 @@ def check(root: Path):
     counts = {"html_pages": 0, "html_references": 0, "css_references": 0, "manifest_images": 0}
     pages = {}
     for page in root.rglob("*.html"):
-        if ".git" in page.parts: continue
+        if ".git" in page.parts or "templates" in page.relative_to(root).parts: continue
         doc = Scan()
         doc.feed(page.read_text(encoding="utf-8"))
         pages[page.resolve()] = doc
