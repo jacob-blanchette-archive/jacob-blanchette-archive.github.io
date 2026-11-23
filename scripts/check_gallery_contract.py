@@ -176,9 +176,11 @@ def check(root: Path) -> tuple[int, int]:
             raise ValueError(f"{route}: no public photographs")
         checked += 1
 
-    # Portraits is the remaining portrait collection; Environmental is a legacy redirect.
-    if "portraits" not in direct_ids or "environmental" in direct_ids:
+    # Portraits and Landscapes are both direct galleries under People & Places.
+    if not {"portraits", "landscapes"}.issubset(direct_ids) or "environmental" in direct_ids:
         raise ValueError("Portraits must remain a direct photographic collection")
+    if any(subject_map[sid].get("theme") != "people-places" for sid in ("portraits", "landscapes")):
+        raise ValueError("People & Places subject themes are inconsistent")
     if "environmental" in collection_map or "environmental" in subject_map:
         raise ValueError("Environmental gallery was not retired")
     if 'festivals-parades.html' not in read(root, 'environmental.html'):

@@ -82,8 +82,14 @@ def check(root: Path) -> int:
         r'<section class="home-theme home-portraiture"[\s\S]*?</section>',
         read(root, "index.html"),
     )
-    if not portraiture or "Collection in development" in portraiture.group(0) or portraiture.group(0).count('class="collection-card-wrap"') != 1:
-        raise ValueError("Published Portraiture must have exactly one photographic preview")
+    if not portraiture or "Collection in development" in portraiture.group(0) or portraiture.group(0).count('class="collection-card-wrap"') != 2:
+        raise ValueError("People & Places must display exactly two photographic previews")
+    if "portraits.html" not in home or "landscapes.html" not in home:
+        raise ValueError("People & Places must preview Portraits and Landscapes")
+    if '<h3 id="home-portraiture">People &amp; Places</h3>' not in read(root, "index.html"):
+        raise ValueError("Homepage People & Places heading missing")
+    if '<h2 id="portraiture-title">People &amp; Places</h2>' not in read(root, "collections.html"):
+        raise ValueError("Collections People & Places heading missing")
     for page in ("index.html", "collections.html"):
         head = read(root, page).split("</head>", 1)[0]
         main = 'assets/css/curatorial.css'
